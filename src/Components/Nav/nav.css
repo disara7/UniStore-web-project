@@ -10,7 +10,7 @@
     justify-content: space-evenly;
     padding-top: 0.5rem;
     padding-bottom: 0rem;
-    padding-left: 30rem;
+    padding-left: 36rem;
     padding-right: 10rem;
     list-style: none;
     gap: 3rem;
@@ -48,7 +48,7 @@ button {
     height: 2.5rem;
     outline: none;
     border: 1px solid grey;
-    border-radius: 75px;
+    border-radius: 0.8rem;
     color: grey;
     font-size: 18px;
     font-weight: 500;
@@ -56,5 +56,35 @@ button {
     cursor: pointer;
     margin-top: 1rem;
     margin-left: 1.5rem;
+}
+
+button:active {
+    background: blue;
+}
+
+.cart-count {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.2rem;
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: white;
+}
+
+.icon-style {
+    margin-right: -3.5rem;
+    margin-top: 1.8rem;
+}
+
+.nav-button {
+    display: flex;
+    margin-right: 6rem;
+    
 }
 
