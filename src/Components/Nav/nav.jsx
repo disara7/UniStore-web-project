@@ -1,24 +1,30 @@
-import './nav.css'
-import { BsCart2 } from "react-icons/bs";
-
-import React from 'react'
+import React, { useState } from 'react';
+import { BsCart2 } from 'react-icons/bs';
+import './nav.css';
 
 const Nav = () => {
+  const [menu, setMenu] = useState('Home');
+
   return (
     <div className="nav-menu">
-        <ul className="nav-list">
-            <li>Home <hr /></li>
-            <li>Preloved</li>
-            <li>CraftsWorld</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-        <div className="nav-button">
-            <a><BsCart2 /></a>
-            <button>Register</button>
-        </div>
+      <ul className="nav-list">
+        <li onClick={() => setMenu('Home')}>Home {menu === 'Home' ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu('Preloved')}>Preloved {menu === 'Preloved' ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu('CraftsWorld')}>CraftsWorld {menu === 'CraftsWorld' ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu('About')}>About {menu === 'About' ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu('Contact')}>Contact {menu === 'Contact' ? <hr /> : <></>}</li>
+      </ul>
+      <div className="nav-button">
+        <a>
+          <div className="icon-style">
+            <BsCart2 />
+          </div>
+        </a>
+        <div className="cart-count">0</div>
+        <button>Register</button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
