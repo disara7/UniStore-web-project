@@ -10,7 +10,7 @@
     justify-content: space-evenly;
     padding-top: 0.5rem;
     padding-bottom: 0rem;
-    padding-left: 30rem;
+    padding-left: 36rem;
     padding-right: 10rem;
     list-style: none;
     gap: 3rem;
@@ -48,7 +48,7 @@ button {
     height: 2.5rem;
     outline: none;
     border: 1px solid grey;
-    border-radius: 75px;
+    border-radius: 0.8rem;
     color: grey;
     font-size: 18px;
     font-weight: 500;
