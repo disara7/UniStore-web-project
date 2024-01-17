@@ -1,0 +1,60 @@
+.nav-menu {
+    display: flex;
+    box-shadow: 0 1px 3px -2px black;
+    gap: 5rem;
+    justify-content: space-evenly;   
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 0.5rem;
+    padding-bottom: 0rem;
+    padding-left: 30rem;
+    padding-right: 10rem;
+    list-style: none;
+    gap: 3rem;
+    color: #626262;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+/* .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} */
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.nav-menu hr {
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: blue;
+}
+
+button {
+    width: 8rem;
+    height: 2.5rem;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 75px;
+    color: grey;
+    font-size: 18px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
