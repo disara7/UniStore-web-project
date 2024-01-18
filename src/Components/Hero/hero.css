@@ -1,17 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+.content{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
 
+}
 .hero {
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
-    background-color: #F6F6F6;
-    overflow-x: hidden;
+    /* background-color: #F6F6F6; */
+    overflow: hidden;
+    background-image: url('../Assets/images/bg.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+    background-size: auto;
+    background-position: center;
+    height: 68vh;
+    
+    margin-left: -1.9rem;
+    overflow: hidden;
 }
 
-.hero h1 {
+.logo img{
+    width: 70vh;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+    margin-top: 5rem;
+}
+
+
+/* .hero h1 {
     font-size: 7rem;
     padding: 2rem;
     
@@ -25,32 +48,42 @@
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-}
+} */
 
-.hero p {
+.content p {
     width: 38rem;
     text-align: center;
-    justify-content: center;
-    align-self: center;
-    margin-top: -5rem;
+    /* justify-content: center; */
+    /* align-self: center; */
+    margin-top: 1rem;
     padding: 0.5rem;
-    color: rgb(83, 83, 83);
+    color: white;
+    margin-bottom: -1rem;
+    
+    
 }
 
-.hero button {
+.content button {
     justify-content: center;
     align-items: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 3rem;
     margin-right: 1rem;
-    border-color: blue;
+    border-color: white;
+    border-width: 0.2rem;
+    border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: rgb(10, 10, 98);
+    color: white;
+    background-color: transparent;
        
 }
 
-.herobtn{
+.pl:hover{
+    background-color: yellow;
+}
+
+.content .herobtn{
     align-self: center;
    
     display: flex;

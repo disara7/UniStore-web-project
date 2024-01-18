@@ -4,9 +4,11 @@ import Hero from '../../Components/Hero/hero'
 import Popular from '../../Components/popular/popular'
 import Content from '../../Components/content/Content'
 
+
 const Home = () => {
   return (
-    <div>
+    <div className='home'> 
+        
         <Hero/>
         <Popular/>
         <Content/>
