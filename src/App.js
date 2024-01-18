@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './Pages/home/cart';
 import Login from './Pages/home/login';
 import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
+import Footer from './Components/footer/Footer';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}/> 
           <Route path='/login' element={<Login/>}/>         
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
