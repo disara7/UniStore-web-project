@@ -28,12 +28,13 @@
 }
 
 .preloved button{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
     margin-left: 0rem;
     margin-right: 2.5rem;
-    justify-content: left;
-    justify-self: left;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
 }
 
 .preloved img{
