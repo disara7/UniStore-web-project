@@ -1,0 +1,33 @@
+.content{
+    overflow-x: hidden;
+    display: flex;
+    gap: 2rem;
+    margin-left: 5rem;
+    width: auto;
+    justify-content: left;
+    
+    
+}
+
+.content h1{
+    font-size: 3rem;
+}
+
+.content p{
+    width: 40rem;
+}
+
+.content img{
+    width: 30rem;
+    margin-top: 2rem;
+    margin-left: 8rem;
+}
+
+.content button{
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0rem;
+    margin-right: 2.5rem;
+    
+}
