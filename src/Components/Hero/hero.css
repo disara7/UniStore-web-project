@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+.hero {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    background-color: #F6F6F6;
+    overflow-x: hidden;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    padding: 2rem;
+    
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400;
+    width: fit-content;
+    
+
+    background: linear-gradient(90deg, rgba(255, 191, 21, 1), rgba(242, 84, 27, 1), rgba(201, 24, 83, 1), rgba(168, 24, 110, 1), rgba(106, 4, 135, 1), rgba(48, 29, 125, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    width: 38rem;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: -5rem;
+    padding: 0.5rem;
+    color: rgb(83, 83, 83);
+}
+
+.hero button {
+    justify-content: center;
+    align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: auto;
+    margin-right: 1rem;
+    border-color: blue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: rgb(10, 10, 98);
+       
+}
+
+.herobtn{
+    align-self: center;
+   
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}

@@ -1,8 +1,9 @@
 .nav-menu {
     display: flex;
-    box-shadow: 0 1px 3px -2px black;
+    /* box-shadow: 0 1px 3px -2px black; */
     gap: 5rem;
     justify-content: space-evenly;   
+    background-color: #F6F6F6;
 }
 
 .nav-list {
@@ -10,8 +11,8 @@
     justify-content: space-evenly;
     padding-top: 0.5rem;
     padding-bottom: 0rem;
-    padding-left: 36rem;
-    padding-right: 10rem;
+    padding-left: 40rem;
+    padding-right: 9rem;
     list-style: none;
     gap: 3rem;
     color: #626262;
@@ -33,6 +34,7 @@
     justify-content: center;
     gap: 3px;
     cursor: pointer;
+    margin-right: -0.5rem;
 }
 
 .nav-menu hr {
@@ -44,18 +46,19 @@
 }
 
 button {
-    width: 8rem;
-    height: 2.5rem;
+    width: 7rem;
+    height: 2.3rem;
     outline: none;
     border: 1px solid grey;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     color: grey;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     background: white;
     cursor: pointer;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 7rem;
 }
 
 button:active {
@@ -79,12 +82,18 @@ button:active {
 
 .icon-style {
     margin-right: -3.5rem;
-    margin-top: 1.8rem;
+    margin-top: 2rem;
 }
 
 .nav-button {
     display: flex;
-    margin-right: 6rem;
+    margin-right: 5rem;
     
 }
 
+.sign button{
+    border: none;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    background-color: #F6F6F6;
+}
