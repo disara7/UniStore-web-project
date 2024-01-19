@@ -9,9 +9,11 @@ img {
     
 }
 
-.item p{
+.item_name{
     margin: 0.5rem 0rem;
-    padding-left: 0.3rem;
+    color: black;
+    width: auto;
+    text-align: left;
 
 }
 

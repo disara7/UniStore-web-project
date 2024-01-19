@@ -3,46 +3,47 @@
     /* box-shadow: 0 1px 3px -2px black; */
     gap: 5rem;
     justify-content: space-evenly;   
-    background-color: #F6F6F6;
+    background-color: transparent;
+    background-image: url('../Assets/images/bg.png');
+    background-size: auto;
+    position: relative;
+    overflow: hidden;
+    
 }
 
 .nav-list {
     display: flex;
-    justify-content: space-evenly;
+    width: auto;
     padding-top: 0.5rem;
     padding-bottom: 0rem;
-    padding-left: 40rem;
-    padding-right: 9rem;
     list-style: none;
-    gap: 3rem;
-    color: #626262;
+    gap: 5rem;
+    color: white;
     font-size: 15px;
-    font-weight: 500;
-
+    font-weight: 600;
+    margin-right: 14rem;
+    margin-left: -1rem;
 }
-
-/* .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-} */
 
 .nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
     cursor: pointer;
-    margin-right: -0.5rem;
 }
+
+.nav-menu:active{
+    color: white;
+}
+
 
 .nav-menu hr {
     border: none;
-    width: 80%;
-    height: 3px;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 10px;
-    background: blue;
+    background: white;
 }
 
 button {
@@ -54,15 +55,14 @@ button {
     color: grey;
     font-size: 16px;
     font-weight: 500;
-    background: white;
+    background: transparent;
     cursor: pointer;
     margin-top: 1.5rem;
-    margin-left: 1rem;
-    margin-right: 7rem;
+    margin-left: -1rem;
 }
 
 button:active {
-    background: blue;
+    background: white;
 }
 
 .cart-count {
@@ -81,19 +81,24 @@ button:active {
 }
 
 .icon-style {
-    margin-right: -3.5rem;
     margin-top: 2rem;
+    margin-left: 3rem;
 }
 
 .nav-button {
-    display: flex;
-    margin-right: 5rem;
-    
+    display: flex; 
 }
 
 .sign button{
     border: none;
-    margin-right: -1rem;
-    margin-left: -1rem;
     background-color: #F6F6F6;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 10px;
+    width: 10px;
+    margin-top: 2rem;
 }

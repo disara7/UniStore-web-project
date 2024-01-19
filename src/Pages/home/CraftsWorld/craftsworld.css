@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+.craftsworld{
+    display: flex;
+    background-color: #F6F6F6;
+    height: 70vh;
+}
+.craftsworld .left{
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    padding: 8rem;
+    background-color: #F6F6F6;
+    justify-self: left;
+}
+
+.craftsworld p {
+    width: 35rem;
+}
+
+.craftsworld h1{
+    font-size: 6rem;    
+    font-family: 'Abril Fatface', serif;
+    font-weight: 300;
+    width: fit-content;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.craftsworld button{
+    padding: 1rem;
+    margin-left: 0rem;
+    margin-right: 2.5rem;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+
+.craftsworld img{
+    width: 30rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
