@@ -7,7 +7,6 @@
     background-image: url('../Assets/images/bg.png');
     background-size: auto;
     position: relative;
-    
     overflow: hidden;
     
 }
@@ -17,23 +16,14 @@
     width: auto;
     padding-top: 0.5rem;
     padding-bottom: 0rem;
-    padding-left: 2rem;
-    padding-right: 10rem;
     list-style: none;
     gap: 5rem;
     color: white;
     font-size: 15px;
     font-weight: 600;
-    
-    
-
+    margin-right: 14rem;
+    margin-left: -1rem;
 }
-
-/* .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-} */
 
 .nav-menu li {
     display: flex;
@@ -68,8 +58,7 @@ button {
     background: transparent;
     cursor: pointer;
     margin-top: 1.5rem;
-    margin-left: 1rem;
-    margin-right: 7rem;
+    margin-left: -1rem;
 }
 
 button:active {
@@ -92,21 +81,16 @@ button:active {
 }
 
 .icon-style {
-    margin-right: -3.5rem;
     margin-top: 2rem;
+    margin-left: 3rem;
 }
 
 .nav-button {
-    display: flex;
-    margin-left: 13rem;
-    margin-right: 3rem;
-    
+    display: flex; 
 }
 
 .sign button{
     border: none;
-    margin-right: -1rem;
-    margin-left: -1rem;
     background-color: #F6F6F6;
 }
 
@@ -117,5 +101,4 @@ button:active {
     height: 10px;
     width: 10px;
     margin-top: 2rem;
-    margin-left: 2rem;
 }

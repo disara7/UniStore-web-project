@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-.content{
+.hero{
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     align-items: center;
 
 }
-.hero {
+.herotop {
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -33,28 +33,9 @@
     margin-top: 5rem;
 }
 
-
-/* .hero h1 {
-    font-size: 7rem;
-    padding: 2rem;
-    
-    font-family: 'Abril Fatface', serif;
-    font-weight: 400;
-    width: fit-content;
-    
-
-    background: linear-gradient(90deg, rgba(255, 191, 21, 1), rgba(242, 84, 27, 1), rgba(201, 24, 83, 1), rgba(168, 24, 110, 1), rgba(106, 4, 135, 1), rgba(48, 29, 125, 1));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-} */
-
-.content p {
+p {
     width: 38rem;
     text-align: center;
-    /* justify-content: center; */
-    /* align-self: center; */
     margin-top: 1rem;
     padding: 0.5rem;
     color: white;
@@ -63,31 +44,38 @@
     
 }
 
-.content button {
+.hero button {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.8rem;
+    width: 10rem;
     height: 3rem;
-    margin-right: 1rem;
+    margin-left: 2rem;
     border-color: white;
-    border-width: 0.2rem;
+    border-width: 0.15rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.134);
+    font-weight: 600;
        
 }
 
 .pl:hover{
-    background-color: yellow;
+    background-color: rgba(245, 205, 42, 1);
 }
 
-.content .herobtn{
-    align-self: center;
-   
+.cw:hover{
+    background-color: rgba(105, 195, 35, 1);
+}
+
+.hero .herobtn{
+    align-self: center; 
     display: flex;
     flex-direction: row;
     padding: 1rem;
     margin-bottom: 3rem;
+    margin-left: 4rem;
 }

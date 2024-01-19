@@ -1,0 +1,53 @@
+.content{
+    display: flex;
+    justify-self: left;
+    justify-content: left;
+    padding: 3rem;
+}
+
+.content h1{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.content p{
+    width: 40rem;
+    color: black;
+    text-align: left;
+}
+
+.content img{
+    width: 40rem;
+    padding-left: 4rem;
+}
+
+.buttons{
+    display: flex;
+    padding-top: 2rem;
+    margin-left: 1.5rem;
+}
+
+button{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 12rem;
+    height: 3rem;
+    margin-right: 2rem;
+    border-width: 0.15rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.134);
+    font-weight: 600;
+}
+
+.giver button{
+    background-color: rgba(245, 205, 42, 1);
+    border-color: rgba(245, 205, 42, 1);
+    
+}
+
+.seller button{
+    background-color: rgba(105, 195, 35, 1);
+    border-color: rgba(105, 195, 35, 1);    
+}

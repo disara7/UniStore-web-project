@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 100vh;
+    height: 90vh;
     width: auto;   
 }
 
@@ -11,6 +11,7 @@
     color: #2c2b2b;
     font-size: 1.8rem;
     font-weight: 600;
+    margin-top: 1.5rem;
 }
 
 .popular hr {
@@ -22,19 +23,8 @@
 }
 
 .popular-item {
-    margin-top: 50px;
+    margin-top: 1rem;
     display: flex;
     gap: 30px;
 }
 
-.popular button{
-    justify-content: center;
-    margin-left: 8%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    width: auto;
-    background-color: rgb(6, 6, 88);
-    color: white;
-    margin-top: 3rem;
-    
-}
