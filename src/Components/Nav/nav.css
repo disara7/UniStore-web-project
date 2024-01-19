@@ -21,9 +21,14 @@
     color: white;
     font-size: 15px;
     font-weight: 600;
-    margin-right: 14rem;
-    margin-left: -1rem;
+    margin-right: 18rem;
+    margin-left: -4rem;
 }
+
+.nav-list li a {
+    color: white;
+    text-decoration: none; 
+  }
 
 .nav-menu li {
     display: flex;
@@ -73,16 +78,20 @@ button:active {
     align-items: center;
     margin-top: 1.2rem;
     margin-right: 1.5rem;
-    margin-left: 1rem;
+    margin-left: -0.5rem;
     border-radius: 11px;
     font-size: 14px;
-    background: red;
-    color: white;
+    background: white;
+    color: grey;
 }
 
 .icon-style {
     margin-top: 2rem;
-    margin-left: 3rem;
+    margin-left: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
 }
 
 .nav-button {

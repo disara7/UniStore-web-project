@@ -1,30 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
 .preloved{
     display: flex;
-    background-color: #F6F6F6;
-    height: 70vh;
-}
-.preloved .left{
-    justify-content: left;
-    display: flex;
     flex-direction: column;
-    padding: 8rem;
     background-color: #F6F6F6;
-    justify-self: left;
+    height: 35vh;
+    align-items: center;
+    background-image: url('../../../Components/Assets/images/bg.png');
 }
 
+.page-content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+.right{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 .preloved p {
+    margin-top: -2rem;
     width: 35rem;
 }
 
 .preloved h1{
     font-size: 6rem;    
-    font-family: 'Abril Fatface', serif;
-    font-weight: 300;
+    font-weight: 600;
     width: fit-content;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    text-align: center;
+    color: white;
 }
 
 .preloved button{
