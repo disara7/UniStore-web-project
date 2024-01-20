@@ -28,3 +28,24 @@
     gap: 30px;
 }
 
+
+/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+
+@media  screen and (max-width: 600px) {
+    .popular {
+        height: 50vh;  
+    }
+
+    .popular h1 {
+        font-size: 1.3rem;
+    }
+
+    .popular hr {
+        width: 6rem;
+    }
+
+    .popular-item {
+        margin-top: 0.2rem;
+        gap: 15px;
+    }
+}
