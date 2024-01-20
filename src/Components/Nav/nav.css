@@ -111,3 +111,12 @@ button:active {
     width: 10px;
     margin-top: 2rem;
 }
+
+/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+
+@media  screen and (max-width: 600px) {
+    .nav-menu {
+       display: none;  
+    }
+
+}
