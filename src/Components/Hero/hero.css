@@ -79,3 +79,32 @@ p {
     margin-bottom: 3rem;
     margin-left: 4rem;
 }
+
+/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+
+@media  screen and (max-width: 600px) {
+    .logo img{
+        width: 45vh;
+        justify-content: center;
+    }
+
+    p {
+        width: 22rem;
+        font-size: 13px;
+        justify-content: center;
+    }
+
+    .herotop {
+        overflow: hidden;
+        height: 60vh;
+    }
+
+    .hero button {
+        padding-left: 1rem;
+        width: 9rem;
+        margin-left: -0.5rem;
+        border-width: 0.13rem;
+    }
+
+    
+}
