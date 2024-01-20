@@ -51,3 +51,31 @@ button{
     background-color: rgba(105, 195, 35, 1);
     border-color: rgba(105, 195, 35, 1);    
 }
+
+/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+
+@media  screen and (max-width: 600px) {
+    .content{
+        padding: 1.5rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        height: 60vh;
+    }
+    
+    .content h1{
+        width: 23rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .content p{
+        width: 23rem;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+}
