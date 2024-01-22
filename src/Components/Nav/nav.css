@@ -1,34 +1,64 @@
 .nav-menu {
     display: flex;
     /* box-shadow: 0 1px 3px -2px black; */
-    gap: 5rem;
-    justify-content: space-evenly;   
+    justify-content: space-between;  
+    align-items: center; 
+    padding: 20px 80px;
     background-color: transparent;
-    background-image: url('../Assets/images/bg.png');
+    /* background-image: url('../Assets/images/bg.png'); */
     background-size: auto;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     overflow: hidden;
+    z-index: 10;
+    
+    
+}
+.nav-menu.active{
+    background: linear-gradient(to right,#F4B91B,#408242);
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 30px;
     
 }
 
-.nav-list {
-    display: flex;
-    width: auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0rem;
+#nav-list li{
     list-style: none;
-    gap: 5rem;
+    padding: 0 5px;
+    position: relative;
     color: white;
-    font-size: 15px;
-    font-weight: 600;
-    margin-right: 18rem;
-    margin-left: -4rem;
 }
 
-.nav-list li a {
+#nav-list li a {
     color: white;
     text-decoration: none; 
+    transition: 0.3s ease-in-out;
   }
+  #nav-list li a:hover,
+  #nav-list li a.active{
+    font-weight: 600;
+    
+}
+#nav-list li a:hover::after,
+#nav-list li a.active::after{
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    
+}
 
 .nav-menu li {
     display: flex;
@@ -42,16 +72,27 @@
     color: white;
 }
 
+.left-part{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.right-part{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-.nav-menu hr {
+
+/* .nav-menu hr {
     border: none;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 10px;
     background: white;
-}
+} */
 
-button {
+/* button {
     width: 7rem;
     height: 2.3rem;
     outline: none;
@@ -62,23 +103,21 @@ button {
     font-weight: 500;
     background: transparent;
     cursor: pointer;
-    margin-top: 1.5rem;
-    margin-left: -1rem;
 }
 
 button:active {
     background: white;
-}
+} */
 
 .cart-count {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.2rem;
-    margin-right: 1.5rem;
-    margin-left: -0.5rem;
+    margin-top: -40px;
+    
+    margin-left: 0.8rem;
     border-radius: 11px;
     font-size: 14px;
     background: white;
@@ -86,8 +125,7 @@ button:active {
 }
 
 .icon-style {
-    margin-top: 2rem;
-    margin-left: 2rem;
+    
     color: white;
     font-size: 1.5rem;
     font-weight: 600;
@@ -96,6 +134,8 @@ button:active {
 
 .nav-button {
     display: flex; 
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .sign button{
@@ -106,17 +146,72 @@ button:active {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    padding-right: 70px;
     height: 10px;
     width: 10px;
-    margin-top: 2rem;
 }
+ #mobile i{
+    color: white;
+ }
+ #mobile{
+    display: none;
+ }
+ .mobileOverlay{
+    display: none;
+ }
+ 
 
 /*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
 
-@media  screen and (max-width: 600px) {
-    .nav-menu {
-       display: none;  
+@media  screen and (max-width: 769px) {
+    .nav-menu{
+        padding: 20px 60px;
+    }
+    #nav-list {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;  
+       justify-content: flex-start;
+       gap: 10px;
+       position: fixed;
+       top: 75px;
+       right: -300px;
+       width: 300px;
+       height: 100vh;
+       background: #F4B91B;
+       padding: 40px 0 0 20px;
+       z-index: 1;
+    }
+
+    .mobileOverlay{
+        display: none;
+     }
+
+    .mobileOverlay.active{
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;  
+       justify-content: flex-start;
+       gap: 10px;
+       position: fixed;
+       top: 75px;
+       right: 0;
+       width: 100%;
+       height: 100vh;
+       background: #F4B91B;
+       background-color: rgba(0, 0, 0, 0.7);
+       z-index: -1;
+    }
+    #nav-list.active{
+        right: 0px;
+    }
+    #mobile{
+        display: block;
+    }
+    #mobile i{
+        font-size: 24px;
+        cursor: pointer;
+        padding-left: 30px;
     }
 
 }

@@ -16,35 +16,70 @@
     align-items: center;
     /* background-color: #F6F6F6; */
     overflow: hidden;
-    background-image: url('../Assets/images/bg.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
-    background-size: auto;
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../Assets/images/bg.png'); 
+    background-size: cover;
     background-position: center;
-    height: 68vh;
-    
-    margin-left: -1.9rem;
+    height: 100vh;
     overflow: hidden;
+}
+.herotop .glow{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transform: translateY(0%);
+  height: 100vh;
+  width: 100vh;
+}
+
+.herotop .glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(215, 255, 164, 0.5); 
+  border-radius: inherit; 
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; 
+  pointer-events: none; 
+  border-radius: 50%; 
+  width: 200px;
+  height: 200px; 
+  filter: blur(90px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+  
+}
+
+.herotop .glow:hover::after {
+  opacity: 1; 
 }
 
 .logo img{
-    width: 70vh;
+    width: 100vh;
     align-items: center;
     justify-content: center;
-    margin-left: 4rem;
+    margin-left: 3rem;
     margin-top: 5rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    z-index: 2;
 }
 
 p {
-    width: 38rem;
+    max-width: 50rem;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
-    margin-top: 1rem;
-    padding: 0.5rem;
     color: white;
-    margin-bottom: -1rem;
-    
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1;
     
 }
 
-.hero button {
+/*.hero button {
     display: flex;
     justify-content: center;
     padding-left: 1rem;
@@ -61,15 +96,15 @@ p {
     background-color: rgba(255, 255, 255, 0.134);
     font-weight: 600;
        
-}
+}*/
 
-.pl:hover{
+/* .pl:hover{
     background-color: rgba(245, 205, 42, 1);
 }
 
 .cw:hover{
     background-color: rgba(105, 195, 35, 1);
-}
+} */
 
 .hero .herobtn{
     align-self: center; 
@@ -79,32 +114,84 @@ p {
     margin-bottom: 3rem;
     margin-left: 4rem;
 }
-
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
-
-@media  screen and (max-width: 600px) {
-    .logo img{
-        width: 45vh;
-        justify-content: center;
-    }
-
-    p {
-        width: 22rem;
-        font-size: 13px;
-        justify-content: center;
-    }
-
-    .herotop {
-        overflow: hidden;
-        height: 60vh;
-    }
-
-    .hero button {
-        padding-left: 1rem;
-        width: 9rem;
-        margin-left: -0.5rem;
-        border-width: 0.13rem;
-    }
-
+.Btn {
+    width: 14rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.134);
+    border-radius: 72px;
+    border-color:white;
+    border-style:solid;
+    color: white;
+    font-size:20px;
+    font-weight: 500;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .6s;
+    z-index: 1;
+  }
+  
+  .Btn::before {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    content: "";
     
-}
+    border-radius: 50%;
+    left: -100%;
+    top: 200%;
+    transition-duration: .6s;
+    mix-blend-mode: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+  .y::before{
+    background-color: #F5CD2A;
+  }
+  .g::before{
+    background-color: #69C323;
+  }
+  
+  .Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-200%);
+    border-radius: 72px;
+    width: 14rem;
+    height: 3.5rem;
+    
+  }
+  .Btn:hover{
+    border: none;
+    
+  }
+  
+  .Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+  }
+
+  @media  screen and (max-width: 769px) {
+    .logo img{
+      width: 70vh;
+      align-items: center;
+      justify-content: center;
+      margin-left: 3rem;
+      margin-top: 5rem;
+      padding-bottom: 0;
+      margin-bottom: 0;
+  }
+  p{
+    font-size: 16px;
+  }
+  .Btn, .Btn:hover::before{
+    width: 10rem;
+    height: 3rem;
+  }
+  
+  }
