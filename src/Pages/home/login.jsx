@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/login.css';
+import { Link } from 'react-router-dom';
 import login_pic from '../../Components/Assets/images/login.png';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
@@ -67,7 +68,12 @@ const Login = () => {
           </button>
         </form>
         <div className="textline">
-          <h3>Are you new? <a href="">Click here</a> to create an account.</h3>
+          <h3>Are you new? 
+            <Link to='/CreateAccount' >
+            <a href="">Click here</a>
+
+            </Link>
+             to create an account.</h3>
         </div>
       </div>
     </div>
