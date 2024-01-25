@@ -45,6 +45,8 @@
   border-radius: 2rem;
   margin-left: 9rem;
   border: none;
+  color: white;
+  font-weight: 600;
 }
 
 .login-box {
