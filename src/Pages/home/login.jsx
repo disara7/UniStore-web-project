@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/login.css';
 import { Link } from 'react-router-dom';
-import login_pic from '../../Components/Assets/images/login.png';
+import logo_full from '../../Components/Assets/images/logo.png';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
 
@@ -17,9 +17,15 @@ const Login = () => {
 
   return (
     <div className='login'>
+      <div className="column-style-right">
       <div className="image">
-        <img src={login_pic} alt="Login" />
+        <img src={logo_full} alt="Logo" />
       </div>
+      <h4>Welcome Back!</h4>
+      <h5>Please Login to Continue</h5>
+
+      </div>
+      <div className="column-style">
       <div className="login-box">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
@@ -75,6 +81,10 @@ const Login = () => {
              to create an account.</h3>
         </div>
       </div>
+
+      </div>
+      
+      
     </div>
   );
 };

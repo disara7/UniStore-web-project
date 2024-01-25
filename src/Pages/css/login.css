@@ -1,7 +1,3 @@
-.login{
-
-}
-
 .login h3{
   font-size: 1rem;
   margin-top: 3.5rem;
@@ -29,11 +25,38 @@
   margin-left: 24rem;
 }
 
+.column-style-right {
+  background-image: url('../../Components/Assets/images/bg.png');
+  height: 80vh;
+  width: 50%;
+  margin-top: 5rem;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.column-style-right h4 {
+  margin-top: 1rem;
+  font-size: 1.9rem;
+  
+}
+
+.column-style-right h5 {
+  font-size: 1rem;
+}
+
+.image{
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
 .image img{
-    width: 38rem;
-    height: 80vh;
-    overflow: hidden;
-    margin-bottom: -0.4rem;
+  width: 45rem;
+  height: auto;
+  padding: 10rem;
+  margin-bottom: -10rem;
 }
 
 .login-button{
@@ -45,6 +68,8 @@
   border-radius: 2rem;
   margin-left: 9rem;
   border: none;
+  color: white;
+  font-weight: 600;
 }
 
 .login-box {
