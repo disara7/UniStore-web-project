@@ -29,11 +29,13 @@
   margin-left: 24rem;
 }
 
+.image{
+    width: 50%;
+}
 .image img{
-    width: 38rem;
-    height: 80vh;
+    width: 100%;
+    height: auto;
     overflow: hidden;
-    margin-bottom: -0.4rem;
 }
 
 .login-button{
