@@ -39,7 +39,6 @@
 .column-style-right h4 {
   margin-top: 1rem;
   font-size: 1.9rem;
-  
 }
 
 .column-style-right h5 {
@@ -48,15 +47,15 @@
 
 .image{
   justify-content: center;
-  align-content: center;
+  align-items: center;
   position: relative;
 }
 
 .image img{
   width: 45rem;
   height: auto;
-  padding: 10rem;
-  margin-bottom: -10rem;
+  padding: 2rem;
+  
 }
 
 .login-button{
