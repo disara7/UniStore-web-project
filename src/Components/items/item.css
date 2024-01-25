@@ -1,26 +1,49 @@
-img {
-    width: 20rem;
-}
+
 
 .item {
-    width: 20rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
     
+}
+.item img {
+    padding: 5px;
+    padding-bottom: 0;
+    border-radius: 15px;
+    max-width: 290px;
+    
+
+}
+i{
+    font-size: 18px;
 }
 
 .item_name{
-    margin: 0.5rem 0rem;
-    color: black;
+    padding: 5px 5px;
+    color: #4C4C4C;
     width: auto;
     text-align: left;
+    font-size: 18px;
 
 }
 
 .item-price {
     display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    gap: 10px;
+    text-align: left;
+}
+.bottomPart{
+    display: flex;
     gap: 20px;
-    padding-left: 0.3rem;
+    align-items: flex-end;
+    padding: 0 5px 5px 5px;
+    justify-content: space-between;
 }
 
 .new-price {
@@ -44,13 +67,14 @@ img {
 
 /*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
 
-@media  screen and (max-width: 600px) {
-    img {
-        width: 10rem;
+@media  screen and (max-width: 768px) {
+    .item img {
+        width: 200px;
+        
     }
     
     .item {
-        width: 10rem;        
+        width: 220px;        
     }
     
     .item_name{
@@ -63,12 +87,57 @@ img {
         padding-left: 0.3rem;
     }
     
-    .new-price {
-        font-size: 13px;
-    }
-    
-    .old-price {
-        font-size: 12px;
+    .new-price,.old-price,.item_name {
+        font-size: 14px;
     }
 
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .item img {
+        width: 200px;
+        
+    }
+    
+    .item {
+        width: 220px;        
+    }
+    
+    .item_name{
+        margin: 0rem 0rem;
+    }
+
+    .item-price {
+        display: flex;
+        gap: 10px;
+        padding-left: 0.3rem;
+    }
+    
+    .new-price,.old-price,.item_name {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .item img {
+        width: 250px;
+        
+    }
+    
+    .item {
+        width: 270px;        
+    }
+    
+    .item_name{
+        margin: 0rem 0rem;
+    }
+
+    .item-price {
+        display: flex;
+        gap: 10px;
+        padding-left: 0.3rem;
+    }
+    
+    .new-price, .old-price, .item_name{
+        font-size: 16px;
+    }
 }

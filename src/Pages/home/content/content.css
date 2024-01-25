@@ -1,81 +1,176 @@
 .content{
-    display: flex;
-    justify-self: left;
-    justify-content: left;
-    padding: 3rem;
+    padding: 40px 80px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    
 }
-
-.content h1{
-    font-size: 3rem;
-    font-weight: 600;
+.content .left{
+    flex: 2;
 }
 
 .content p{
-    width: 40rem;
+    font-size: 18px;
     color: black;
-    text-align: left;
+    padding-bottom: 20px;
 }
-
-.content img{
-    width: 40rem;
-    padding-left: 4rem;
-}
-
-.buttons{
-    display: flex;
-    padding-top: 2rem;
-    margin-left: 1.5rem;
-}
-
-button{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 12rem;
-    height: 3rem;
-    margin-right: 2rem;
-    border-width: 0.15rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    background-color: rgba(255, 255, 255, 0.134);
+.content h1 {
+    color: #252525;
+    font-size: 40px;
     font-weight: 600;
+    line-height: 45px;
 }
 
-.giver button{
-    background-color: rgba(245, 205, 42, 1);
-    border-color: rgba(245, 205, 42, 1);
-    
+.content .topic{
+    padding-bottom: 10px;
+    float: top;
 }
 
-.seller button{
-    background-color: rgba(105, 195, 35, 1);
-    border-color: rgba(105, 195, 35, 1);    
+.floatingImg img{
+    max-width: 500px;
+    min-width: 200px;
+    border-radius: 20px;
+}
+.floatingImg{
+    padding-left: 10px;
+    flex: 1;
+}
+.buttons .herobtn{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+.buttons .herobtn .Btn{
+    color: black;
+    border-color: black;
+    padding: 0;
+    margin: 0;
 }
 
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
-
-@media  screen and (max-width: 600px) {
-    .content{
-        padding: 1.5rem;
-        margin-top: 1rem;
-        margin-right: 1rem;
-        height: 60vh;
+@media screen and (max-width: 320px) {
+    .content {
+      grid-template-columns: 1fr;
+      padding: 32px 50px;
     }
-    
-    .content h1{
-        width: 23rem;
-        font-size: 2rem;
-        font-weight: 600;
+  
+    .content h1 {
+      font-size: 20px;
+      line-height: 1.5;
     }
-    
-    .content p{
-        width: 23rem;
+  
+    .content p {
+      font-size: 14px;
     }
-
-    .buttons{
-        display: flex;
+  
+    .floatingImg img {
+      max-width: 240px;
+    }
+    .floatingImg{
+        padding-top: 20px;
+    }
+  
+    .buttons .herobtn {
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+    }
+    .buttons .herobtn .Btn{
+        font-size: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .content {
+      grid-template-columns: 1fr;
+      padding: 32px 50px;
+    }
+  
+    .floatingImg img {
+      max-width: 200px;
+    }
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    .buttons .herobtn .Btn{
+        font-size: 16px;
+    }
+    .buttons .herobtn {
         flex-direction: column;
-        align-items: center; 
+        align-content: center;
+        justify-content: center;
+      }
+      .content h1 {
+        font-size: 22px;
+        line-height: 1.5;
+      }
+  }
+  
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
     }
-
-}
+  
+    .content h1 {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+  
+    .content p {
+      font-size: 14px;
+    }
+  
+    .floatingImg img {
+      max-width: 300px;
+    }
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    .buttons .herobtn .Btn{
+        font-size: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .content h1 {
+      font-size: 28px;
+      line-height: 1.5;
+    }
+    .content {
+        grid-template-columns: 1fr;
+      }
+    
+  
+    .floatingImg img {
+      max-width: 500px;
+    }
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+  }
+  
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .content h1 {
+      font-size: 32px;
+      line-height: 1.5;
+    }
+  
+    .floatingImg img {
+      max-width: 400px;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) and (min-width: 1440px) {
+    .content h1 {
+      font-size: 40px;
+    }
+  
+    .floatingImg img {
+      max-width: 500px;
+    }
+  }
