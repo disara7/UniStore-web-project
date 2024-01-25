@@ -162,8 +162,13 @@ button:active {
  
 
 /*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+@media screen and (max-width: 480px){
+    .nav-menu{
+        padding: 20px 20px;
+    }
+}
 
-@media  screen and (max-width: 769px) {
+@media  screen and (max-width: 769px)  {
     .nav-menu{
         padding: 20px 60px;
     }
@@ -214,4 +219,10 @@ button:active {
         padding-left: 30px;
     }
 
+}
+@media screen and (max-width: 992px) and (min-width: 769px){
+
+}
+@media screen and (max-width: 1200px) and (min-width: 992px){
+    
 }
