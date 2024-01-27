@@ -150,10 +150,10 @@
     .nav-logo {
         display: flex;
         align-items: center;
-        padding-right: 1rem;
+        padding-left: 0.5rem;
         height: 8px;
         width: 8px;
-        margin-left: -2rem;
+        margin-left: 0rem;
     }
 
     #nav-list {
@@ -164,15 +164,13 @@
         gap: 20px;
         position: fixed;
         top: 75px;
-        height: 100vh;
-        background: #f4ba1b98;
+        height: 30vh;
+        width: 60%;
+        background: #f4ba1bda;
         padding: 40px 0 0 40px;
         z-index: 1;
+        margin-right: 0;
      }
- 
-     .mobileOverlay{
-         display: none;
-      }
  
      .mobileOverlay.active{
         display: flex;
@@ -201,7 +199,7 @@
          padding-left: 30px;
      }
      .nav-button {
-        margin-left: 12rem;
+        margin-left: 10rem;
      }
 }
 

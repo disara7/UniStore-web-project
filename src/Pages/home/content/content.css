@@ -1,5 +1,5 @@
 .content{
-    padding: 40px 80px;
+    padding: 3rem;
     background-color: white;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -11,9 +11,10 @@
 }
 
 .content p{
-    font-size: 18px;
+    font-size: 17px;
     color: black;
     padding-bottom: 20px;
+    margin-top: 1rem;
 }
 .content h1 {
     color: #252525;
@@ -39,7 +40,7 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 0;
+    padding-top: 1rem;
     margin: 0;
 }
 .buttons .herobtn .Btn{
