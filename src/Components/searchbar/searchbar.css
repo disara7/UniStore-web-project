@@ -19,15 +19,15 @@
   }
   
   .search-icon {
-    font-size: 1.5em; 
+    font-size: 2.3rem; 
     color: grey; 
-    margin-left: 27rem;
+    margin-left: 26rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
   }
   
   #search-bar {
-    padding-left: 30px; /* Adjust the padding to make space for the icon */
+    padding-left: 30px; 
   }
 
   input#search-bar{
@@ -35,13 +35,14 @@
     width: 35%;
     height: 45px;
     padding-left: 4rem;
+    color: rgba(0, 0, 0, 0.034);
     font-size: 1rem;
     border: none;
     border-radius: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
     &:focus{
-      border: 1px solid green;
+      border: 1px solid grey;
       transition: 0.35s ease;
       color: black;
       &::-webkit-input-placeholder{
@@ -58,3 +59,4 @@
        }    
      }
    }
+

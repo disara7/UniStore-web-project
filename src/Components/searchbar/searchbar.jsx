@@ -9,7 +9,7 @@ const Searchbar = () => {
         <div className='search-icon-container'>
           <IoSearch className='search-icon' />
         </div>
-        <input type="text" id="search-bar" placeholder="What can I help you with today?" />
+        <input type="text" id="search-bar" placeholder="Type here to search..." />
       </form>
     </div>
   );
