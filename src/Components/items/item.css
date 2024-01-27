@@ -99,11 +99,11 @@ i {
 
   @media screen and (min-width: 540px) and (max-width: 1024px){
     .item img {
-        width: 200px;
+        width: 240px;
     }
     
     .item {
-        width: 210px;        
+        width: 250px;        
     }
     
     .item_name{
@@ -117,7 +117,7 @@ i {
     }
     
     .new-price,.old-price {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .item_name {
