@@ -94,14 +94,16 @@ i {
 }
 
 
+/*============ Surface Pro 7, iPad Mini 
+  iPad Pro, iPad Air =============*/
 
-@media screen and (min-width: 768px) and (max-width: 992px){
+  @media screen and (min-width: 540px) and (max-width: 1024px){
     .item img {
-        width: 200px;    
+        width: 200px;
     }
     
     .item {
-        width: 220px;        
+        width: 210px;        
     }
     
     .item_name{
@@ -114,31 +116,11 @@ i {
         padding-left: 0.3rem;
     }
     
-    .new-price,.old-price,.item_name {
-        font-size: 16px;
-    }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1200px){
-    .item img {
-        width: 250px;        
-    }
-    
-    .item {
-        width: 270px;        
-    }
-    
-    .item_name{
-        margin: 0rem 0rem;
+    .new-price,.old-price {
+        font-size: 14px;
     }
 
-    .item-price {
-        display: flex;
-        gap: 10px;
-        padding-left: 0.3rem;
-    }
-    
-    .new-price, .old-price, .item_name{
+    .item_name {
         font-size: 16px;
     }
 }

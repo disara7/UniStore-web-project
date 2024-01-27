@@ -203,40 +203,31 @@
 
 
 
-  @media screen and (max-width: 769px) and (min-width: 480px){
+/*============ Surface Pro 7, iPad Mini 
+  iPad Pro, iPad Air =============*/
+
+  @media screen and (min-width: 540px) and (max-width: 1024px){
     .logo img {
-      width: 22rem;
-      margin-left: 5px;
+      width: 50vh;
+      margin-bottom: 1rem;
+      margin-top: 6rem;
     }
   
-    p {
-      font-size: 16px;
+    .herotop p {
+      font-size: 0.8rem;
+      width: 50vh;
     }
   
     .Btn,
     .Btn:hover::before {
-      width: 10rem;
+      width: 13rem;
       height: 3rem;
     }
-  }
-  @media screen and (max-width: 992px) and (min-width: 769px){
-    .logo img {
-      width: 25rem;
-      margin-left: 10px;
+
+    .herotop{
+      height: auto;
+      width: auto;
+      padding: 1rem;
     }
   }
-  
-  @media screen and (max-width: 1200px) and (min-width: 992px) {
-    .logo img {
-      width: 30rem;
-    }
-  
-    p {
-      font-size: 1.5em;
-    }
-  
-    .herobtn {
-      gap: 30px;
-    }
-  }
-  
+

@@ -96,3 +96,10 @@
 
 
 }
+
+/*============ Surface Pro 7, iPad Mini 
+  iPad Pro, iPad Air =============*/
+
+  @media screen and (min-width: 540px) and (max-width: 1024px){
+    
+  }
