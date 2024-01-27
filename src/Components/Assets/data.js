@@ -24,6 +24,13 @@ let data_product = [
         new_price: "LKR 75.00",
         old_price: "LKR 100.00",
     },
+    {
+        id: 4,
+        name: "Physics 2nd Year PST | Hydro Dynamics Short Note",
+        image: pl2,
+        new_price: "LKR 75.00",
+        old_price: "LKR 100.00",
+    },
     
 ]
 

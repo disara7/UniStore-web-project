@@ -41,8 +41,8 @@ const Nav = () => {
             <li onClick={() => {setMenu('About')}}> <Link style={{textDecoration: 'none'}} to='/About' >About</Link>  {menu === 'About' ? <hr /> : <></>}</li>
             <li onClick={() => {setMenu('Contact')}}> <Link style={{textDecoration: 'none'}} to='/Contact' >Contact</Link>  {menu === 'Contact' ? <hr /> : <></>}</li> */}
             <li><a className={activedPath === '/' ? "active":""} href="./">Home</a></li>
-            <li><a className={activedPath === '/Preloved' ? "active":""} href="./Preloved">Preloved</a></li>
-            <li><a className={activedPath === '/Craftworld' ? "active":""} href="./CraftsWorld">Craftworld</a></li>
+            <li><a className={activedPath === '/Preloved' ? "active":""} href="./Preloved">PreLoved</a></li>
+            <li><a className={activedPath === '/Craftsworld' ? "active":""} href="./CraftsWorld">CraftsWorld</a></li>
             <li><a className={activedPath === '/About' ? "active":""} href="./About">About</a></li>
             <li><a className={activedPath === '/Contact' ? "active":""} href="./Contact">Contact</a></li>
           </ul>
