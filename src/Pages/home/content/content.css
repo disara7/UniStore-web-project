@@ -15,6 +15,7 @@
     color: black;
     padding-bottom: 20px;
     margin-top: 1rem;
+    width: 110vh;
 }
 .content h1 {
     color: #252525;
@@ -74,6 +75,7 @@
     .content p {
       font-size: 14px;
       text-align: center;
+      width: auto;
     }
   
     .floatingImg img {
