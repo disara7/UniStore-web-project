@@ -1,3 +1,10 @@
+.search{
+  margin-top: -1.5rem;
+  position: relative;
+  align-self: center;
+  margin-left: 4.5rem;
+}
+
 .search-container {
     position: relative;
     display: flex;

@@ -1,7 +1,7 @@
 import React from 'react'
 import './preloved.css'
 import Searchbar from '../../../Components/searchbar/searchbar'
-import Filter from '../../../Components/filter/filter'
+import PlFilter from '../../../Components/filter/plfilter'
 import Item from '../../../Components/items/item'
 import data_product from '../../../Components/Assets/preloved_items'
 
@@ -17,7 +17,7 @@ const Preloved = () => {
     <Searchbar/>
     <div className="page-content">
       <div className="left">
-        <Filter/>
+        <PlFilter/>
 
       </div>
       <div className="right">

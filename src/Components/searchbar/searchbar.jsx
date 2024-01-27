@@ -4,7 +4,7 @@ import { IoSearch } from 'react-icons/io5';
 
 const Searchbar = () => {
   return (
-    <div>
+    <div className='search'>
       <form className="search-container">
         <div className='search-icon-container'>
           <IoSearch className='search-icon' />
