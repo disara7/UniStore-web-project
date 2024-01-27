@@ -61,7 +61,6 @@
     width: 100vh;
     align-items: center;
     justify-content: center;
-    margin-left: 3rem;
     margin-top: 5rem;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -83,32 +82,10 @@
     
 }
 
-/*.hero button {
-    display: flex;
-    justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.8rem;
-    width: 10rem;
-    height: 3rem;
-    margin-left: 2rem;
-    border-color: white;
-    border-width: 0.15rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    background-color: rgba(255, 255, 255, 0.134);
-    font-weight: 600;
-       
-}*/
-
-/* .pl:hover{
-    background-color: rgba(245, 205, 42, 1);
+.herobtn a{
+  text-decoration: none;
 }
 
-.cw:hover{
-    background-color: rgba(105, 195, 35, 1);
-} */
 .hero .herobtn button {
   text-decoration: none;
 }
@@ -148,7 +125,6 @@
     height: 200px;
     position: absolute;
     content: "";
-    
     border-radius: 50%;
     left: -100%;
     top: 200%;
@@ -184,46 +160,49 @@
     transform: translate(5px,5px);
     transition-duration: .3s;
   }
-/* 
-  @media  screen and (max-width: 769px) {
-    .logo img{
-      width: 70vh;
-      align-items: center;
-      justify-content: center;
-      margin-left: 3rem;
-      margin-top: 5rem;
-      padding-bottom: 0;
-      margin-bottom: 0;
-  }
-  p{
-    font-size: 16px;
-  }
-  .Btn, .Btn:hover::before{
-    width: 10rem;
-    height: 3rem;
-  }
+
   
-  } */
- 
-  
-  @media screen and (max-width: 480px) {
+
+  /*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px){
     .logo img {
-      width: 40vh;
-      margin-left: 0;
+      width: 35vh;
+      margin-top: 6rem;
     }
   
     p {
-      font-size: 14px;
+      font-size: 1rem;
     }
   
     .hero .herobtn {
       flex-direction: column;
     }
+
     .Btn, .Btn:hover::before{
-      width: 12rem;
+      width: 10rem;
       height: 3rem;
     }
+
+    .herotop{
+      height: auto;
+      width: auto;
+      padding: 1rem;
+    }
+
+    .herotop p {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .hero .herobtn{
+      margin-bottom: 1.5rem;
+    }
   }
+
+
+
   @media screen and (max-width: 769px) and (min-width: 480px){
     .logo img {
       width: 22rem;

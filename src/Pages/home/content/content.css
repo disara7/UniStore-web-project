@@ -28,8 +28,7 @@
 }
 
 .floatingImg img{
-    max-width: 500px;
-    min-width: 200px;
+    width: 500px;
     border-radius: 20px;
 }
 .floatingImg{
@@ -50,37 +49,50 @@
     margin: 0;
 }
 
-@media screen and (max-width: 320px) {
+
+
+/*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px){
     .content {
-      grid-template-columns: 1fr;
-      padding: 32px 50px;
+      padding: 1rem;
+      margin-left: -1rem;
+      justify-content: center;
+      justify-items: center;
     }
   
     .content h1 {
       font-size: 20px;
       line-height: 1.5;
+      text-align: center;
     }
   
     .content p {
       font-size: 14px;
+      text-align: center;
     }
   
     .floatingImg img {
-      max-width: 240px;
-    }
-    .floatingImg{
-        padding-top: 20px;
+      align-self: center;
+      border-radius: 1rem;
+      width: 50vh;
+      padding: 0;
     }
   
     .buttons .herobtn {
+      margin-top: 1rem;
       flex-direction: column;
-      align-content: center;
+      align-self: center;
       justify-content: center;
     }
     .buttons .herobtn .Btn{
-        font-size: 16px;
+      font-size: 16px;
+      align-self: center;
     }
   }
+  
+
   
   @media screen and (min-width: 320px) and (max-width: 480px) {
     .content {

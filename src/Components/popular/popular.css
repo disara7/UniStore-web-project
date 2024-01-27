@@ -31,14 +31,48 @@
     gap: 30px;
 }
 
+.carousel-wrap {
+  margin: 90px auto;
+  padding: 0 5%;
+  width: 100%;
+  position: relative;
+}
 
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+  position: relative;
+  z-index: 100; 
+  -webkit-backface-visibility: hidden; 
+}
+
+/* end fix */
+.owl-nav > div {
+  margin-top: 26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: 30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
+}
 
 
 
-@media screen and (max-width: 320px) {
+/*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px) {
     .popular{
-        padding: 30px 50px; 
+        padding: 0.5rem; 
     }
     
     .popular h1 {

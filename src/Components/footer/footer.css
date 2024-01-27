@@ -65,17 +65,34 @@
 }
 
 
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
 
-@media  screen and (max-width: 600px) {
+
+/*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px){
     .foot-links{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         font-size: 14px;
-        margin-left: -1.5rem;
-        margin-bottom: 0.5rem;
-        gap: 10px;
+        margin-left: 1rem;
+        gap: 8px;
         margin-top: 0.5rem;
     }
+
+    .foot-links li{
+        padding: 0.8rem;
+        margin-bottom: -0.5rem;
+    }
+
+    .footer-copyright hr{
+        width: 60%;
+        border: none;
+        border-radius: 10px;
+        height: 3px;
+        margin-bottom: 1rem;
+    }
+
+
 }

@@ -1,34 +1,30 @@
-
-
 .item {
     display: flex;
     flex-direction: column;
     width: 310px;
     height: auto;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: white;
-    
+    border-radius: 10px;
+    padding: 6px;
+    background-color: white;  
 }
+
 .item img {
     padding: 5px;
     padding-bottom: 0;
     border-radius: 15px;
-    max-width: 290px;
-    
-
+    max-width: 300px;
 }
-i{
+
+i {
     font-size: 18px;
 }
 
-.item_name{
+.item_name {
     padding: 5px 5px;
     color: #4C4C4C;
     width: auto;
     text-align: left;
     font-size: 18px;
-
 }
 
 .item-price {
@@ -38,7 +34,8 @@ i{
     gap: 10px;
     text-align: left;
 }
-.bottomPart{
+
+.bottomPart {
     display: flex;
     gap: 20px;
     align-items: flex-end;
@@ -54,7 +51,7 @@ i{
 
 .old-price {
     color: #8c8c8c;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     text-decoration: line-through;
 }
@@ -65,16 +62,16 @@ i{
 }
 
 
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+/*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
 
-@media  screen and (max-width: 768px) {
+  @media screen and (min-width: 360px) and (max-width: 412px) {
     .item img {
-        width: 200px;
-        
+        width: 180px;
     }
     
     .item {
-        width: 220px;        
+        width: 190px;        
     }
     
     .item_name{
@@ -87,15 +84,20 @@ i{
         padding-left: 0.3rem;
     }
     
-    .new-price,.old-price,.item_name {
-        font-size: 14px;
+    .new-price,.old-price {
+        font-size: 12px;
     }
 
+    .item_name {
+        font-size: 12px;
+    }
 }
+
+
+
 @media screen and (min-width: 768px) and (max-width: 992px){
     .item img {
-        width: 200px;
-        
+        width: 200px;    
     }
     
     .item {
@@ -119,8 +121,7 @@ i{
 
 @media screen and (min-width: 992px) and (max-width: 1200px){
     .item img {
-        width: 250px;
-        
+        width: 250px;        
     }
     
     .item {
