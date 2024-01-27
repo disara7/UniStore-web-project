@@ -11,7 +11,13 @@ const Preloved = () => {
     <div className="preloved-style">
       <div className='preloved'>
         <h1>Pre-Loved</h1>
-        <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete</p>
+        <p>Promoting sustainability and upcycling in the undergraduate 
+          community allowing university seniors to share, 
+          donate, or sell their pre-owned items ranging from essential study 
+          materials to personal items such as electronics, bedding, and more 
+          which ultimately encourages the reuse 
+          of quality goods and enables students to acquire necessities 
+          inexpensively or even for free.</p>
         
     </div>
     <Searchbar/>

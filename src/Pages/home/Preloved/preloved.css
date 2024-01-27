@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     background-color: #F6F6F6;
-    height:50vh;
+    height:60vh;
     align-items: center;
-    background-image: url('../../../Components/Assets/images/bg.png');
+    width: auto;
+    background-image: linear-gradient(to bottom, rgba(89, 197, 105, 0.766), rgba(50, 96, 36, 0.832)),url('../../../Components/Assets/images/plbg.png');
+    background-size: cover;
+    background-position: contain;
 }
 
 .page-content{
@@ -21,19 +24,20 @@
 }
 
 .preloved p {
-    margin-top: -1rem;
-    width: 40rem;
+    margin-top: 0rem;
+    width: 50rem;
     text-align: center;
+    color: white;
 }
 
 .preloved h1{
     font-size: 6rem;    
-    font-weight: 600;
     width: fit-content;
-    margin-bottom: 1rem;
-    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 6rem;
     text-align: center;
     color: white;
+    font-weight: bold;
 }
 
 .preloved button{

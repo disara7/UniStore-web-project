@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     background-color: #F6F6F6;
-    height:50vh;
+    height:60vh;
     align-items: center;
-    background-image: url('../../../Components/Assets/images/bg.png');
+    background-image: linear-gradient(to bottom, rgba(242, 219, 11, 0.662), rgba(131, 128, 31, 0.832)), url('../../../Components/Assets/images/cwbg.png');
+    background-size: cover;
+    background-position: contain;
 }
 
 .page-content{
@@ -21,17 +23,18 @@
 }
 
 .crafts-top p {
-    margin-top: -1rem;
-    width: 40rem;
+    margin-top: 0rem;
+    width: 45rem;
     text-align: center;
+    color: white;
 }
 
 .crafts-top h1{
     font-size: 6rem;    
     font-weight: 600;
     width: fit-content;
-    margin-bottom: 1rem;
-    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 6rem;
     text-align: center;
     color: white;
 }
