@@ -6,8 +6,10 @@
     flex-direction: column;
     align-self: center;
     align-items: center;
+    text-decoration: none;
 
 }
+
 .herotop {
     justify-content: center;
     display: flex;
@@ -20,8 +22,9 @@
     background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../Assets/images/bg.png'); 
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 95vh;
     overflow: hidden;
+    text-decoration: none;
 }
 .herotop .glow{
   position: absolute;
@@ -58,54 +61,34 @@
     width: 100vh;
     align-items: center;
     justify-content: center;
-    margin-left: 3rem;
-    margin-top: 5rem;
+    margin-top: 10rem;
     padding-bottom: 0;
     margin-bottom: 0;
     z-index: 2;
 }
 
 .herotop p {
-    max-width: 50rem;
+    max-width: 60rem;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
     color: white;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     font-size: 18px;
     font-weight: 500;
     z-index: 1;
+    text-decoration: none;
     
 }
 
-/*.hero button {
-    display: flex;
-    justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.8rem;
-    width: 10rem;
-    height: 3rem;
-    margin-left: 2rem;
-    border-color: white;
-    border-width: 0.15rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-    background-color: rgba(255, 255, 255, 0.134);
-    font-weight: 600;
-       
-}*/
-
-/* .pl:hover{
-    background-color: rgba(245, 205, 42, 1);
+.herobtn a{
+  text-decoration: none;
 }
 
-.cw:hover{
-    background-color: rgba(105, 195, 35, 1);
-} */
-
+.hero .herobtn button {
+  text-decoration: none;
+}
 .hero .herobtn{
     align-self: center; 
     display: flex;
@@ -113,6 +96,7 @@
     padding: 1rem;
     margin-bottom: 3rem;
     gap: 20px;
+    text-decoration: none;
 }
 .Btn {
     width: 14rem;
@@ -133,6 +117,7 @@
     overflow: hidden;
     transition-duration: .6s;
     z-index: 1;
+    text-decoration: none;
   }
   
   .Btn::before {
@@ -140,7 +125,6 @@
     height: 200px;
     position: absolute;
     content: "";
-    
     border-radius: 50%;
     left: -100%;
     top: 200%;
@@ -150,6 +134,7 @@
     align-items: center;
     justify-content: center;
     z-index: -1;
+    text-decoration: none;
   }
   .y::before{
     background-color: #F5CD2A;
@@ -175,80 +160,74 @@
     transform: translate(5px,5px);
     transition-duration: .3s;
   }
-/* 
-  @media  screen and (max-width: 769px) {
-    .logo img{
-      width: 70vh;
-      align-items: center;
-      justify-content: center;
-      margin-left: 3rem;
-      margin-top: 5rem;
-      padding-bottom: 0;
-      margin-bottom: 0;
-  }
-  p{
-    font-size: 16px;
-  }
-  .Btn, .Btn:hover::before{
-    width: 10rem;
-    height: 3rem;
-  }
+
   
-  } */
- 
-  
-  @media screen and (max-width: 480px) {
+
+  /*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px){
     .logo img {
-      width: 40vh;
-      margin-left: 0;
+      width: 35vh;
+      margin-top: 6rem;
     }
   
     p {
-      font-size: 14px;
+      font-size: 1rem;
     }
   
     .hero .herobtn {
       flex-direction: column;
     }
+
     .Btn, .Btn:hover::before{
-      width: 12rem;
+      width: 10rem;
       height: 3rem;
     }
+
+    .herotop{
+      height: auto;
+      width: auto;
+      padding: 1rem;
+    }
+
+    .herotop p {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .hero .herobtn{
+      margin-bottom: 1.5rem;
+    }
   }
-  @media screen and (max-width: 769px) and (min-width: 480px){
+
+
+
+/*============ Surface Pro 7, iPad Mini 
+  iPad Pro, iPad Air =============*/
+
+  @media screen and (min-width: 540px) and (max-width: 1024px){
     .logo img {
-      width: 22rem;
-      margin-left: 5px;
+      width: 50vh;
+      margin-bottom: 1rem;
+      margin-top: 6rem;
     }
   
-    p {
-      font-size: 16px;
+    .herotop p {
+      font-size: 0.8rem;
+      width: 50vh;
     }
   
     .Btn,
     .Btn:hover::before {
-      width: 10rem;
+      width: 13rem;
       height: 3rem;
     }
-  }
-  @media screen and (max-width: 992px) and (min-width: 769px){
-    .logo img {
-      width: 25rem;
-      margin-left: 10px;
+
+    .herotop{
+      height: auto;
+      width: auto;
+      padding: 1rem;
     }
   }
-  
-  @media screen and (max-width: 1200px) and (min-width: 992px) {
-    .logo img {
-      width: 30rem;
-    }
-  
-    p {
-      font-size: 1.5em;
-    }
-  
-    .herobtn {
-      gap: 30px;
-    }
-  }
-  
+

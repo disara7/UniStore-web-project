@@ -1,8 +1,38 @@
 .filter{
-    background-color: red;
-    width: 18rem;
+    background-color: white;
+    width: 20rem;
     padding: 1.5rem;
     margin-left: 2rem;
     margin-top: 1rem;
     border-radius: 1.5rem;
+}
+
+.filter a {
+    text-decoration: none;
+    color: black;
+}
+
+.filter li{
+    padding: 0.3rem;
+}
+
+.filter ul {
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+.filter h2 {
+    margin-bottom: 0.5rem;
+}
+
+.price-filter {
+    margin-top: 1rem;
+}
+
+.sub-list {
+    margin-left: 1.5rem;
+}
+
+.filter h3{
+    font-size: 1rem;
 }

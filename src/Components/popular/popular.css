@@ -31,14 +31,48 @@
     gap: 30px;
 }
 
+.carousel-wrap {
+  margin: 90px auto;
+  padding: 0 5%;
+  width: 100%;
+  position: relative;
+}
 
-/*===========FOR RESPONSIVENESS (SMALL DEVICES)==============*/
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+  position: relative;
+  z-index: 100; 
+  -webkit-backface-visibility: hidden; 
+}
+
+/* end fix */
+.owl-nav > div {
+  margin-top: 26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: 30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
+}
 
 
 
-@media screen and (max-width: 320px) {
+/*============ Samsung Galaxy A51/71, S20 Ultra, 
+  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
+
+  @media screen and (min-width: 360px) and (max-width: 412px) {
     .popular{
-        padding: 30px 50px; 
+        padding: 0.5rem; 
     }
     
     .popular h1 {
@@ -57,25 +91,18 @@
     
   }
   
-  @media screen and (min-width: 320px) and (max-width: 480px) {
+
+  /*============ Surface Pro 7, iPad Mini 
+  iPad Pro, iPad Air =============*/
+
+  @media screen and (min-width: 540px) and (max-width: 1024px) {
    
+    .popular{
+        padding: 0.5rem; 
+    }
+    
     .popular h1 {
-        font-size: 22px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 2rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  }
-  
-  @media screen and (min-width: 480px) and (max-width: 768px) {
-    .popular h1 {
-        font-size: 24px;
+        font-size: 1.8rem;
         padding-bottom: 1px;
     }
 
@@ -86,93 +113,5 @@
     .popular-item {
         gap: 10px;
     }
-  } 
-  
-
-@media screen and (max-width: 768px) {
-    .slideshow {
-        width: 100%;
-        overflow: hidden;
-      }
-      
-      .popular-item {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-         
-      }
-      
-      .slide {
-        flex-shrink: 0; /* Prevent items from shrinking */
-        width: 100%;
-        opacity: 0;
-      }
-      
-      .slide.active {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      
-      .dots {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-      
-      .dot {
-        cursor: pointer;
-        width: 10px;
-        height: 10px;
-        margin: 0 5px;
-        border-radius: 50%;
-        background-color: #ccc;
-        transition: background-color 0.3s ease-in-out;
-      }
-      
-      .dot.active {
-        background-color: #333;
-      }
-      
-}
-  
-  
-  
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-    .popular h1 {
-        font-size: 28px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 3rem;
-    }
-
-    .popular-item {
-        gap: 20px;
-    }
   }
   
-  @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .popular h1 {
-        font-size: 32px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 4rem;
-    }
-
-    .popular-item {
-        gap: 20px;
-    }
-  }
-  
-  @media screen and (min-width: 1200px) and (min-width: 1440px) {
-    .popular h1 {
-        font-size: 40px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 4rem;
-    }
-  }

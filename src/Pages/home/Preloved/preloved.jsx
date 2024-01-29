@@ -1,7 +1,7 @@
 import React from 'react'
 import './preloved.css'
 import Searchbar from '../../../Components/searchbar/searchbar'
-import Filter from '../../../Components/filter/filter'
+import PlFilter from '../../../Components/filter/plfilter'
 import Item from '../../../Components/items/item'
 import data_product from '../../../Components/Assets/preloved_items'
 
@@ -11,13 +11,19 @@ const Preloved = () => {
     <div className="preloved-style">
       <div className='preloved'>
         <h1>Pre-Loved</h1>
-        <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete</p>
+        <p>Promoting sustainability and upcycling in the undergraduate 
+          community allowing university seniors to share, 
+          donate, or sell their pre-owned items ranging from essential study 
+          materials to personal items such as electronics, bedding, and more 
+          which ultimately encourages the reuse 
+          of quality goods and enables students to acquire necessities 
+          inexpensively or even for free.</p>
         
     </div>
     <Searchbar/>
     <div className="page-content">
       <div className="left">
-        <Filter/>
+        <PlFilter/>
 
       </div>
       <div className="right">
