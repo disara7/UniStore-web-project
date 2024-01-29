@@ -11,6 +11,7 @@ import Login from './Pages/home/login';
 import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
 import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
+import Finish from './Pages/home/signupfinish';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
           </Route>
           <Route path='/cart' element={<Cart/>}/> 
           <Route path='/login' element={<Login/>}/> 
-          <Route path='/createaccount' element={<CreateAccount/>}/>         
+          <Route path='/createaccount' element={<CreateAccount/>}/> 
+          <Route path='/finish' element={<Finish/>}/>        
         </Routes>
         <Footer/>
       </BrowserRouter>

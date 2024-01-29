@@ -31,10 +31,10 @@ const Hero = () => {
         <div className="hero">
         <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete</p>
         <div className="herobtn">
-          <Link to='/Preloved'>
+          <Link to='/Preloved' style={{ textDecoration: 'none' }}>
             <button className='Btn y'>Preloved</button>
           </Link>
-          <Link to='/CraftsWorld'>
+          <Link to='/CraftsWorld' style={{ textDecoration: 'none' }}>
             <button className='Btn g'>CraftsWorld</button>
           </Link>
             

@@ -10,6 +10,10 @@ const Nav = () => {
   // const [menu, setMenu] = useState('Home');
   const [clicked,setClicked]= useState(false);
   const [scrolled,setScrolled] = useState(false);
+  const isLoginOrRegister =
+    window.location.pathname.startsWith('/Login') ||
+    window.location.pathname.startsWith('/CreateAccount') ||
+    window.location.pathname.startsWith('/Finish');
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -28,7 +32,7 @@ const Nav = () => {
   window.addEventListener('scroll',changeBg);
   
   return (
-    <div className={scrolled ? "nav-menu active" : "nav-menu"}>
+    <div className={`nav-menu ${scrolled ? 'active' : ''} ${isLoginOrRegister ? 'hidden' : ''}`}>
       <div className='left-part'>
         <div className="nav-logo">
           <img src={logo_small} alt="" />
@@ -42,7 +46,7 @@ const Nav = () => {
             <li onClick={() => {setMenu('Contact')}}> <Link style={{textDecoration: 'none'}} to='/Contact' >Contact</Link>  {menu === 'Contact' ? <hr /> : <></>}</li> */}
             <li><a className={activedPath === '/' ? "active":""} href="./">Home</a></li>
             <li><a className={activedPath === '/Preloved' ? "active":""} href="./Preloved">Preloved</a></li>
-            <li><a className={activedPath === '/Craftworld' ? "active":""} href="./CraftsWorld">Craftworld</a></li>
+            <li><a className={activedPath === '/CraftsWorld' ? "active":""} href="./CraftsWorld">Craftworld</a></li>
             <li><a className={activedPath === '/About' ? "active":""} href="./About">About</a></li>
             <li><a className={activedPath === '/Contact' ? "active":""} href="./Contact">Contact</a></li>
           </ul>

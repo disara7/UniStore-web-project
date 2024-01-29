@@ -1,0 +1,11 @@
+.finish{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url(../../Components/Assets/images/signin.png);
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+.finish-box{
+    padding: 30px;
+}
