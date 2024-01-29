@@ -18,6 +18,9 @@
 .nav-menu.active{
     background: linear-gradient(to right,#F4B91B,#408242);
 }
+.nav-menu.hidden{
+    display: none;
+}
 
 #nav-list {
     display: flex;
