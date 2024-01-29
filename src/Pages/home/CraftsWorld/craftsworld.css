@@ -1,33 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
-.craftsworld{
-    display: flex;
-    background-color: #F6F6F6;
-    height: 70vh;
-}
-.craftsworld .left{
-    justify-content: left;
+.crafts-top{
     display: flex;
     flex-direction: column;
-    padding: 8rem;
     background-color: #F6F6F6;
-    justify-self: left;
+    height:60vh;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(242, 219, 11, 0.662), rgba(131, 128, 31, 0.832)), url('../../../Components/Assets/images/cwbg.png');
+    background-size: cover;
+    background-position: contain;
 }
 
-.craftsworld p {
-    width: 35rem;
+.page-content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    gap: 3rem;
 }
 
-.craftsworld h1{
+.right{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.crafts-top p {
+    margin-top: 0rem;
+    width: 45rem;
+    text-align: center;
+    color: white;
+}
+
+.crafts-top h1{
     font-size: 6rem;    
-    font-family: 'Abril Fatface', serif;
-    font-weight: 300;
+    font-weight: 600;
     width: fit-content;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 6rem;
+    text-align: center;
+    color: white;
 }
 
-.craftsworld button{
+.crafts-top button{
     padding: 1rem;
     margin-left: 0rem;
     margin-right: 2.5rem;
@@ -37,8 +49,8 @@
     padding-bottom: 0.5rem;
 }
 
-.craftsworld img{
-    width: 30rem;
+.crafts-top img{
+    width: 40rem;
     margin-top: 2rem;
     margin-left: 1rem;
 }

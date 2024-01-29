@@ -27,10 +27,10 @@ const Nav = () => {
   }
 
   const activedPath = window.location.pathname;
-    
+
 
   window.addEventListener('scroll',changeBg);
-  
+
   return (
     <div className={`nav-menu ${scrolled ? 'active' : ''} ${isLoginOrRegister ? 'hidden' : ''}`}>
       <div className='left-part'>
@@ -46,7 +46,7 @@ const Nav = () => {
             <li onClick={() => {setMenu('Contact')}}> <Link style={{textDecoration: 'none'}} to='/Contact' >Contact</Link>  {menu === 'Contact' ? <hr /> : <></>}</li> */}
             <li><a className={activedPath === '/' ? "active":""} href="./">Home</a></li>
             <li><a className={activedPath === '/Preloved' ? "active":""} href="./Preloved">Preloved</a></li>
-            <li><a className={activedPath === '/CraftsWorld' ? "active":""} href="./CraftsWorld">Craftworld</a></li>
+            <li><a className={activedPath === '/CraftsWorld' ? "active":""} href="./CraftsWorld">Craftsworld</a></li>
             <li><a className={activedPath === '/About' ? "active":""} href="./About">About</a></li>
             <li><a className={activedPath === '/Contact' ? "active":""} href="./Contact">Contact</a></li>
           </ul>
@@ -68,23 +68,22 @@ const Nav = () => {
                 <FaRegUser />
               </div>
               </a>
-          </div>  
+          </div>
 
         </div>
-          
-            
+
+
           {/* <Link to='/Login'><button>Register</button></Link> */}
         <div id='mobile' onClick={handleClick}>
           <i id='bar' className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
         <div className={clicked ? 'mobileOverlay active' : 'mobileOverlay'} onClick={handleClick}></div>
       </div>
-        
+
     </div>
-      
+
   );
 
 }
 
 export default Nav;
-
