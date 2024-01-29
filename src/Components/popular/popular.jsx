@@ -2,45 +2,83 @@ import React, { useEffect, useState } from 'react';
 import './popular.css';
 import data_product from '../Assets/data';
 import Item from '../items/item';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import {Autoplay, Navigation, Pagination, EffectCards } from 'swiper/modules';
 
-const Popular  = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % data_product.length);
-    }, 3000); // Change item every 3 seconds
-  
-    return () => clearInterval(interval);
-  }, [data_product.length]);
+const Popular = () => {
 
-    return (
-      <div className='popular'>
-        <h1>Top Picks for You</h1>
-        <hr />
-        <div className='carousel'>
-          
-          <div className="popular-item">
-            {data_product.map((item, i) => (
-              <Item
-                className={`slide ${currentSlide === i ? 'active' : ''}`}
-                key={i}
-                id={item.id}
-                name={item.name}
-                image={item.image}
-                new_price={item.new_price}
-                old_price={item.old_price}
-              />
-            ))}
-          </div>
-  
-          
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className='popular'>
+      <h1>Top Picks for You</h1>
+      <hr />
+      <Swiper
+        // spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          500: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          940:{
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          1200:{
+            slidesPerView:3,
+            spaceBetween: 50
+          },
+          1280:{
+            slidesPerView:4,
+            spaceBetween: 50
+          },
+          1440:{
+            slidesPerView:4,
+            spaceBetween: 50
+          }
+        }}
+        // navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {data_product.map((item, i) => (
+        <SwiperSlide key={i}>
+          <Item
+            key={i}
+            id={item.id}
+            name={item.name}
+            image={item.image}
+            new_price={item.new_price}
+            old_price={item.old_price}
+          />
+        </SwiperSlide>
+      ))}
+        
+      </Swiper>
+    </div>
+  );
+};
 
 export default Popular

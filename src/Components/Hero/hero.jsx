@@ -36,7 +36,7 @@ const Hero = () => {
           their entrepreneurial endeavors.</p>
         <div className="herobtn">
           <Link to='/Preloved' style={{ textDecoration: 'none' }}>
-            <button className='Btn y'>Preloved</button>
+            <button className='Btn y'>PreLoved</button>
           </Link>
           <Link to='/CraftsWorld' style={{ textDecoration: 'none' }}>
             <button className='Btn g'>CraftsWorld</button>
