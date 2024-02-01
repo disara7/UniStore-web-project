@@ -13,14 +13,14 @@ const Hero = () => {
       glowRef.current.style.left = x - 100 + 'px';
       glowRef.current.style.top = y - 100 + 'px';
     };
-  
+
     window.addEventListener('mousemove', handleMouseMove);
-  
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  
+
 
   return (
     <div className='herotop'>
@@ -29,22 +29,19 @@ const Hero = () => {
 
         </div>
         <div className="hero">
-        <p>We aim to foster a vibrant exchange within university 
-          communities, promoting sustainable reuse and supporting 
-          small businesses owned by university undergraduates, 
-          enhancing and supporting undergraduate experiences and 
+        <p>We aim to foster a vibrant exchange within university
+          communities, promoting sustainable reuse and supporting
+          small businesses owned by university undergraduates,
+          enhancing and supporting undergraduate experiences and
           their entrepreneurial endeavors.</p>
         <div className="herobtn">
-          <Link to='/Preloved'>
-          <button className='Btn y'>Preloved</button>
-
-     
-            
+          <Link to='/Preloved' style={{ textDecoration: 'none' }}>
+            <button className='Btn y'>PreLoved</button>
           </Link>
-          <Link to='/CraftsWorld'>
+          <Link to='/CraftsWorld' style={{ textDecoration: 'none' }}>
             <button className='Btn g'>CraftsWorld</button>
           </Link>
-            
+
         </div>
 
         </div>

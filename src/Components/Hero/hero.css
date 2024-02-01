@@ -7,22 +7,23 @@
     align-self: center;
     align-items: center;
     text-decoration: none;
-
+    
 }
 
 .herotop {
-    justify-content: center;
+    
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
+    justify-content: center;
     /* background-color: #F6F6F6; */
     overflow: hidden;
     position: relative;
-    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../Assets/images/bg.png'); 
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../Assets/images/bg.png');
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    height: 100vh;
     overflow: hidden;
     text-decoration: none;
 }
@@ -31,7 +32,7 @@
   top: 0; left: 0; right: 0; bottom: 0;
   transform: translateY(0%);
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
 }
 
 .herotop .glow::after {
@@ -39,47 +40,46 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(215, 255, 164, 0.5); 
-  border-radius: inherit; 
+  background-color: rgba(215, 255, 164, 0.5);
+  border-radius: inherit;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out; 
-  pointer-events: none; 
-  border-radius: 50%; 
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  border-radius: 50%;
   width: 200px;
-  height: 200px; 
+  height: 200px;
   filter: blur(90px);
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
   z-index: -1;
-  
+
 }
 
 .herotop .glow:hover::after {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .logo img{
     width: 100vh;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
+    padding-top: 7rem;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin: 0;
     z-index: 2;
 }
 
 .herotop p {
     max-width: 60rem;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding:0 30px;
     text-align: center;
     color: white;
     margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 18px;
     font-weight: 500;
     z-index: 1;
     text-decoration: none;
-    
+
 }
 
 .herobtn a{
@@ -90,7 +90,7 @@
   text-decoration: none;
 }
 .hero .herobtn{
-    align-self: center; 
+    align-self: center;
     display: flex;
     flex-direction: row;
     padding: 1rem;
@@ -119,7 +119,7 @@
     z-index: 1;
     text-decoration: none;
   }
-  
+
   .Btn::before {
     width: 200px;
     height: 200px;
@@ -142,40 +142,40 @@
   .g::before{
     background-color: #69C323;
   }
-  
+
   .Btn:hover::before {
     transition-duration: .3s;
     transform: translate(100%,-200%);
     border-radius: 72px;
     width: 14rem;
     height: 3.5rem;
-    
+
   }
   .Btn:hover{
     border: none;
-    
+
   }
-  
+
   .Btn:active {
     transform: translate(5px,5px);
     transition-duration: .3s;
   }
 
-  
 
-  /*============ Samsung Galaxy A51/71, S20 Ultra, 
+
+  /*============ Samsung Galaxy A51/71, S20 Ultra,
   iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
+/* 
   @media screen and (min-width: 360px) and (max-width: 412px){
     .logo img {
       width: 35vh;
       margin-top: 6rem;
     }
-  
-    p {
-      font-size: 1rem;
+
+    .herotop p {
+      font-size: 14px;
     }
-  
+
     .hero .herobtn {
       flex-direction: column;
     }
@@ -199,25 +199,24 @@
     .hero .herobtn{
       margin-bottom: 1.5rem;
     }
-  }
+  } */
 
 
 
-/*============ Surface Pro 7, iPad Mini 
+/*============ Surface Pro 7, iPad Mini
   iPad Pro, iPad Air =============*/
 
-  @media screen and (min-width: 540px) and (max-width: 1024px){
+  /* @media screen and (min-width: 540px) and (max-width: 1024px){
     .logo img {
       width: 50vh;
       margin-bottom: 1rem;
       margin-top: 6rem;
     }
-  
+
     .herotop p {
-      font-size: 0.8rem;
-      width: 50vh;
+      font-size: 16px;
     }
-  
+
     .Btn,
     .Btn:hover::before {
       width: 13rem;
@@ -231,3 +230,76 @@
     }
   }
 
+  @media screen and (max-width: 1200px) and (min-width: 992px) {
+    .logo img {
+      width: 30rem;
+    }
+
+    .herotop p {
+      font-size: 1.5em;
+    }
+
+    .herobtn {
+      gap: 30px;
+    }
+  } */
+
+  @media screen and (max-width: 480px) {
+    .logo img {
+      width: 35vh;
+      margin-left: 0;
+    }
+  
+    .herotop p {
+      font-size: 14px;
+    }
+  
+    .hero .herobtn {
+      flex-direction: column;
+    }
+
+    .Btn, .Btn:hover::before{
+      width: 12rem;
+      height: 3rem;
+      font-size: 16px;
+    }
+
+  }
+  @media screen and (max-width: 769px) and (min-width: 480px){
+    .logo img {
+      width: 45vh;
+      margin-left: 5px;
+
+    }
+  
+    .herotop p {
+      font-size: 16px;
+    }
+  
+    .Btn,
+    .Btn:hover::before {
+      width: 10rem;
+      height: 3rem;
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 992px) and (min-width: 769px){
+    .logo img {
+      width: 25rem;
+      margin-left: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) and (min-width: 992px) {
+    .logo img {
+      width: 30rem;
+    }
+  
+    .herotop p {
+      font-size: 1.5em;
+    }
+  
+    .herobtn {
+      gap: 30px;
+    }
+  }

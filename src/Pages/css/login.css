@@ -1,30 +1,28 @@
-.login h3{
+/* .login h3{
   font-size: 1rem;
   margin-top: 3.5rem;
   text-align: center;
   font-weight: 200;
 }
-
-.login a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
+*/
 
 .inputbox{
   display: flex;
-  flex-direction: row;
   gap: 5rem;
+  flex-direction: row;
+  align-items: center;
+  
 }
-
 .login-icons{
+  position: absolute;
+  top: 30%;
   font-weight: bold;
   font-size: 1.5rem;
   color: grey;
-  position: absolute;
-  margin-left: 24rem;
+  right: 1rem; 
+  transform: translateY(-50%);
 }
-
+/*
 .column-style-right {
   background-image: url('../../Components/Assets/images/bg.png');
   height: 80vh;
@@ -69,9 +67,9 @@
   border: none;
   color: white;
   font-weight: 600;
-}
+} */
 
-.login-box {
+/* .login-box {
     position: absolute;
     top: 50%;
     left: 70%;
@@ -79,7 +77,7 @@
     padding: 40px;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-  }
+  } */
   
   .login-box h2 {
     margin: 0 0 30px;
@@ -94,14 +92,14 @@
     position: relative;
   }
   
-  .login-box .user-box input {
+  .login-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: grey;
+    
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(12, 12, 12);
     outline: none;
     background: transparent;
   }
@@ -112,7 +110,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: grey;
+    /* color: grey; */
     pointer-events: none;
     transition: .5s;
   }
@@ -125,7 +123,7 @@
     font-size: 12px;
   }
   
-  .login-box form a {
+  /* .login-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -137,23 +135,23 @@
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px
-  }
+  } */
     
-  .login-box a span {
+  /* .login-box a span {
     position: absolute;
     display: block;
-  }
+  } */
   
-  .login-box a span:nth-child(1) {
+  /* .login-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, #03e9f4);
     animation: btn-anim1 1s linear infinite;
-  }
+  } */
   
-  @keyframes btn-anim1 {
+  /* @keyframes btn-anim1 {
     0% {
       left: -100%;
     }
@@ -218,3 +216,6 @@
       bottom: 100%;
     }
   }
+  .logo{
+    max-width: 80vw;
+  } */

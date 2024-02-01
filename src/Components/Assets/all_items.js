@@ -6,7 +6,8 @@ let data_item = [
     {
         id: 1,
         name: "Scrunchie Lab | Colorful Handmade Scrunchies",
-        category: "Craft",
+        section: "CraftsWorld",
+        category: 'Craft',
         image: cw1,
         new_price: "LKR 75.00",
         old_price: "LKR 100.00",
@@ -14,6 +15,7 @@ let data_item = [
     {
         id: 2,
         name: "Calculator Used for 3 Years | Rechargeable Battery",
+        section: "PreLoved",
         category: "Craft",
         image: pl1,
         new_price: "LKR 75.00",

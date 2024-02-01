@@ -1,5 +1,6 @@
+
 .content{
-    padding: 3rem;
+    padding: 40px 80px;
     background-color: white;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -11,11 +12,9 @@
 }
 
 .content p{
-    font-size: 17px;
+    font-size: 18px;
     color: black;
     padding-bottom: 20px;
-    margin-top: 1rem;
-    width: 110vh;
 }
 .content h1 {
     color: #252525;
@@ -30,7 +29,8 @@
 }
 
 .floatingImg img{
-    width: 500px;
+    max-width: 500px;
+    min-width: 200px;
     border-radius: 20px;
 }
 .floatingImg{
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding-top: 1rem;
+    padding: 0;
     margin: 0;
 }
 .buttons .herobtn .Btn{
@@ -51,19 +51,10 @@
     margin: 0;
 }
 
-
-
-/*============ Samsung Galaxy A51/71, S20 Ultra, 
-  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
-  @media screen and (min-width: 360px) and (max-width: 412px){
+@media screen and (max-width: 320px) {
     .content {
-      padding: 2rem;
-      margin-left: -1rem;
-      justify-content: center;
-      justify-items: center;
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      padding: 32px 50px;
     }
   
     .content h1 {
@@ -75,72 +66,141 @@
     .content p {
       font-size: 14px;
       text-align: center;
-      width: auto;
     }
   
     .floatingImg img {
-      align-self: center;
-      border-radius: 1rem;
-      width: 40vh;
-      padding: 0;
-      margin-top: 1rem;
+      width: 100%;
+    }
+    .floatingImg{
+        padding-top: 20px;
     }
   
     .buttons .herobtn {
-      margin-top: 1rem;
       flex-direction: column;
-      align-self: center;
+      align-content: center;
       justify-content: center;
+      align-items: center;
     }
     .buttons .herobtn .Btn{
-      font-size: 16px;
-      align-self: center;
+        font-size: 16px;
     }
   }
   
-
-  /*============ Surface Pro 7, iPad Mini 
-  iPad Pro, iPad Air =============*/
-
-  @media screen and (min-width: 540px) and (max-width: 1024px) {
+  @media screen and (min-width: 320px) and (max-width: 480px) {
     .content {
-      padding: 5rem;
-      justify-content: center;
-      justify-items: center;
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      padding: 32px 50px;
+    }
+  
+    .floatingImg img {
+      width: 100%;
+    }
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    .buttons .herobtn .Btn{
+        font-size: 16px;
+    }
+    .buttons .herobtn {
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .content h1 {
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .content p {
+        font-size: 16px;
+        text-align: center;
+      }
+  }
+  
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
     }
   
     .content h1 {
-      margin-top: -2rem;
-      font-size: 40px;
+      font-size: 24px;
       line-height: 1.5;
       text-align: center;
     }
   
     .content p {
-      font-size: 16px;
+      font-size: 14px;
       text-align: center;
     }
   
     .floatingImg img {
-      align-self: center;
-      border-radius: 1rem;
-      width: 50vh;
-      margin-top: 2rem;
-      margin-left: 2rem;
+      max-width: 100%;
     }
-  
-    .buttons .herobtn {
-      margin-top: 1rem;
-      flex-direction: column;
-      align-self: center;
-      justify-content: center;
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
     }
-
     .buttons .herobtn .Btn{
-      font-size: 19px;
-      align-self: center;
+        font-size: 16px;
+    }
+    .buttons .herobtn {
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      
     }
   }
   
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .content h1 {
+      font-size: 28px;
+      line-height: 1.5;
+      text-align: center;
+
+    }
+    .content p{
+      text-align: center;
+    }
+    .buttons .herobtn {
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .content {
+        grid-template-columns: 1fr;
+      }
+    
+  
+    .floatingImg img {
+      max-width: 100%;
+    }
+    .floatingImg{
+        padding-top: 20px;
+        padding-left: 0;
+    }
+  }
+  
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .content h1 {
+      font-size: 32px;
+      line-height: 1.5;
+    }
+  
+    .floatingImg img {
+      max-width: 400px;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) and (min-width: 1440px) {
+    .content h1 {
+      font-size: 40px;
+    }
+  
+    .floatingImg img {
+      max-width: 500px;
+    }
+  }
