@@ -6,7 +6,7 @@ const Breadcrumbs = (props) => {
     const {product} = props;
   return (
     <div className='breadcrumb'>
-        UniStore <IoIosArrowForward /> {product.section} <IoIosArrowForward /> {product.category} <IoIosArrowForward /> {product.name}
+        UniStore <IoIosArrowForward /> {product.category} <IoIosArrowForward /> {product.name}
     </div>
   )
 }

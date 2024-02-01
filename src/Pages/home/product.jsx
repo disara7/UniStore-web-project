@@ -7,7 +7,7 @@ import ProductDisplay from '../../Components/ProductDisplay/product_display';
 const Product = () => {
   const {all_items} = useContext(unistorecontext);
   const {productId} = useParams();
-  const product = all_items.find((e)=> e.id === Number(productId))
+  const product = all_items.find((e)=> e.id === Number(productId));
   return (
     <div>
       <Breadcrumbs product={product}/>
