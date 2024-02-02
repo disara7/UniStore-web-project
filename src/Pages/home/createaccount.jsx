@@ -191,7 +191,7 @@ export default function CreateAccount() {
       <Box
         sx={{
           height: '100%',
-          position: 'absolute',
+          position: 'fixed',
           right: 0,
           top: 0,
           bottom: 0,

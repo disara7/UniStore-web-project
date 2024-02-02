@@ -9,6 +9,9 @@
     padding: 1rem;
     width: auto;
 }
+.footer.hidden{
+    display: none;
+}
 
 .footer-logo{
     display: flex;

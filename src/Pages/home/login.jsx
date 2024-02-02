@@ -39,7 +39,7 @@ export default function Login() {
       <Box
         sx={{
           height: '100vh',
-          position: 'absolute',
+          position: 'fixed',
           right: 'clamp(0px, (100vw - var(--Collapsed-breakpoint)) * 999, 100vw - var(--Cover-width))',
           top: 0,
           bottom: 0,

@@ -5,8 +5,12 @@ import { BsWhatsapp } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 
 const Footer = () => {
+    const isLoginOrRegister =
+    window.location.pathname.startsWith('/Login') ||
+    window.location.pathname.startsWith('/CreateAccount') ||
+    window.location.pathname.startsWith('/Finish');
   return (
-    <div className='footer'>
+    <div className={isLoginOrRegister? 'footer hidden':'footer'}>
         <div className="footer-logo">
             <img src="" alt="" />
             {/* <p>UniStore</p> */}
