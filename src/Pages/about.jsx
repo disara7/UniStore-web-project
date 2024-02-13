@@ -5,12 +5,16 @@ const About = () => {
   return (
     <div className='about'> 
       <h1>About Us </h1>
-      <p>“UniStore” is an innovative online web-platform designed to foster a vibrant exchange within university 
+      <div className="intro">
+      <p >“UniStore” is an innovative online web-platform designed to foster a vibrant exchange within university 
     communities, aimed to promote sustainable reuse, and support small businesses owned by university 
     undergraduates. UniStore comprises two separate sections: "Preloved" and "CraftsWorld," each 
     dedicated to enhancing and supporting undergraduate experiences and their entrepreneurial endeavors.
     </p>
-    <h2>Objectives</h2>
+
+      </div>
+      
+    <h2>What We Aim For...</h2>
     <h3>Facilitating Sustainable Practices by Creating a Platform for Resource Accessibility:</h3>
     <p>UniStore aims to encourage sustainable habits within the student community by promoting the reuse 
 and upcycling of preloved items. By providing a platform for sharing and purchasing pre-owned goods, 

@@ -1,0 +1,31 @@
+.about {
+    margin-top: 5rem;
+    padding: 5rem;
+}
+
+.about h1 {
+    color: green;
+    text-align: center;
+}
+
+.intro p{
+    text-align: center;
+    width: 70%;
+    margin-left: 20%;
+    padding: 2rem;
+}
+
+.about h2 {
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+}
+
+.about h3 {
+    padding-bottom: 1rem;
+}
+
+.about p {
+    padding-bottom: 5rem;
+    width: 60%;
+    /* text-align: justify; */
+}
