@@ -1,10 +1,10 @@
 import React, { createContext } from 'react';
 import all_items from '../Components/Assets/all_items';
 
-export const unistorecontext = createContext();
+export const unistorecontext = createContext(null);
 
 const unistorecontextProvider = (props) => {
-    const contextValue = {all_items: all_items};
+    const contextValue = {all_items};
 
     return (
         <unistorecontext.Provider value={contextValue}>

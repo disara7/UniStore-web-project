@@ -12,12 +12,18 @@ import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
 import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
+import Item from './Components/items/item';
+import ProductDisplay from './Components/ProductDisplay/product_display';
+import unistorecontextProvider from './Context/unistorecontext';
+import { Category } from './Pages/category';
+
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+       
         <Nav/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -31,7 +37,8 @@ function App() {
           <Route path='/cart' element={<Cart/>}/> 
           <Route path='/login' element={<Login/>}/> 
           <Route path='/createaccount' element={<CreateAccount/>}/> 
-          <Route path='/finish' element={<Finish/>}/>        
+          <Route path='/finish' element={<Finish/>}/>
+             
         </Routes>
         <Footer/>
       </BrowserRouter>

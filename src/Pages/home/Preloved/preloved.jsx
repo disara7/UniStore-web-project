@@ -4,6 +4,7 @@ import Searchbar from '../../../Components/searchbar/searchbar'
 import PlFilter from '../../../Components/filter/plfilter'
 import Item from '../../../Components/items/item'
 import data_product from '../../../Components/Assets/preloved_items'
+import all_items from '../../../Components/Assets/all_items'
 
 
 const Preloved = () => {
@@ -27,9 +28,14 @@ const Preloved = () => {
 
       </div>
       <div className="right">
-      {data_product.map((item, i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-            })}
+      {all_items.map((item, i)=>{
+                if (item.category==="preloved"){
+                  return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+              }
+              else {
+                  return null;
+              }}
+            )}
 
       </div>
 
