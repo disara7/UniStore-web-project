@@ -1,5 +1,5 @@
 .seller {
-    background-color: pink;
+    background-color: white;
     width: 25%;
     border-radius: 2rem;
 }
@@ -27,6 +27,13 @@
 
 .details {
     padding-left: 2rem;
+}
+
+.details hr{
+    color: rgba(185, 183, 183, 0.621);
+    width: 40vh;
+    position: absolute;
+    margin-left: 0.7rem;
 }
 
 

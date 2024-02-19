@@ -1,6 +1,7 @@
 .productdisplay {
     height:65vh;
     display: flex;
+    background-color: #F6F6F6;
 }
 
 .productdisplay-left {

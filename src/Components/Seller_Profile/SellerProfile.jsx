@@ -13,16 +13,21 @@ const SellerProfile = () => {
                 <tr>
                     <td><FaRegUser /></td>
                     <td><p>C. K. Lenadora</p></td>
+                    
                 </tr>
+                <hr />
                 <tr>
                     <td><LuPhone /></td>
                     <td><p>+94 75 123 3221</p></td>
                 </tr>
+                <hr />
                 <tr>
                     <td><FiMail /></td>
                     <td><p>cklenadora@gmail.com</p></td>
                 </tr>
             </table>
+            <hr />
+            
             
         </div>
         <h2>Social Media</h2>
