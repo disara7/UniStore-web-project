@@ -1,0 +1,36 @@
+.seller {
+    background-color: pink;
+    width: 25%;
+    border-radius: 2rem;
+}
+
+.seller h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.details li {
+    list-style: none;
+    margin-left: 2rem;
+    padding: 0.6rem;
+}
+
+.details p{
+   margin-left: 1rem;
+}
+
+.details td {
+    padding: 0.5rem;
+}
+
+.details {
+    padding-left: 2rem;
+}
+
+
+
+
+
+

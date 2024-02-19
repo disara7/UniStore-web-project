@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs';
 import ProductDisplay from '../../Components/ProductDisplay/product_display';
 import '../css/product.css'
-import picture from '../../Components/Assets/images/cw_nav.png'
+import SellerProfile from '../../Components/Seller_Profile/SellerProfile';
+
 
 
 const Product = () => {
@@ -16,6 +17,7 @@ const Product = () => {
     <div className='product'>
       <Breadcrumbs product={product}/>
       <ProductDisplay product={product}/>
+      <SellerProfile/>
     </div>
   )
 }
