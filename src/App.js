@@ -15,7 +15,7 @@ import Finish from './Pages/home/signupfinish';
 import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
-import { Category } from './Pages/category';
+
 
 
 

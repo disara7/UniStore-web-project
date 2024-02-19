@@ -4,7 +4,6 @@ import Searchbar from '../../../Components/searchbar/searchbar'
 import CwFilter from '../../../Components/filter/cwfilter'
 import Item from '../../../Components/items/item'
 import data_product from '../../../Components/Assets/preloved_items'
-import Category from '../../category'
 import all_items from '../../../Components/Assets/all_items'
 
 const CraftsWorld = () => {
