@@ -6,17 +6,16 @@ import cw2 from '../Assets/images/cw2.png'
 let all_items = [
     {
         id: 1,
-        name: "Scrunchie Lab | Colorful Handmade Scrunchies",
-        // section: "CraftsWorld",
+        name: "Natural Gemstone Dangle Earrings",
         category: "craftsworld",
         image: cw1,
         new_price: "LKR 75.00",
         old_price: "LKR 100.00",
+        description: "Sea Sediment is a gemstone of stability. It is said to be a powerful protection against things that are not good for you and it eases emotional stresses, making it a wonderful gemstone to wear on yourself."
     },
     {
         id: 2,
         name: "Calculator Used for 3 Years | Rechargeable Battery",
-        // section: "PreLoved",
         category: "preloved",
         image: pl1,
         new_price: "LKR 75.00",
@@ -48,7 +47,7 @@ let all_items = [
     },
     {
         id: 6,
-        name: "Scrunchie Lab | Colorful Handmade Scrunchies",
+        name: "Natural Gemstone Dangle Earrings",
         category: "craftsworld",
         image: cw1,
         new_price: "LKR 75.00",

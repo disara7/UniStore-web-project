@@ -1,5 +1,6 @@
 .productdisplay {
     height: 100vh;
+    display: flex;
 }
 
 .productdisplay-left {
@@ -10,15 +11,21 @@
 .productdisplay-img-list{
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
+    margin-left: 5rem;
 }
 
 .productdisplay-list-img {
     width: 20vh;
     padding: 0.5rem;
+    border-radius: 1rem;
 }
 
 .productdisplay-main-img {
     width: 60vh;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.productdisplay-right {
     padding: 0.5rem;
 }

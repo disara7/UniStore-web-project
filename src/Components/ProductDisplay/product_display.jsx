@@ -28,13 +28,14 @@ const ProductDisplay = ({ product }) => {
       </div>
       <div className='productdisplay-right'>
         <h1>{product.name}</h1>
+        
         <div className='productdisplay-right-star'>
           <FaStar color='yellow' />
           <FaStar />
           <FaStar />
           <FaStar />
           <FaStar color='grey' />
-          <p>(122)</p>
+          <p className='description'>{product.description}</p>
         </div>
       </div>
     </div>
