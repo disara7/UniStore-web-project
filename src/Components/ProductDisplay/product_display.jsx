@@ -35,9 +35,11 @@ const ProductDisplay = ({ product }) => {
           <FaStar />
           <FaStar />
           <FaStar color='grey' />
-          <p className='description'>{product.description}</p>
+          
         </div>
+        <p className='description'>{product.description}</p>
       </div>
+
     </div>
   );
 };
