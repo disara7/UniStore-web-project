@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs';
 import ProductDisplay from '../../Components/ProductDisplay/product_display';
 
+
 const Product = () => {
   const {all_items} = useContext(unistorecontext);
   const {productId} = useParams();

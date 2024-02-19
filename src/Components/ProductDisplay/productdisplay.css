@@ -1,0 +1,19 @@
+.productdisplay {
+    height: 100vh;
+
+}
+
+.productdisplay-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.productdisplay-img-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.productdisplay-list-img {
+    width: 20vh;
+    padding: 0.5rem;
+}
