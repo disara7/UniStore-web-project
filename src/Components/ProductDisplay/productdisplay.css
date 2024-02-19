@@ -38,6 +38,18 @@
 
 .productdisplay-right p{
     padding-top: 1rem;
-    width: 85%;
+    width: 84%;
+}
+
+.add-to-cart {
+    background-color: #F5CD2A;
+    color: white;
+    border-color: transparent;
+    padding: 1rem;
+    border-radius: 1.8rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 600;
+    width: 12rem;
 }
 

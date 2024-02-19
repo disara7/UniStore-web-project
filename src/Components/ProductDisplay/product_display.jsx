@@ -28,17 +28,19 @@ const ProductDisplay = ({ product }) => {
       </div>
       <div className='productdisplay-right'>
         <h1>{product.name}</h1>
-        
         <div className='productdisplay-right-star'>
           <FaStar color='yellow' />
           <FaStar />
           <FaStar />
           <FaStar />
           <FaStar color='grey' />
-          
         </div>
         <p className='description'>{product.description}</p>
+        <button className='add-to-cart'>
+        Add to Cart
+      </button>
       </div>
+      
 
     </div>
   );
