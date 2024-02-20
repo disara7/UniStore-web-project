@@ -7,7 +7,7 @@ const Recommended = () => {
   return (
     <div className='Recommended'>
         <h1>Recommended Products</h1>
-        <div className="recommended-items">
+        <div className="recommended-list">
         {all_items.map((item, i) => {
     if (item.category === "craftsworld") {
       if (i < 3) {
