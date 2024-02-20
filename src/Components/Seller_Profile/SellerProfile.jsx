@@ -11,26 +11,25 @@ const SellerProfile = () => {
         <div className="details">
             <table>
                 <tr>
-                    <td><FaRegUser /></td>
+                    <td className='socials-icon'><FaRegUser /></td>
                     <td><p>C. K. Lenadora</p></td>
                     
                 </tr>
                 <hr />
                 <tr>
-                    <td><LuPhone /></td>
+                    <td className='socials-icon'><LuPhone /></td>
                     <td><p>+94 75 123 3221</p></td>
                 </tr>
                 <hr />
                 <tr>
-                    <td><FiMail /></td>
+                    <td className='socials-icon'><FiMail /></td>
                     <td><p>cklenadora@gmail.com</p></td>
                 </tr>
             </table>
             <hr />
-            
-            
+            <h2>Social Media</h2>
         </div>
-        <h2>Social Media</h2>
+        
         <div className="socials">
 
         </div>
