@@ -2,6 +2,7 @@
     background-color: white;
     width: 25%;
     border-radius: 2rem;
+    margin-left: 6%;
 }
 
 .seller h1 {
@@ -41,6 +42,16 @@
     font-size: 1.2rem;
 }
 
+.socials img {
+    width: 8vh;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.socials {
+    margin-left: 1.5rem;
+    margin-bottom: 3.5rem;
+}
 
 
 

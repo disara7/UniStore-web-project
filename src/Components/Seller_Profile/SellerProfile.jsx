@@ -3,6 +3,9 @@ import './sellerprofile.css'
 import { FaRegUser } from "react-icons/fa";
 import { LuPhone } from "react-icons/lu";
 import { FiMail } from "react-icons/fi";
+import whatsapp from '../Assets/images/whatsapp.png'
+import facebook from '../Assets/images/facebook.png'
+import instagram from '../Assets/images/instagram.png'
 
 const SellerProfile = () => {
   return (
@@ -31,7 +34,9 @@ const SellerProfile = () => {
         </div>
         
         <div className="socials">
-
+            <img src={whatsapp} alt="" />
+            <img src={facebook} alt="" />
+            <img src={instagram} alt="" />
         </div>
     </div>
   )
