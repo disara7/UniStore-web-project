@@ -5,6 +5,7 @@ import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs';
 import ProductDisplay from '../../Components/ProductDisplay/product_display';
 import '../css/product.css'
 import SellerProfile from '../../Components/Seller_Profile/SellerProfile';
+import Recommended from '../../Components/Recommended/Recommended';
 
 
 
@@ -18,6 +19,7 @@ const Product = () => {
       <Breadcrumbs product={product}/>
       <ProductDisplay product={product}/>
       <SellerProfile/>
+      <Recommended/>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 .seller {
     background-color: white;
-    width: 25%;
+    width: 24%;
     border-radius: 2rem;
-    margin-left: 6%;
+    margin-left: 5%;
 }
 
 .seller h1 {
@@ -43,8 +43,8 @@
 }
 
 .socials img {
-    width: 8vh;
-    padding: 0.5rem;
+    width: 9vh;
+    padding: 0.8rem;
     margin-bottom: 1rem;
 }
 
