@@ -54,3 +54,22 @@
     width: 12rem;
 }
 
+.productdisplay-right .price{
+    display: flex;
+    flex-direction: row;
+}
+
+.prices{
+    display: flex;
+}
+
+.prices h2{
+    font-size: 1.8rem;
+}
+
+.prices h3 {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    color: grey;
+    text-decoration: line-through;
+}

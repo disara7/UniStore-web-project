@@ -28,6 +28,7 @@ const ProductDisplay = ({ product }) => {
       </div>
       <div className='productdisplay-right'>
         <h1>{product.name}</h1>
+        <div className="prices"><h2>{product.new_price}</h2> <h3>{product.old_price}</h3></div>
         <div className='productdisplay-right-star'>
           <FaStar color='yellow' />
           <FaStar />
