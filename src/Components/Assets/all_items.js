@@ -3,6 +3,7 @@ import pl1 from '../Assets/images/pl1.png'
 import pl2 from '../Assets/images/pl2.png'
 import cw2 from '../Assets/images/cw2.png'
 import pl3 from '../Assets/images/pl3.png'
+import cw11 from '../Assets/images/cw1_1.png'
 
 let all_items = [
     {
@@ -10,6 +11,7 @@ let all_items = [
         name: "Natural Gemstone Dangle Earrings",
         category: "craftsworld",
         image: cw1,
+        image1: cw11,
         new_price: "LKR 75.00",
         old_price: "LKR 100.00",
         description: "Sea Sediment is a gemstone of stability. It is said to be a powerful protection against things that are not good for you and it eases emotional stresses, making it a wonderful gemstone to wear on yourself."

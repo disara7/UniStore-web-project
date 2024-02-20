@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './productdisplay.css';
 import { FaStar } from 'react-icons/fa6';
 
 const ProductDisplay = ({ product }) => {
+  const [selectedImage, setSelectedImage] = useState(product.image);
+
+  const handleImageClick = (newImage) => {
+    setSelectedImage(newImage);
+  };
+  
   // Check if product is undefined or images is not an array
   if (!product ) {
     return <div>Loading or error message...</div>;
@@ -12,18 +18,24 @@ const ProductDisplay = ({ product }) => {
     <div className='productdisplay'>
       <div className='productdisplay-left'>
         <div className='productdisplay-img-list'>
+          
             <img className='productdisplay-list-img' 
             src={product.image} 
-            alt={product.name} />
+            alt={product.name} 
+            onClick={() => handleImageClick(product.image)}/>
+            <img className='productdisplay-list-img' 
+            src={product.image1} 
+            alt={product.name} 
+            onClick={() => handleImageClick(product.image1)}/>
             <img className='productdisplay-list-img' 
             src={product.image} 
-            alt={product.name} />
-            <img className='productdisplay-list-img' 
-            src={product.image} 
-            alt={product.name} />
+            alt={product.name}
+            onClick={() => handleImageClick(product.image)} />
         </div>
         <div className='productdisplay-img'>
-          <img className='productdisplay-main-img' src={product.image} alt={product.name} />
+          <img className='productdisplay-main-img' 
+          src={selectedImage} 
+          alt={product.name} />
         </div>
       </div>
       <div className='productdisplay-right'>
