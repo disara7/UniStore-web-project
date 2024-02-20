@@ -1,20 +1,15 @@
 .seller {
-    background-color: pink;
-    width: 25%;
+    background-color: white;
+    width: 24%;
     border-radius: 2rem;
+    margin-left: 5%;
 }
 
 .seller h1 {
     font-weight: 600;
     font-size: 1.5rem;
-    text-align: center;
     padding-top: 1rem;
-}
-
-.details li {
-    list-style: none;
-    margin-left: 2rem;
-    padding: 0.6rem;
+    padding-left: 2.5rem;
 }
 
 .details p{
@@ -22,14 +17,41 @@
 }
 
 .details td {
-    padding: 0.5rem;
+    padding: 0.8rem;
 }
 
 .details {
     padding-left: 2rem;
 }
 
+.details hr{
+    border-color: rgba(255, 255, 255, 0.344);
+    width: 40vh;
+    position: absolute;
+    margin-left: 0.7rem;
+    background-color: none;
+}
 
+.details h2{
+    font-size: 1.2rem;
+    padding-top: 0.8rem;
+}
+
+.socials-icon {
+    color: orange;
+    font-size: 1.2rem;
+}
+
+.socials img {
+    width: 9vh;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.socials {
+    margin-left: 1.5rem;
+    margin-bottom: 3.5rem;
+}
 
 
 
