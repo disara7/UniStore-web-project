@@ -231,7 +231,6 @@ export default function Finish() {
 
                     <label>University</label>
 
-                    {/* Add the dropdown menu element */}
                     <datalist id="universities">
                       {universities.map((university) => (
                           <option key={university} value={university}>
