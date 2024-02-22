@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../css/login.css';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
@@ -16,12 +17,32 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
+import { auth, signInWithEmailAndPassword, provider, signInWithPopup } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit= async (e) => {
+    e.preventDefault();
+    try{
+      await signInWithEmailAndPassword(auth, username, password);
+      navigate('/');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const signInWithGoogle = async (e) => {
+    try{
+      await signInWithPopup(auth, provider);
+      navigate('/');
+    } catch {
+      console.log(e);
+    }
+  }
+
 
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
@@ -131,8 +152,8 @@ export default function Login() {
                 <Typography level="h1">Login</Typography>
                 <Typography level="body-sm">
                   Are you new?{' '}
-                  <Link href="/CreateAccount" level="title-sm">
-                    Sign up!
+                  <Link  level="title-sm">
+                    <NavLink to="/CreateAccount" style={{ textDecoration: 'none' }}>Sign Up!</NavLink> 
                   </Link>
                 </Typography>
               </Stack>
@@ -144,6 +165,7 @@ export default function Login() {
                 sx={{
                   borderRadius: '20px'
                 }}
+                onClick={signInWithGoogle}
               >
                 Continue with Google
               </Button>
@@ -163,16 +185,7 @@ export default function Login() {
             <Stack gap={4} sx={{ mt: 2 }}>
               <Box className='login-box'>
               <form
-                // onSubmit={(event: React.FormEvent<SignInFormElement>) => {
-                //   event.preventDefault();
-                //   const formElements = event.currentTarget.elements;
-                //   const data = {
-                //     email: formElements.email.value,
-                //     password: formElements.password.value,
-                //     persistent: formElements.persistent.checked,
-                //   };
-                //   alert(JSON.stringify(data, null, 2));
-                // }}
+                onSubmit={handleSubmit}
               >
               <div className="user-box">
               <div className="inputbox" style={{color: {xs:'white', md:'black'}}}>

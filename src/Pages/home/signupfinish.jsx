@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/login.css';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import { formLabelClasses } from '@mui/joy/FormLabel';
 import { CssVarsProvider,extendTheme  } from '@mui/joy/styles';
 import GlobalStyles from '@mui/joy/GlobalStyles'
-import Link from '@mui/joy/Link';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 import CssBaseline from '@mui/joy/CssBaseline';
@@ -15,6 +15,8 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import IconButton from '@mui/joy/IconButton';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import universitiesData from './universities.json';
+import { auth, storage, getDownloadURL, ref, uploadBytesResumable, firestore, collection, updateDoc, doc } from '../../../src/FirebaseConfig/firebase';
+import profilePic from '../../Components/Assets/images/user.png'
 
 
 
@@ -26,8 +28,88 @@ export default function Finish() {
   const [lname, setLname] = useState('');
   const [selectedUniversity, setSelectedUniversity] = useState('');
   const universities = universitiesData;
+  const [profilePicture, setProfilePicture] = useState(profilePic);
+  const navigate = useNavigate();
 
+  const handlePictureUpload = async (e) => {
+    try {
+      // Get the selected file:
+      const file = e.target.files[0];
   
+      if (!file) {
+        throw new Error('Please select a file to upload.');
+      }
+  
+      const user = auth.currentUser; // Retrieve the currently logged-in user's ID
+      const fileName = `ProfilePic`;
+  
+      const storageRef = ref(storage, `user_profile_pictures/${user.uid}/${fileName}`);
+  
+      const task = await uploadBytesResumable(storageRef, file); 
+  
+      const downloadURL = await getDownloadURL(task.ref); 
+  
+      setProfilePicture(downloadURL);
+  
+      console.log('Picture uploaded successfully!');
+  
+    } catch (error) {
+      console.error('Error uploading picture:', error);
+    }
+  };
+  const validateInput = (fname, lname, selectedUniversity) => {
+    const errors = [];
+  
+    if (!fname.trim()) {
+      errors.push('First name is required.');
+    }
+  
+    if (!lname.trim()) {
+      errors.push('Last name is required.');
+    }
+  
+    if (!selectedUniversity) {
+      errors.push('Please select a university.');
+    }
+  
+    if (errors.length > 0) {
+      // Display or return the error messages to the user
+      return false;
+    }
+  
+    return true; // Indicates valid input
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+  
+    if (!validateInput(fname, lname, selectedUniversity)) {
+      alert('Please  enter all required information.');
+      return;
+    }
+    
+  
+    try {
+      const user = auth.currentUser;
+      const userRef = doc(collection(firestore, 'Users'),user.uid);
+      
+      const userData = {
+        fname,
+        lname,
+        selectedUniversity,
+      };
+
+      await updateDoc(userRef, userData);
+      console.log('User data updated successfully!');
+      navigate('/');
+  
+    } catch (error) {
+      console.error('Error updating user data:', error);
+    }
+  };
+  
+
+
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
       <CssBaseline />
@@ -144,11 +226,10 @@ export default function Finish() {
                 sx={{ width:{xs:'120px', md:'150px'}, borderRadius: '100%' }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-                  srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
-                  loading="lazy"
-                  alt=""
+                  src={profilePicture}
+                  alt="User Profile"
                 />
+                <input type="file" onChange={handlePictureUpload} />
               </AspectRatio>
               <IconButton
                 aria-label="upload new picture"
@@ -170,23 +251,22 @@ export default function Finish() {
                   boxShadow: 'sm',
                 }}
               >
-                <EditRoundedIcon />
+                <label htmlFor="file-upload">
+                  <EditRoundedIcon />
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  style={{ display: 'none' }}
+                  onChange={handlePictureUpload}
+                />
               </IconButton>
               </div>
             </Stack>
             <Stack gap={4} sx={{ mt: 2 }}>
               <Box className='login-box'>
               <form
-                // onSubmit={(event: React.FormEvent<SignInFormElement>) => {
-                //   event.preventDefault();
-                //   const formElements = event.currentTarget.elements;
-                //   const data = {
-                //     email: formElements.email.value,
-                //     password: formElements.password.value,
-                //     persistent: formElements.persistent.checked,
-                //   };
-                //   alert(JSON.stringify(data, null, 2));
-                // }}
+                onSubmit={handleSubmit}
               >
                 <div className="user-box">
                 <div className="inputbox" style={{color: {xs:'white', md:'black'}}}>

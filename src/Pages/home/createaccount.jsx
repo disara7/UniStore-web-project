@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate,NavLink } from 'react-router-dom';
 import '../css/login.css';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
@@ -14,12 +15,53 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
+import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider,signInWithPopup } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
 export default function CreateAccount() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
+  
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+      const user = userCredential.user; 
+      const userRef = doc(collection(firestore, 'Users'), user.uid);
+
+      await setDoc(userRef, {
+        username,
+      });
+      console.log("Successfully created Account!");
+      navigate('/Finish');
+    } catch (e) {
+      console.log(e);
+    } 
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      const username = user.email;
+      // Handle successful sign-in
+      const userRef = doc(collection(firestore, 'Users'), user.uid);
+      await setDoc(userRef, {
+        username,
+      });
+      console.log("Successfully created Account!");
+      navigate('/Finish');
+    } catch (error) {
+      // Handle errors
+      console.error('Error signing in:', error);
+    }
+  };
+
 
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
@@ -89,8 +131,8 @@ export default function CreateAccount() {
                 <Typography level="h1">Create an Account</Typography>
                 <Typography level="body-sm">
                   Already have an account?{' '}
-                  <Link href="/Login" level="title-sm">
-                    Login!
+                  <Link  level="title-sm">
+                    <NavLink to="/Login" style={{ textDecoration: 'none' }}>Login!</NavLink> 
                   </Link>
                 </Typography>
               </Stack>
@@ -102,6 +144,7 @@ export default function CreateAccount() {
                 sx={{
                   borderRadius: '20px'
                 }}
+                onClick={handleGoogleSignIn}
               >
                 Continue with Google
               </Button>
@@ -121,7 +164,7 @@ export default function CreateAccount() {
             <Stack gap={4} sx={{ mt: 2 }}>
               <Box className='login-box'>
               <form
-                onSubmit={{Link:'/Finish'}}
+                onSubmit={handleSubmit}
               >
               <div className="user-box">
               <div className="inputbox" style={{color: {xs:'white', md:'black'}}}>
@@ -154,8 +197,8 @@ export default function CreateAccount() {
                 <input
                     type="password"
                     name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                   />
                   <label>Confirm Password</label>

@@ -12,6 +12,7 @@ import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
 import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
+import UserProfile from './Pages/home/user';
 
 
 function App() {
@@ -21,17 +22,18 @@ function App() {
         <Nav/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/preloved' element={<Preloved category="preloved"/>}/>
-          <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
-          <Route path='/about' element={<About />}/>
-          <Route path='/contact' element={<Contact />}/>
-          <Route path='/product' element={<Product />}>
+          <Route path='/Preloved' element={<Preloved category="preloved"/>}/>
+          <Route path='/CraftsWorld' element={<CraftsWorld category="craftsworld"/>}/>
+          <Route path='/About' element={<About />}/>
+          <Route path='/Contact' element={<Contact />}/>
+          <Route path='/Product' element={<Product />}>
             <Route path=':productId' element={<Product/>} />
           </Route>
-          <Route path='/cart' element={<Cart/>}/> 
-          <Route path='/login' element={<Login/>}/> 
-          <Route path='/createaccount' element={<CreateAccount/>}/> 
-          <Route path='/finish' element={<Finish/>}/>        
+          <Route path='/Cart' element={<Cart/>}/> 
+          <Route path='/Login' element={<Login/>}/> 
+          <Route path='/CreateAccount' element={<CreateAccount/>}/> 
+          <Route path='/Finish' element={<Finish/>}/>   
+          <Route path='/UserProfile' element={<UserProfile/>}/>    
         </Routes>
         <Footer/>
       </BrowserRouter>
