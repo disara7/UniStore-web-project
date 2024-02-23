@@ -55,3 +55,26 @@
     margin-top: 2rem;
     margin-left: 1rem;
 }
+
+@media screen and (max-width: 480px) {
+    .preloved p {
+        margin-top: 0rem;
+        width: 45%;
+        font-size: 0.6rem;
+    }
+    .preloved h1{
+        font-size: 2.7rem;    
+        width: fit-content;
+        margin-bottom: 0.5rem;
+        margin-top: 5rem;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    .preloved{
+        height:33vh;
+        width: auto;
+        background-size: auto;
+        margin-left: -30%;
+    }
+}
