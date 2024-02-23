@@ -17,26 +17,29 @@ const ProductDisplay = ({ product }) => {
   return (
     <div className='productdisplay'>
       <div className='productdisplay-left'>
+        <div className="product-images">
         <div className='productdisplay-img-list'>
           
-            <img className='productdisplay-list-img' 
-            src={product.image} 
-            alt={product.name} 
-            onClick={() => handleImageClick(product.image)}/>
-            <img className='productdisplay-list-img' 
-            src={product.image1} 
-            alt={product.name} 
-            onClick={() => handleImageClick(product.image1)}/>
-            <img className='productdisplay-list-img' 
-            src={product.image} 
-            alt={product.name}
-            onClick={() => handleImageClick(product.image)} />
-        </div>
-        <div className='productdisplay-img'>
+          <img className='productdisplay-list-img' 
+          src={product.image} 
+          alt={product.name} 
+          onClick={() => handleImageClick(product.image)}/>
+          <img className='productdisplay-list-img' 
+          src={product.image1} 
+          alt={product.name} 
+          onClick={() => handleImageClick(product.image1)}/>
+          <img className='productdisplay-list-img' 
+          src={product.image} 
+          alt={product.name}
+          onClick={() => handleImageClick(product.image)} />
+      </div>
+      <div className='productdisplay-img'>
           <img className='productdisplay-main-img' 
           src={selectedImage} 
           alt={product.name} />
         </div>
+        </div>
+        
       </div>
       <div className='productdisplay-right'>
         <h1>{product.name}</h1>
