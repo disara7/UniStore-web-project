@@ -60,10 +60,10 @@
     .preloved p {
         margin-top: 0rem;
         width: 45%;
-        font-size: 0.6rem;
+        font-size: 0.3rem;
     }
     .preloved h1{
-        font-size: 2.7rem;    
+        font-size: 4rem;    
         width: fit-content;
         margin-bottom: 0.5rem;
         margin-top: 5rem;
@@ -75,7 +75,7 @@
         height:33vh;
         width: auto;
         background-size: auto;
-        margin-left: -30%;
+
     }
 }
 
