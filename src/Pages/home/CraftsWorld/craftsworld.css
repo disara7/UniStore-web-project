@@ -54,3 +54,36 @@
     margin-top: 2rem;
     margin-left: 1rem;
 }
+
+@media screen and (max-width: 480px) {
+    .crafts-top p {
+        margin-top: 0rem;
+        width: 45%;
+        font-size: 0.3rem;
+    }
+    .crafts-top h1{
+        font-size: 3.5rem;    
+        width: fit-content;
+        margin-bottom: 0.5rem;
+        margin-top: 5rem;
+    }
+    .crafts-top{
+        height:35vh;
+        width: auto;
+        background-size: auto;
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .crafts-top p {
+        margin-top: 0rem;
+        width: 83%;
+        font-size: 1rem;
+    }
+    .crafts-top{
+        height:43vh;
+        width: auto;
+        background-size: auto;
+    }
+}

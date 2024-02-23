@@ -60,3 +60,28 @@
      }
    }
 
+   @media screen and (max-width: 480px) {
+
+    input#search-bar{
+      width: 50%;
+      padding-left: 1.2rem;
+    }
+    .search-icon {
+      margin-left: 2rem;
+    }
+
+   }
+
+   @media screen and (max-width: 992px) {
+    input#search-bar{
+      margin-left: 15%;
+      width: 60%;
+      padding-left: 1.2rem;
+    }
+    .search-icon-container {
+      left: 35%; 
+    }
+    .search-icon {
+      margin-left: 13.5rem;
+    }
+   }
