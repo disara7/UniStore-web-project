@@ -73,3 +73,50 @@
     color: grey;
     text-decoration: line-through;
 }
+.product-images{
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .product-images{
+        display: flex;
+        flex-direction: column;
+    }
+    .productdisplay-img-list{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1rem;
+    }
+    
+    .productdisplay-list-img {
+        width: 12vh;
+    }
+    
+    .productdisplay-main-img {
+        width: 35.8vh;
+        margin-left: 1rem;
+    }
+    .productdisplay {
+        display: flex;
+        flex-direction: column;
+    }
+    .productdisplay-right h1{
+        font-size: 1.5rem;
+        padding-bottom: 0.8rem;
+        width: 85%;
+    }
+    
+    .productdisplay-right p{
+        padding-top: 1rem;
+        width: 81%;
+        text-align: justify;
+    }
+    .prices{
+        margin-top: -0.5rem;
+    }
+    .add-to-cart {
+        margin-top: 2rem;
+        width: 12rem;
+        margin-left: 15%;
+    }
+}

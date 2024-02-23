@@ -53,6 +53,44 @@
     margin-bottom: 3.5rem;
 }
 
+@media screen and (max-width: 480px) {
+    .seller {
+        width: 78%;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        margin-top: 80%;
+    }
+    
+    .seller h1 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        padding-left: 2rem;
+    }
+    
+    .details p{
+       margin-left: 0.5rem;
+    }
+    
+    .details hr{
+        width: 60%;
+    }
+    
+    .socials-icon {
+        color: orange;
+        font-size: 1.2rem;
+    }
+    
+    .socials img {
+        width: 7vh;
+    }
+    
+    .socials {
+        margin-left: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
 
 
 
