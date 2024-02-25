@@ -1,11 +1,16 @@
 import React from 'react'
 import './css/about.css'
+import member1 from '../Components/Assets/images/team/disara.jpg'
+import member2 from '../Components/Assets/images/team/navindu.jpg'
+import member3 from '../Components/Assets/images/team/dushyantha.jpg'
+import member4 from '../Components/Assets/images/team/kushana.jpg'
 
 const About = () => {
   return (
     <div className='about'> 
+    <div className="intro">
       <h1>About Us </h1>
-      <div className="intro">
+      
       <p >“UniStore” is an innovative online web-platform designed to foster a vibrant exchange within university 
     communities, aimed to promote sustainable reuse, and support small businesses owned by university 
     undergraduates. UniStore comprises two separate sections: "Preloved" and "CraftsWorld," each 
@@ -14,6 +19,13 @@ const About = () => {
 
       </div>
       
+    <div className="team">
+    <h1>Meet the Team</h1>
+      <img src={member1} alt="" />
+      <img src={member2} alt="" />
+      <img src={member3} alt="" />
+      <img src={member4} alt="" />
+    </div>
     <h2>What We Aim For...</h2>
     <h3>Facilitating Sustainable Practices by Creating a Platform for Resource Accessibility:</h3>
     <p>UniStore aims to encourage sustainable habits within the student community by promoting the reuse 
