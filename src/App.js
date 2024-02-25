@@ -16,6 +16,7 @@ import Finish from './Pages/home/signupfinish';
 import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
+import Payment from './Pages/Payment/payment';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path='/login' element={<Login/>}/> 
           <Route path='/createaccount' element={<CreateAccount/>}/> 
           <Route path='/finish' element={<Finish/>}/>
+          <Route path='/Payment' element={<Payment />}/>
              
         </Routes>
         <Footer/>

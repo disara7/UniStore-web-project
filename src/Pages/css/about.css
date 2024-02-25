@@ -1,11 +1,13 @@
-.about {
+/* .about {
     margin-top: 5rem;
     padding: 5rem;
-}
+} */
 
 .about h1 {
-    color: green;
+    color: white;
     text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
 }
 
 .intro p{
@@ -13,6 +15,7 @@
     width: 70%;
     margin-left: 20%;
     padding: 2rem;
+    color: white;
 }
 
 .about h2 {
@@ -29,3 +32,48 @@
     width: 60%;
     /* text-align: justify; */
  } 
+
+ .intro {
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../../Components/Assets/images/signin.png');
+    background-position: 50% 15%;
+    height: 58vh;
+    padding-top: 7rem;
+ }
+
+ .team {
+    margin-left: 14%;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .team h1{
+    color: black;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-left: -7rem;
+ }
+
+ .team img{
+    width: 28vh;
+    border-radius: 10rem;
+ }
+
+ .card {
+    margin-right: 5rem;
+    width: max-content;
+    justify-content: center;
+    
+ }
+
+ .card p {
+    width: max-content;
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+ }
+
+ .social-media{
+    margin-top: -4rem;
+    font-size: 1.5rem;
+    text-align: center;
+ }
