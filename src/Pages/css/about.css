@@ -46,11 +46,10 @@
     flex-direction: row;
  }
 
- .team h1{
+ .about .topic {
     color: black;
     font-size: 2rem;
-    padding: 2rem;
-    margin-left: -7rem;
+    padding: 3rem;
  }
 
  .team img{
@@ -76,4 +75,9 @@
     margin-top: -4rem;
     font-size: 1.5rem;
     text-align: center;
+    
+ }
+
+ .social-media p{
+
  }
