@@ -1,0 +1,22 @@
+.topic-part {
+    margin-top: 5rem;
+    padding: 5%;
+}
+.create-seller {
+    display: flex;
+    flex-direction: row;
+    height: 92vh;
+}
+
+.create-seller-left {
+    width: 60%;
+}
+
+.create-seller-right {
+    width: 55%;
+    justify-self: center;
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../../Components/Assets/images/signin.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
