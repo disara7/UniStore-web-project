@@ -4,6 +4,8 @@ import member1 from '../Components/Assets/images/team/disara.jpg'
 import member2 from '../Components/Assets/images/team/navindu.jpg'
 import member3 from '../Components/Assets/images/team/dushyantha.jpg'
 import member4 from '../Components/Assets/images/team/kushana.jpg'
+import { BsLinkedin } from "react-icons/bs";
+import { MdOutlineMail } from "react-icons/md";
 
 const About = () => {
   return (
@@ -19,12 +21,41 @@ const About = () => {
 
       </div>
       
-    <div className="team">
+    
     <h1>Meet the Team</h1>
-      <img src={member1} alt="" />
-      <img src={member2} alt="" />
-      <img src={member3} alt="" />
-      <img src={member4} alt="" />
+    <div className="team">
+      <div className="card">
+        <img src={member1} alt="" />
+        <p>Disara Mapalagama</p>
+        <div className="social-media">
+          <BsLinkedin />
+          <MdOutlineMail />
+        </div>
+      </div>
+      <div className="card">
+        <img src={member2} alt="" />
+        <p>Navindu Rathnayaka</p>
+        <div className="social-media">
+          <BsLinkedin />
+          <MdOutlineMail />
+        </div>
+      </div>
+      <div className="card">
+        <img src={member3} alt="" />
+        <p>Dushyantha Thilakarathne</p>
+        <div className="social-media">
+          <BsLinkedin />
+          <MdOutlineMail />
+        </div>
+      </div>
+      <div className="card">
+        <img src={member4} alt="" />
+        <p>Kushana Senadheera</p>
+        <div className="social-media">
+          <BsLinkedin />
+          <MdOutlineMail />
+        </div>
+      </div>
     </div>
     <h2>What We Aim For...</h2>
     <h3>Facilitating Sustainable Practices by Creating a Platform for Resource Accessibility:</h3>

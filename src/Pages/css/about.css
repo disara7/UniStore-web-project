@@ -41,7 +41,9 @@
  }
 
  .team {
-    margin-left: 7rem;
+    margin-left: 14%;
+    display: flex;
+    flex-direction: row;
  }
 
  .team h1{
@@ -52,8 +54,26 @@
  }
 
  .team img{
-    width: 20%;
-    padding: 1rem;
+    width: 28vh;
     border-radius: 10rem;
-    margin-right: 3%;
+ }
+
+ .card {
+    margin-right: 5rem;
+    width: max-content;
+    justify-content: center;
+    
+ }
+
+ .card p {
+    width: max-content;
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+ }
+
+ .social-media{
+    margin-top: -4rem;
+    font-size: 1.5rem;
+    text-align: center;
  }
