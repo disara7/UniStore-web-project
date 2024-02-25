@@ -22,7 +22,7 @@ const About = () => {
       </div>
       
     
-    <h1>Meet the Team</h1>
+    <h1 className='topic'>Meet the Team</h1>
     <div className="team">
       <div className="card">
         <img src={member1} alt="" />
@@ -52,8 +52,8 @@ const About = () => {
         <img src={member4} alt="" />
         <p>Kushana Senadheera</p>
         <div className="social-media">
-          <BsLinkedin />
-          <MdOutlineMail />
+          <p><BsLinkedin /></p>
+          <p><MdOutlineMail /></p>
         </div>
       </div>
     </div>
