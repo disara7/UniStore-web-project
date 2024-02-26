@@ -3,7 +3,6 @@ import { useNavigate,NavLink } from 'react-router-dom';
 import '../css/login.css';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import { formLabelClasses } from '@mui/joy/FormLabel';
 import { CssVarsProvider,extendTheme  } from '@mui/joy/styles';
@@ -15,7 +14,7 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
-import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider,signInWithPopup } from '../../../src/FirebaseConfig/firebase';
+import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider, signInWithPopup, fetchSignInMethodsForEmail } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
@@ -28,8 +27,27 @@ export default function CreateAccount() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if(password !== confirmPassword){
+      alert("Passwords do not match");
+      return;
+    }
+    if(username === '' || password === '' || confirmPassword === '') {
+      alert("Please fill in all fields");
+      return;
+    }
+    if(password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return;
+    }
     try {
+      const signInMethods = await fetchSignInMethodsForEmail(auth, username.value);
+    
+      if (signInMethods.length > 0) {
+        // Email is already in use, show an appropriate message
+        alert("Email is already in use");
+        return;
+      };
+
       const userCredential = await createUserWithEmailAndPassword(auth, username, password);
       const user = userCredential.user; 
       const userRef = doc(collection(firestore, 'Users'), user.uid);
@@ -41,6 +59,7 @@ export default function CreateAccount() {
       navigate('/Finish');
     } catch (e) {
       console.log(e);
+      alert("Invalid Username");
     } 
   };
 
@@ -205,16 +224,7 @@ export default function CreateAccount() {
                 </div>
                 </div>
                 <Stack gap={4} sx={{ mt: 2 }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Checkbox size="sm" label="Remember me" name="persistent" />
-                    
-                  </Box>
+                  
                   <Button color="neutral" type="submit" fullWidth
                   sx={
                     {

@@ -4,7 +4,7 @@ import { BsCart2 } from 'react-icons/bs';
 import './nav.css';
 import logo_small from '../Assets/images/logo_small.png'
 import { FaRegUser } from "react-icons/fa";
-import { auth,storage,ref,getDownloadURL } from '../../../src/FirebaseConfig/firebase';
+import { auth,storage,ref,getDownloadURL,onAuthStateChanged } from '../../../src/FirebaseConfig/firebase';
 import profilePic from '../../Components/Assets/images/user.png'
 import { NavLink,useLocation } from 'react-router-dom';
 
@@ -38,31 +38,38 @@ const Nav = () => {
 
 
   window.addEventListener('scroll',changeBg);
-
+  console.log(auth.currentUser);
   
   useEffect(() => {
     const getUserProfilePicture = async () => {
-      const user = auth.currentUser;
-      if (user) {
-        try {
-          const profilePictureRef = ref(storage, `user_profile_pictures/${user.uid}/ProfilePic`);
-          const url = await getDownloadURL(profilePictureRef);
-          setProfilePictureUrl(url);
-        } catch (error) {
-          console.error('Error fetching profile picture:', error);
-          // Handle error fetching profile picture
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          try {
+            const profilePictureRef = ref(storage, `user_profile_pictures/${user.uid}/ProfilePic`);
+            const url = await getDownloadURL(profilePictureRef);
+            setProfilePictureUrl(url);
+          } catch (error) {
+            console.error('Error fetching profile picture:', error);
+            // Handle error fetching profile picture
+          }
         }
-      }
+      });
+  
+      return unsubscribe;
     };
-
-    getUserProfilePicture();
+  
+    const unsubscribe = getUserProfilePicture();
+  
+    return () => unsubscribe();
   }, []);
 
   return (
     <div className={`nav-menu ${scrolled ? 'active' : ''} ${isLoginOrRegister ? 'hidden' : ''}`}>
       <div className='left-part'>
         <div className="nav-logo">
+        <NavLink to="/">
           <img src={logo_small} alt="" />
+        </NavLink>
         </div>
         <div>
           <ul id="nav-list" className={clicked ? '#nav-list active': '#nav-list'}>

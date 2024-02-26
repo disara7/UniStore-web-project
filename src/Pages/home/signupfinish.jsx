@@ -17,6 +17,7 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import universitiesData from './universities.json';
 import { auth, storage, getDownloadURL, ref, uploadBytesResumable, firestore, collection, updateDoc, doc } from '../../../src/FirebaseConfig/firebase';
 import profilePic from '../../Components/Assets/images/user.png'
+import Compressor from "compressorjs";
 
 
 
@@ -44,8 +45,21 @@ export default function Finish() {
       const fileName = `ProfilePic`;
   
       const storageRef = ref(storage, `user_profile_pictures/${user.uid}/${fileName}`);
+      const compressedImage = await new Promise((resolve, reject) => {new Compressor(file, {
+        quality: 0.6, 
+        maxWidth: 800, 
+        maxHeight: 800, 
+        success(result) {
+          resolve(result);
+        },
+        error(error) {
+          reject(error);
+        },
+      });
+    });
+      
   
-      const task = await uploadBytesResumable(storageRef, file); 
+      const task = await uploadBytesResumable(storageRef, compressedImage); 
   
       const downloadURL = await getDownloadURL(task.ref); 
   

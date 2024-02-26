@@ -5,7 +5,6 @@ import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import { formLabelClasses } from '@mui/joy/FormLabel';
 import { CssVarsProvider,extendTheme  } from '@mui/joy/styles';
@@ -27,13 +26,57 @@ export default function Login() {
   const navigate = useNavigate();
   const handleSubmit= async (e) => {
     e.preventDefault();
+    if (!isValidEmail(username)) {
+      alert("Invalid email format");
+      return;
+    }
+    if(username === '' || password === '') {
+      alert("Please fill in all fields");
+      return;
+    }
+
     try{
       await signInWithEmailAndPassword(auth, username, password);
       navigate('/');
     } catch (e) {
       console.log(e);
+      alert("Invalid Username or Password");
     }
   };
+  function isValidEmail(email) {
+    // Check presence of "@" symbol
+    if (!email.includes('@')) {
+      return false;
+    }
+
+    // Split email address into parts before and after "@" symbol
+    const [username, domain] = email.split('@');
+
+    // Check if username is empty
+    if (!username) {
+      return false;
+    }
+
+    // Check if domain is empty or contains only a dot
+    if (!domain || domain === '.') {
+      return false;
+    }
+
+    // Check allowed characters in username and domain
+    const allowedChars = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/;
+    if (!allowedChars.test(username) || !allowedChars.test(domain)) {
+      return false;
+    }
+
+    // Check domain length (at least 2 characters after the dot)
+    const domainParts = domain.split('.');
+    if (domainParts.length < 2 || domainParts.some(part => part.length < 1)) {
+      return false;
+    }
+
+    return true;
+  }
+
   const signInWithGoogle = async (e) => {
     try{
       await signInWithPopup(auth, provider);
@@ -223,11 +266,10 @@ export default function Login() {
                   <Box
                     sx={{
                       display: 'flex',
-                      justifyContent: 'space-between',
+                      justifyContent: 'flex-end',
                       alignItems: 'center',
                     }}
                   >
-                    <Checkbox size="sm" label="Remember me" name="persistent" />
                     <Link level="title-sm" href="#replace-with-a-link">
                       Forgot your password?
                     </Link>
