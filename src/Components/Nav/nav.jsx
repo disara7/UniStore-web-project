@@ -38,7 +38,6 @@ const Nav = () => {
 
 
   window.addEventListener('scroll',changeBg);
-  console.log(auth.currentUser);
   
   useEffect(() => {
     const getUserProfilePicture = async () => {

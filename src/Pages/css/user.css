@@ -1,3 +1,12 @@
 .userProfile{
-    padding-top:50px;
+    padding-top:60px;
+    
+}
+.bg{
+    height: 165px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(104, 104, 104, 0.788), rgba(156, 156, 156, 0.5));
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
