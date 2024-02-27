@@ -26,7 +26,7 @@ function App() {
     <div>
       <BrowserRouter>
        
-        <Nav/>
+        {/* <Nav/> */}
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/preloved' element={<Preloved category="preloved"/>}/>
