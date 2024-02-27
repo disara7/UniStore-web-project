@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { auth,firestore,signOut } from "../../FirebaseConfig/firebase";
-import { useNavigate } from "react-router-dom";
+import { auth,deleteDoc,firestore,signOut, updateDoc } from "../../FirebaseConfig/firebase";
 import '../css/user.css';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
@@ -18,23 +17,25 @@ import CardOverflow from '@mui/joy/CardOverflow';
 
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import { onAuthStateChanged,ref,storage,getDownloadURL,getDoc,doc } from "../../FirebaseConfig/firebase";
+import { onAuthStateChanged,ref,storage,getDownloadURL,getDoc,doc,uploadBytesResumable,deleteUser,reauthenticateWithCredential,EmailAuthProvider,GoogleAuthProvider,reauthenticateWithPopup } from "../../FirebaseConfig/firebase";
 import profilePic from '../../Components/Assets/images/user.png'
+import Compressor from "compressorjs";
 
 
 export default function UserProfile() {
-    const navigator = useNavigate();
     const [profilePictureUrl, setProfilePictureUrl] = useState(profilePic);
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
     const [email, setEmail] = useState('');
     const [university, setUniversity] = useState('');
+    const [originalFname, setOriginalFname] = useState('');
+    const [originalLname, setOriginalLname] = useState('');
 
     const logOut = () => {
         signOut(auth)
           .then(() => {
             console.log('Sign out successful');
-            navigator('/');
+            window.location.replace('/');
           })
           .catch((error) => {
             console.error('Error signing out:', error);
@@ -44,9 +45,10 @@ export default function UserProfile() {
       useEffect(() => {
         const getUserProfilePicture = async () => {
           const unsubscribe = onAuthStateChanged(auth, async (user) => {
-            const uid = user.uid;
-            const userRef = doc(firestore, "Users", uid);
+            
             if (user) {
+              const uid = user.uid;
+              const userRef = doc(firestore, "Users", uid);
               try {
                 const docSnap = await getDoc(userRef);
                 if (docSnap.exists) {
@@ -57,6 +59,8 @@ export default function UserProfile() {
                   const university = data.selectedUniversity;
                   setFname(fname);
                   setLname(lname);
+                  setOriginalFname(fname);
+                  setOriginalLname(lname);
                   setEmail(email);
                   setUniversity(university);
                 } else {
@@ -79,13 +83,115 @@ export default function UserProfile() {
         const unsubscribe = getUserProfilePicture();
         return() => unsubscribe;
       }, []);
+
       const handleFnameChange = (event) => {
         setFname(event.target.value);
       };
       const handleLnameChange = (event) => {
         setLname(event.target.value);
       }
+    
+      const handleSave = async () => {
+        try {
+          const user = auth.currentUser;
+          const userDocRef = doc(firestore, 'Users', user.uid);
+          await updateDoc(userDocRef, {
+            fname: fname,
+            lname: lname,
+          }, { merge: true }); 
+          console.log('Data updated successfully');
+          alert("Data updated successfully!");
+        } catch (error) {
+          console.error('Error updating data:', error);
+          // Handle error updating data
+        }
+      }
 
+      const handleReset = () => {
+        setFname(originalFname); 
+        setLname(originalLname); 
+      }
+
+      const handlePictureUpload = async (e) => {
+        try {
+          // Get the selected file:
+          const file = e.target.files[0];
+      
+          if (!file) {
+            throw new Error('Please select a file to upload.');
+          }
+      
+          const user = auth.currentUser; // Retrieve the currently logged-in user's ID
+          const fileName = `ProfilePic`;
+      
+          const storageRef = ref(storage, `user_profile_pictures/${user.uid}/${fileName}`);
+          const compressedImage = await new Promise((resolve, reject) => {new Compressor(file, {
+            quality: 0.6, 
+            maxWidth: 800, 
+            maxHeight: 800, 
+            success(result) {
+              resolve(result);
+            },
+            error(error) {
+              reject(error);
+            },
+          });
+        });
+          
+      
+          const task = await uploadBytesResumable(storageRef, compressedImage); 
+      
+          const downloadURL = await getDownloadURL(task.ref); 
+      
+          setProfilePictureUrl(downloadURL);
+      
+          console.log('Picture uploaded successfully!');
+      
+        } catch (error) {
+          console.error('Error uploading picture:', error);
+        }
+      };
+
+      const handleDelete = async () => {
+        const user = auth.currentUser;
+
+        if (user) {
+        const providers = user.providerData.map((userInfo) => userInfo.providerId);
+        // Display a confirmation popup
+        const confirmed = window.confirm('Are you sure you want to delete your account? This action cannot be undone.');
+      
+        if (confirmed) {
+          try {
+            const method = providers.includes('password') ? 'email' : providers.includes('google.com') ? 'google' : null;
+
+            if (method === 'email') {
+              // Re-authenticate using email and password
+              const password = prompt('Please enter your password:');
+              const credentials = EmailAuthProvider.credential(user.email, password);
+              await reauthenticateWithCredential(user, credentials);
+            } else if (method === 'google') {
+              // Re-authenticate using Google authentication
+              const googleAuthProvider = new GoogleAuthProvider();
+              await reauthenticateWithPopup(user, googleAuthProvider);
+            } else {
+              console.log('No re-authentication method available');
+              return;
+            }
+
+            // Delete user account and associated document
+            await deleteUser(user);
+            await deleteDoc(doc(firestore, 'Users', user.uid));
+            alert("Account deleted!");
+            console.log('User account deleted successfully');
+          } catch (error) {
+            console.error('Error deleting user account:', error);
+          }
+        } else {
+          console.log('User account deletion cancelled');
+        }
+        window.location.replace('/');
+      }
+      }
 
     return (
         <div className="userProfile" style={{ minHeight: '100vh' }}>
@@ -109,7 +215,7 @@ export default function UserProfile() {
           >
             <Card>
               <Box sx={{ mb: 1 }}>
-                <Typography level="title-lg">Personal info</Typography>
+                <Typography level="title-lg">Personal Information</Typography>
               </Box>
               <Divider />
               <Stack
@@ -140,7 +246,15 @@ export default function UserProfile() {
                       boxShadow: 'sm',
                     }}
                   >
-                    <EditRoundedIcon />
+                    <label htmlFor="file-upload">
+                      <EditRoundedIcon />
+                    </label>
+                    <input
+                      id="file-upload"
+                      type="file"
+                      style={{ display: 'none' }}
+                      onChange={handlePictureUpload}
+                    />
                   </IconButton>
                 </Stack>
                 <Stack spacing={2} sx={{ flexGrow: 1 }}>
@@ -156,7 +270,7 @@ export default function UserProfile() {
                   <Stack direction="row" spacing={2}>
                     <FormControl>
                       <FormLabel>University</FormLabel>
-                      <Input size="sm" value={university} disabled/>
+                      <Input size="sm" value={university} placeholder="University" disabled/>
                     </FormControl>
                     <FormControl sx={{ flexGrow: 1 }}>
                       <FormLabel>Email</FormLabel>
@@ -164,7 +278,7 @@ export default function UserProfile() {
                         size="sm"
                         type="email"
                         startDecorator={<EmailRoundedIcon />}
-                        placeholder="email"
+                        placeholder="Email"
                         value={email}
                         sx={{ flexGrow: 1 }}
                         disabled
@@ -223,7 +337,7 @@ export default function UserProfile() {
                 </Stack>
                 <FormControl>
                   <FormLabel>University</FormLabel>
-                  <Input size="sm" value={university} />
+                  <Input size="sm" value={university} placeholder="University" disabled/>
                 </FormControl>
                 <FormControl sx={{ flexGrow: 1 }} >
                   <FormLabel>Email</FormLabel>
@@ -231,7 +345,7 @@ export default function UserProfile() {
                     size="sm"
                     type="email"
                     startDecorator={<EmailRoundedIcon />}
-                    placeholder="email"
+                    placeholder="Email"
                     value={email}
                     sx={{ flexGrow: 1 }}
                     disabled
@@ -240,10 +354,10 @@ export default function UserProfile() {
               </Stack>
               <CardOverflow sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
                 <CardActions sx={{ alignSelf: 'flex-end', pt: 2 }}>
-                  <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px'}}>
-                    Cancel
+                  <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px'}} onClick={handleReset}>
+                    Reset
                   </Button>
-                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black'}}>
+                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black'}} onClick={handleSave}>
                     Save
                   </Button>
                 </CardActions>
@@ -261,7 +375,7 @@ export default function UserProfile() {
               <CardOverflow sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
                 <CardActions sx={{ alignSelf: 'flex-end', pt: 2 }}>
                   <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px'}}>
-                    Cancel
+                    Reset
                   </Button>
                   <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black'}}>
                     Save
@@ -271,7 +385,10 @@ export default function UserProfile() {
             </Card>
           </Stack>
         </Box>
-          <Button onClick={logOut} sx={{borderRadius: '20px'}}>Logout</Button>
+        <div style={{display:'flex',justifyContent:'center', paddingBottom:'20px', gap:'10px'}}>
+          <Button onClick={logOut} color="danger" sx={{borderRadius: '20px', padding: '0 30px'}}>Logout</Button>
+          <Button variant="outlined" color="danger" sx={{borderRadius: '20px', padding: '0 30px'}} onClick={handleDelete}>Delete Account</Button>
+        </div>
         </div>
     )
 }

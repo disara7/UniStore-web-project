@@ -16,7 +16,7 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
-import { auth, signInWithEmailAndPassword, provider, signInWithPopup } from '../../../src/FirebaseConfig/firebase';
+import { auth, signInWithEmailAndPassword, provider, signInWithPopup,doc,firestore,getDoc,setDoc,collection } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
@@ -79,8 +79,23 @@ export default function Login() {
 
   const signInWithGoogle = async (e) => {
     try{
-      await signInWithPopup(auth, provider);
-      navigate('/');
+      const result = await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      const userDocRef = doc(firestore, 'Users', user.uid);
+      const userDocSnapshot = await getDoc(userDocRef);
+      if(userDocSnapshot.exists()){
+        navigate('/');
+      } else {
+        const user = result.user;
+        const username = user.email;
+        // Handle successful sign-in
+        const userRef = doc(collection(firestore, 'Users'), user.uid);
+        await setDoc(userRef, {
+          username,
+        });
+        console.log("Successfully created Account!");
+        navigate('/Finish');
+      }
     } catch {
       console.log(e);
     }

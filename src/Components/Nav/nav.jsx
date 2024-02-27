@@ -110,7 +110,7 @@ const Nav = () => {
               </NavLink>
             <div className="cart-count">0</div>
           </div>
-          {auth.currentUser ? (
+          {auth.currentUser!==null ? (
             <div>
               <NavLink to='./UserProfile'>
                 <div className="icon-style">
