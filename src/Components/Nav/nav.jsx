@@ -4,6 +4,7 @@ import { BsCart2 } from 'react-icons/bs';
 import './nav.css';
 import logo_small from '../Assets/images/logo_small.png'
 import { FaRegUser } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 
 
 const Nav = () => {
@@ -39,11 +40,11 @@ const Nav = () => {
         </div>
         <div>
           <ul id="nav-list" className={clicked ? '#nav-list active': '#nav-list'}>
-            <li><a className={activedPath === '/' ? "active":""} href="./">Home</a></li>
-            <li><Link to='./Preloved'><a className={activedPath === '/Preloved' ? "active":""} href="./Preloved">PreLoved</a></Link></li>
-            <li><Link to='./CraftsWorld'><a className={activedPath === '/CraftsWorld' ? "active":""} href="./CraftsWorld">Craftsworld</a></Link></li>
-            <li><Link to='./About'><a className={activedPath === '/About' ? "active":""} href="./About">About</a></Link></li>
-            <li><Link to='./Contact'><a className={activedPath === '/Contact' ? "active":""} href="./Contact">Contact</a></Link></li>
+          <li><NavLink className={activedPath === '/' ? "active":""} to="/">Home</NavLink></li>
+            <li><NavLink className={activedPath === '/Preloved' ? "active":""} to="/Preloved">PreLoved</NavLink></li>
+            <li><NavLink className={activedPath === '/Craftsworld' ? "active":""} to="/CraftsWorld">CraftsWorld</NavLink></li>
+            <li><NavLink className={activedPath === '/About' ? "active":""} to="/About">About</NavLink></li>
+            <li><NavLink className={activedPath === '/Contact' ? "active":""} to="/Contact">Contact</NavLink></li>
           </ul>
         </div>
       </div>
