@@ -59,7 +59,7 @@ const Nav = () => {
   
     const unsubscribe = getUserProfilePicture();
   
-    return () => unsubscribe();
+    return () => unsubscribe;
   }, []);
 
   return (

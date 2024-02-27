@@ -14,7 +14,7 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
-import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider, signInWithPopup, fetchSignInMethodsForEmail } from '../../../src/FirebaseConfig/firebase';
+import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider, signInWithPopup } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
@@ -40,14 +40,6 @@ export default function CreateAccount() {
       return;
     }
     try {
-      const signInMethods = await fetchSignInMethodsForEmail(auth, username.value);
-    
-      if (signInMethods.length > 0) {
-        // Email is already in use, show an appropriate message
-        alert("Email is already in use");
-        return;
-      };
-
       const userCredential = await createUserWithEmailAndPassword(auth, username, password);
       const user = userCredential.user; 
       const userRef = doc(collection(firestore, 'Users'), user.uid);
@@ -57,9 +49,13 @@ export default function CreateAccount() {
       });
       console.log("Successfully created Account!");
       navigate('/Finish');
-    } catch (e) {
-      console.log(e);
-      alert("Invalid Username");
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Entered email already in use. Please try again with another email');
+      } else {
+        console.error(e);
+        
+      }
     } 
   };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import '../css/login.css';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
@@ -101,6 +102,23 @@ export default function Login() {
     }
   }
 
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    try {
+      const email = prompt('Please enter your email:');
+      if (email) {
+        await auth.sendPasswordResetEmail(email);
+        alert('Password reset email sent. Please check your email for further instructions.');
+      }
+    } catch (error) {
+      if (error.code === 'auth/user-not-found') {
+        alert('The entered email is not registered. Please check the email or create a new account.');
+      } else {
+        console.error('Error sending password reset email:', error);
+        alert('The entered email is registered with Google account.If not, please try again.');
+      }
+    }
+  };
 
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
@@ -285,7 +303,7 @@ export default function Login() {
                       alignItems: 'center',
                     }}
                   >
-                    <Link level="title-sm" href="#replace-with-a-link">
+                    <Link component={RouterLink} level="title-sm" href="#replace-with-a-link" onClick={handleResetPassword}>
                       Forgot your password?
                     </Link>
                   </Box>

@@ -4,7 +4,6 @@ import '../css/user.css';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Divider from '@mui/joy/Divider';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
@@ -194,9 +193,9 @@ export default function UserProfile() {
       }
 
     return (
-        <div className="userProfile" style={{ minHeight: '100vh' }}>
+        <div className="userProfile" style={{ minHeight: '100vh', bgcolor:'F7F7F7' }}>
             <Typography level="h2" component="h1" sx={{ mt: 1, mb: 2, pl: '5%', pt: 5, color: 'white' }}>
-            User Profile
+              My Account
             </Typography>
             <hr />
             <div className="bg"></div>
@@ -213,17 +212,16 @@ export default function UserProfile() {
               py: { xs: 2, md: 3 },
             }}
           >
-            <Card>
+            <Card variant="plain" sx={{ bgcolor: 'white' }}>
               <Box sx={{ mb: 1 }}>
                 <Typography level="title-lg">Personal Information</Typography>
               </Box>
-              <Divider />
               <Stack
                 direction="row"
                 spacing={3}
                 sx={{ display: { xs: 'none', md: 'flex' }, my: 1 }}
               >
-                <Stack direction="column" spacing={1}>
+                <Stack direction="column" spacing={1} sx={{height: 120}}>
                   <AspectRatio
                     ratio="1"
                     maxHeight={200}
@@ -242,7 +240,7 @@ export default function UserProfile() {
                       zIndex: 2,
                       borderRadius: '50%',
                       left: 100,
-                      top: 170,
+                      top: {sm: 100, md:150},
                       boxShadow: 'sm',
                     }}
                   >
@@ -311,12 +309,20 @@ export default function UserProfile() {
                         position: 'absolute',
                         zIndex: 2,
                         borderRadius: '50%',
-                        left: 85,
-                        top: 180,
+                        left: 90,
+                        top: 140,
                         boxShadow: 'sm',
                       }}
                     >
-                      <EditRoundedIcon />
+                      <label htmlFor="file-upload">
+                        <EditRoundedIcon />
+                      </label>
+                      <input
+                        id="file-upload"
+                        type="file"
+                        style={{ display: 'none' }}
+                        onChange={handlePictureUpload}
+                      />
                     </IconButton>
                   </Stack>
                   <Stack spacing={1} sx={{ flexGrow: 1 }}>
@@ -352,33 +358,31 @@ export default function UserProfile() {
                   />
                 </FormControl>
               </Stack>
-              <CardOverflow sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
-                <CardActions sx={{ alignSelf: 'flex-end', pt: 2 }}>
-                  <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px'}} onClick={handleReset}>
-                    Reset
-                  </Button>
-                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black'}} onClick={handleSave}>
+              <CardOverflow>
+                <CardActions sx={{ justifyContent:'center', pt: 2 }}>
+                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black',p:'0 30px'}} onClick={handleSave}>
                     Save
+                  </Button>
+                  <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px', p:'0 30px'}} onClick={handleReset}>
+                    Reset
                   </Button>
                 </CardActions>
               </CardOverflow>
             </Card>
-            <Card>
+            <Card variant="plain" sx={{ bgcolor: 'white' }}>
+            <Box sx={{ mb: 1 }}>
+                <Typography level="title-lg">Seller</Typography>
+              </Box>
               <Box sx={{ mb: 1 }}>
-                <Typography level="title-md">Seller</Typography>
                 <Typography level="body-sm">
-                  Something
+                  Elevate your entrepreneurial journey and expand your reach with <b>UniStore</b>, the ultimate platform for university undergraduates to showcase and sell their creations, while also offering a marketplace for preloved items, promoting sustainability and reducing waste.
                 </Typography>
               </Box>
-              <Divider />
               
-              <CardOverflow sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
-                <CardActions sx={{ alignSelf: 'flex-end', pt: 2 }}>
-                  <Button size="sm" variant="outlined" color="neutral" sx={{borderRadius: '20px'}}>
-                    Reset
-                  </Button>
-                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px', bgcolor:'black'}}>
-                    Save
+              <CardOverflow>
+                <CardActions sx={{ alignSelf: 'flex-start', pt: 2 }}>
+                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px',p:'0 30px' , bgcolor:'black',minWidth: '150px',maxWidth: '200px',}}>
+                    Become a Seller
                   </Button>
                 </CardActions>
               </CardOverflow>
