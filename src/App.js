@@ -17,29 +17,28 @@ import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
 import Payment from './Pages/Payment/payment';
-
-
-
+import SellerNav from './SellerSide/SellerComponents/SellerNav';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-       
-        {/* <Nav/> */}
+        {/* <SellerNav/> */}
+        <Nav/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/preloved' element={<Preloved category="preloved"/>}/>
-          <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
-          <Route path='/about' element={<About />}/>
-          <Route path='/contact' element={<Contact />}/>
-          <Route path="/Product/:productId" element={<Product />} />
-          <Route path='/cart' element={<Cart/>}/> 
-          <Route path='/login' element={<Login/>}/> 
-          <Route path='/createaccount' element={<CreateAccount/>}/> 
-          <Route path='/finish' element={<Finish/>}/>
-          <Route path='/Payment' element={<Payment />}/>
-             
+          <Route path='/'>
+            <Route index element={<Home/>}/>
+            <Route path='/preloved' element={<Preloved category="preloved"/>}/>
+            <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
+            <Route path='/about' element={<About />}/>
+            <Route path='/contact' element={<Contact />}/>
+            <Route path="/Product/:productId" element={<Product />} />
+            <Route path='/cart' element={<Cart/>}/> 
+            <Route path='/login' element={<Login/>}/> 
+            <Route path='/createaccount' element={<CreateAccount/>}/> 
+            <Route path='/finish' element={<Finish/>}/>
+            <Route path='/Payment' element={<Payment />}/>
+          </Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
