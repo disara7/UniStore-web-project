@@ -131,10 +131,10 @@ const Nav = () => {
           )}
 
         </div>
-        <div id='mobile' onClick={handleClick}>
+        <div id='mobile' onClick={handleClick} style={{cursor:'pointer'}}>
           <i id='bar' className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          <div className={clicked ? 'mobileOverlay active' : 'mobileOverlay'} onClick={handleClick}></div>
         </div>
-        <div className={clicked ? 'mobileOverlay active' : 'mobileOverlay'} onClick={handleClick}></div>
       </div>
     </div>
 

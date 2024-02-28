@@ -3,9 +3,9 @@ import './preloved.css'
 import Searchbar from '../../../Components/searchbar/searchbar'
 import PlFilter from '../../../Components/filter/plfilter'
 import Item from '../../../Components/items/item'
-import data_product from '../../../Components/Assets/preloved_items'
+// import data_product from '../../../Components/Assets/preloved_items'
 import all_items from '../../../Components/Assets/all_items'
-import { FaSort } from "react-icons/fa";
+// import { FaSort } from "react-icons/fa";
 
 
 const Preloved = () => {

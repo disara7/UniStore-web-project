@@ -15,10 +15,10 @@ import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
-import Item from './Components/items/item';
-import ProductDisplay from './Components/ProductDisplay/product_display';
-import unistorecontextProvider from './Context/unistorecontext';
-import Payment from './Pages/Payment/payment';
+// import Item from './Components/items/item';
+// import ProductDisplay from './Components/ProductDisplay/product_display';
+// import unistorecontextProvider from './Context/unistorecontext';
+// import Payment from './Pages/Payment/payment';
 
 
 function App() {
