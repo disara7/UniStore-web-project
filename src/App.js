@@ -13,12 +13,12 @@ import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
 import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
+import UserProfile from './Pages/home/user';
+import BecomeSeller from './Pages/createseller';
 import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
 import Payment from './Pages/Payment/payment';
-
-
 
 
 function App() {
@@ -29,17 +29,20 @@ function App() {
         <Nav/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/preloved' element={<Preloved category="preloved"/>}/>
-          <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
-          <Route path='/about' element={<About />}/>
-          <Route path='/contact' element={<Contact />}/>
-          <Route path="/Product/:productId" element={<Product />} />
-          <Route path='/cart' element={<Cart/>}/> 
-          <Route path='/login' element={<Login/>}/> 
-          <Route path='/createaccount' element={<CreateAccount/>}/> 
-          <Route path='/finish' element={<Finish/>}/>
-          <Route path='/Payment' element={<Payment />}/>
-             
+          <Route path='/Preloved' element={<Preloved category="preloved"/>}/>
+          <Route path='/CraftsWorld' element={<CraftsWorld category="craftsworld"/>}/>
+          <Route path='/About' element={<About />}/>
+          <Route path='/Contact' element={<Contact />}/>
+          <Route path='/Product' element={<Product />}>
+            <Route path=':productId' element={<Product/>} />
+          </Route>
+          <Route path='/Cart' element={<Cart/>}/> 
+          <Route path='/Login' element={<Login/>}/> 
+          <Route path='/CreateAccount' element={<CreateAccount/>}/> 
+          <Route path='/Finish' element={<Finish/>}/>   
+          <Route path='/UserProfile' element={<UserProfile/>}/>
+          <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
+
         </Routes>
         <Footer/>
       </BrowserRouter>
