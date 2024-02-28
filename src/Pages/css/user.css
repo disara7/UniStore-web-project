@@ -1,5 +1,5 @@
 .userProfile{
-    padding-top:60px;
+    padding-top:100px;
     
 }
 .bg{
@@ -9,4 +9,10 @@
     position: absolute;
     top: 0;
     z-index: -1;
+}
+.userProfile .btn{
+    display: '';
+}
+.sellerCard{
+    display: '';
 }

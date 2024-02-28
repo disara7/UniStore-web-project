@@ -19,6 +19,7 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import { onAuthStateChanged,ref,storage,getDownloadURL,getDoc,doc,uploadBytesResumable,deleteUser,reauthenticateWithCredential,EmailAuthProvider,GoogleAuthProvider,reauthenticateWithPopup } from "../../FirebaseConfig/firebase";
 import profilePic from '../../Components/Assets/images/user.png'
 import Compressor from "compressorjs";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function UserProfile() {
@@ -29,6 +30,7 @@ export default function UserProfile() {
     const [university, setUniversity] = useState('');
     const [originalFname, setOriginalFname] = useState('');
     const [originalLname, setOriginalLname] = useState('');
+    const navigate = useNavigate();
 
     const logOut = () => {
         signOut(auth)
@@ -48,6 +50,14 @@ export default function UserProfile() {
             if (user) {
               const uid = user.uid;
               const userRef = doc(firestore, "Users", uid);
+              const sellerDoc = await getDoc(doc(firestore, 'Sellers', uid));
+              if (sellerDoc.exists) {
+                document.querySelector('.userProfile .btn').style.display = 'block';
+                document.querySelector('.sellerCard').style.display = 'none';
+              } else {
+                document.querySelector('.userProfile .btn').style.display = 'none';
+                document.querySelector('.sellerCard').style.display = 'block';
+              }
               try {
                 const docSnap = await getDoc(userRef);
                 if (docSnap.exists) {
@@ -191,13 +201,19 @@ export default function UserProfile() {
         window.location.replace('/');
       }
       }
-
+    
+    const handleBecomeSeller = () => {
+        navigate('/BecomeSeller');
+    }
+    
     return (
         <div className="userProfile" style={{ minHeight: '100vh', bgcolor:'F7F7F7' }}>
-            <Typography level="h2" component="h1" sx={{ mt: 1, mb: 2, pl: '5%', pt: 5, color: 'white' }}>
-              My Account
-            </Typography>
-            <hr />
+            <Box sx={{display: 'flex',flexDirection:'row', justifyContent: 'space-between',alignContent:'center',alignItems:'center',p:{md:'0 80px', xs:'0 20px'} }}>
+              <Typography level="h2" component="h1" sx={{ mt: 1, mb: 2, color: 'white',fontSize:{xs:'28px',md:'36px'} }}>
+                My Account
+              </Typography>
+              <Button className='btn' variant="plain" sx={{borderRadius: '20px', padding: '0 20px', bgcolor: 'white', color: 'black',height:'30px'}} >Seller Dashboard</Button>
+            </Box>
             <div className="bg"></div>
             
         <Box sx={{ flex: 1, width: '100%' }}>
@@ -369,7 +385,7 @@ export default function UserProfile() {
                 </CardActions>
               </CardOverflow>
             </Card>
-            <Card variant="plain" sx={{ bgcolor: 'white' }}>
+            <Card className='sellerCard' variant="plain" sx={{ bgcolor: 'white' }}>
             <Box sx={{ mb: 1 }}>
                 <Typography level="title-lg">Seller</Typography>
               </Box>
@@ -381,7 +397,7 @@ export default function UserProfile() {
               
               <CardOverflow>
                 <CardActions sx={{ alignSelf: 'flex-start', pt: 2 }}>
-                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px',p:'0 30px' , bgcolor:'black',minWidth: '150px',maxWidth: '200px',}}>
+                  <Button size="sm" variant="solid" color="neutral" sx={{borderRadius: '20px',p:'0 30px' , bgcolor:'black',minWidth: '150px',maxWidth: '200px',}} onClick={handleBecomeSeller}>
                     Become a Seller
                   </Button>
                 </CardActions>

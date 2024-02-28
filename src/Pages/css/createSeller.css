@@ -1,0 +1,77 @@
+.inputbox{
+    display: flex;
+    gap: 5rem;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+  .login-icons{
+    position: absolute;
+    top: 30%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: grey;
+    right: 1rem; 
+    transform: translateY(-50%);
+  }
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(12, 12, 12);
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    /* color: grey; */
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label,
+  .login-box .user-box textarea:focus ~ label,
+  .login-box .user-box textarea:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: grey;
+    font-size: 12px;
+  }
+
+  .login-box .user-box textarea {
+    width: 100%;
+    resize: none;
+    height: auto;
+    max-width: auto;
+    min-height: 100px;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(12, 12, 12);
+    outline: none;
+    background: transparent;
+    color: black;
+  }

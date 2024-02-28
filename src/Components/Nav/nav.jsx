@@ -16,7 +16,8 @@ const Nav = () => {
   const isLoginOrRegister =
     window.location.pathname.startsWith('/Login') ||
     window.location.pathname.startsWith('/CreateAccount') ||
-    window.location.pathname.startsWith('/Finish');
+    window.location.pathname.startsWith('/Finish') || 
+    window.location.pathname.startsWith('/BecomeSeller');
   const [profilePictureUrl, setProfilePictureUrl] = useState(profilePic);
   const location = useLocation();
   const [activedPath, setActivedPath] = useState('/');

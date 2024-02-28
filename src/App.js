@@ -13,6 +13,7 @@ import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
 import UserProfile from './Pages/home/user';
+import BecomeSeller from './Pages/createseller';
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
           <Route path='/Login' element={<Login/>}/> 
           <Route path='/CreateAccount' element={<CreateAccount/>}/> 
           <Route path='/Finish' element={<Finish/>}/>   
-          <Route path='/UserProfile' element={<UserProfile/>}/>    
+          <Route path='/UserProfile' element={<UserProfile/>}/>
+          <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
         </Routes>
         <Footer/>
       </BrowserRouter>

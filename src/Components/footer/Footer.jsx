@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
     let location = useLocation();
 
-    const hideFooterOnPages = ['/Login', '/CreateAccount', '/Finish'];
+    const hideFooterOnPages = ['/Login', '/CreateAccount', '/Finish','/BecomeSeller'];
     const shouldHideFooter = hideFooterOnPages.includes(location.pathname);
     
     if (shouldHideFooter) {
