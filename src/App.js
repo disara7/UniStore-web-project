@@ -18,13 +18,16 @@ import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
 import Payment from './Pages/Payment/payment';
 import SellerNav from './SellerSide/SellerComponents/SellerNav';
+import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
+import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
+import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        {/* <SellerNav/> */}
-        <Nav/>
+       
+        {/* <Nav/> */}
         <Routes>
           <Route path='/'>
             <Route index element={<Home/>}/>
@@ -37,8 +40,12 @@ function App() {
             <Route path='/login' element={<Login/>}/> 
             <Route path='/createaccount' element={<CreateAccount/>}/> 
             <Route path='/finish' element={<Finish/>}/>
-            <Route path='/Payment' element={<Payment />}/>
+            <Route path='/Payment' element={<Payment />}/>         
+          <Route path='/sellerdashboard/About' element={<About/>}/> 
           </Route>
+          <Route path='/sellerdashboard' element={<SellerDashboard/>}/>       
+          <Route path='/sellerdashboard/SellerStatistic' element={<SellerStatistic/>}/> 
+          <Route path='/sellerdashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>    
         </Routes>
         <Footer/>
       </BrowserRouter>
