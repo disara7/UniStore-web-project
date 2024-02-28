@@ -9,6 +9,7 @@ import profilePic from '../../Components/Assets/images/user.png'
 import { NavLink,useLocation } from 'react-router-dom';
 
 
+
 const Nav = () => {
   // const [menu, setMenu] = useState('Home');
   const [clicked,setClicked]= useState(false);

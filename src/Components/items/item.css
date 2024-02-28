@@ -19,6 +19,7 @@
 
 i {
     font-size: 18px;
+    margin-left: 4rem;
 }
 
 .item_name {
@@ -35,6 +36,7 @@ i {
     justify-content: space-evenly;
     gap: 10px;
     text-align: left;
+    margin-left: -1rem;
 }
 
 .bottomPart {
@@ -62,6 +64,8 @@ i {
     transform: scale(1.05);
     transition: 0.6s;
 }
+
+
 
 
 /*============ Samsung Galaxy A51/71, S20 Ultra, 

@@ -4,6 +4,7 @@ import Searchbar from '../../../Components/searchbar/searchbar'
 import CwFilter from '../../../Components/filter/cwfilter'
 import Item from '../../../Components/items/item'
 import data_product from '../../../Components/Assets/preloved_items'
+import all_items from '../../../Components/Assets/all_items'
 
 const CraftsWorld = () => {
   return (
@@ -25,9 +26,15 @@ const CraftsWorld = () => {
 
       </div>
       <div className="right">
-      {data_product.map((item, i)=>{
-                return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-            })}
+        {all_items.map((item, i)=>{
+                if (item.category==="craftsworld"){
+                  return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+              }
+              else {
+                  return null;
+              }}
+            )}
+          
 
       </div>
 

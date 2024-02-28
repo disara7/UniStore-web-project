@@ -23,6 +23,12 @@ const CwFilter = () => {
         </ul>
         <div className="price-filter">
           <h2>Price</h2>
+          <div className="price">
+            <input type="text" placeholder='LKR'/>
+            <p className='dash'>-</p>
+            <input type="text" placeholder='LKR'/>
+            <button>OK</button>
+          </div>
         </div>
     </div>
   )

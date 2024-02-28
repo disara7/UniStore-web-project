@@ -4,8 +4,9 @@ import Home from './Pages/home/home';
 import Preloved from './Pages/home/Preloved/preloved';
 import About from './Pages/about';
 import Contact from './Pages/contact';
-import Product from './Pages/home/product';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Product from './Pages/home/product';
 import Cart from './Pages/home/cart';
 import Login from './Pages/home/login';
 import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
@@ -14,12 +15,17 @@ import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
+import Item from './Components/items/item';
+import ProductDisplay from './Components/ProductDisplay/product_display';
+import unistorecontextProvider from './Context/unistorecontext';
+import Payment from './Pages/Payment/payment';
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+       
         <Nav/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -36,6 +42,7 @@ function App() {
           <Route path='/Finish' element={<Finish/>}/>   
           <Route path='/UserProfile' element={<UserProfile/>}/>
           <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
+
         </Routes>
         <Footer/>
       </BrowserRouter>

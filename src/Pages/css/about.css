@@ -1,0 +1,83 @@
+/* .about {
+    margin-top: 5rem;
+    padding: 5rem;
+} */
+
+.about h1 {
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.intro p{
+    text-align: center;
+    width: 70%;
+    margin-left: 20%;
+    padding: 2rem;
+    color: white;
+}
+
+.about h2 {
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+}
+
+.about h3 {
+    padding-bottom: 1rem;
+}
+
+.about p {
+    padding-bottom: 5rem;
+    width: 60%;
+    /* text-align: justify; */
+ } 
+
+ .intro {
+    background-image: linear-gradient(to bottom, rgba(244, 185, 27, 0.64), rgba(64, 130, 66, 0.64)),url('../../Components/Assets/images/signin.png');
+    background-position: 50% 15%;
+    height: 58vh;
+    padding-top: 7rem;
+ }
+
+ .team {
+    margin-left: 14%;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .about .topic {
+    color: black;
+    font-size: 2rem;
+    padding: 3rem;
+ }
+
+ .team img{
+    width: 28vh;
+    border-radius: 10rem;
+ }
+
+ .card {
+    margin-right: 5rem;
+    width: max-content;
+    justify-content: center;
+    
+ }
+
+ .card p {
+    width: max-content;
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+ }
+
+ .social-media{
+    margin-top: -4rem;
+    font-size: 1.5rem;
+    text-align: center;
+    
+ }
+
+ .social-media p{
+
+ }

@@ -36,3 +36,34 @@
 .filter h3{
     font-size: 1rem;
 }
+
+.price {
+    color: grey;
+    display: flex;
+    flex-direction: row;
+}
+
+.price input{
+    width: 5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    text-align: left;
+}
+
+.dash{
+    margin-left: 0.7rem;
+    margin-top: 0.4rem;
+    font-weight: 600;
+    color: black;
+    margin-right: 0.7rem;
+}
+
+.price button {
+    background-color: black;
+    color: white;
+    width: 4rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    font-weight: 600;
+}

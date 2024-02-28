@@ -1,0 +1,35 @@
+.Recommended {
+    position: relative;
+    margin-top: -24.5rem;
+    height: 70vh;
+    margin-left: 32%;
+    background-color: white;
+    width: 65%;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Recommended h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-left: 2.5rem;
+}
+
+.recommended-items {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .Recommended {
+        position: relative;
+        margin-top: 5%;
+        height: 70vh;
+        margin-left: 1rem;
+        width: 78%;
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,122 @@
+.productdisplay {
+    height:65vh;
+    display: flex;
+    background-color: #F6F6F6;
+}
+
+.productdisplay-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.productdisplay-img-list{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+.productdisplay-list-img {
+    width: 20vh;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.productdisplay-main-img {
+    width: 60vh;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.productdisplay-right {
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.productdisplay-right h1{
+    padding-bottom: 1rem;
+    width: 85%;
+}
+
+.productdisplay-right p{
+    padding-top: 1rem;
+    width: 84%;
+}
+
+.add-to-cart {
+    background-color: #F5CD2A;
+    color: white;
+    border-color: transparent;
+    padding: 1rem;
+    border-radius: 1.8rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 600;
+    width: 12rem;
+}
+
+.productdisplay-right .price{
+    display: flex;
+    flex-direction: row;
+}
+
+.prices{
+    display: flex;
+}
+
+.prices h2{
+    font-size: 1.8rem;
+}
+
+.prices h3 {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    color: grey;
+    text-decoration: line-through;
+}
+.product-images{
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .product-images{
+        display: flex;
+        flex-direction: column;
+    }
+    .productdisplay-img-list{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1rem;
+    }
+    
+    .productdisplay-list-img {
+        width: 12vh;
+    }
+    
+    .productdisplay-main-img {
+        width: 35.8vh;
+        margin-left: 1rem;
+    }
+    .productdisplay {
+        display: flex;
+        flex-direction: column;
+    }
+    .productdisplay-right h1{
+        font-size: 1.5rem;
+        padding-bottom: 0.8rem;
+        width: 85%;
+    }
+    
+    .productdisplay-right p{
+        padding-top: 1rem;
+        width: 81%;
+        text-align: justify;
+    }
+    .prices{
+        margin-top: -0.5rem;
+    }
+    .add-to-cart {
+        margin-top: 2rem;
+        width: 12rem;
+        margin-left: 15%;
+    }
+}
