@@ -5,6 +5,21 @@ import './SellerNav.css';
 import logo_small from '../../Components/Assets/images/logo_small.png'
 import { FaRegUser } from "react-icons/fa";
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
+import { grey } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { useNavigate } from "react-router-dom";
+
+
+const theme = createTheme({
+  palette: {
+    primary:{
+      main:'#ffffff',
+    }
+  },
+});
 
 
 const SellerNav = () => {
@@ -16,7 +31,7 @@ const SellerNav = () => {
   }
   
   const {pathname} = useLocation();
-
+  const navigate = useNavigate();
   return (
     <div className="sellernav-menu">
       <div className='left-part'>
@@ -36,12 +51,12 @@ const SellerNav = () => {
       <div className='right-part'>
         <div className="sellernav-button">
           <div>
-              <a href='./Cart'>
-                <div className="icon-style">
-                  <BsCart2 />
-                </div>
-              </a>
-            <div className="cart-count">0</div>
+            <ThemeProvider theme={theme}>
+              <Button variant="outlined" startIcon={<CloudUploadOutlinedIcon />}
+              onClick={() => navigate("/sellerdashboard/SellerUploadProduct")}>
+                 Upload
+              </Button>
+            </ThemeProvider>
           </div>
           <div>
               <a href='./Login'>

@@ -28,6 +28,7 @@ function App() {
       <BrowserRouter>
        
         {/* <Nav/> */}
+        {/* <SellerNav/> */}
         <Routes>
           <Route path='/'>
             <Route index element={<Home/>}/>
