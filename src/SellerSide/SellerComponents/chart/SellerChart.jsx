@@ -29,10 +29,10 @@ const data = [
 const SellerChart = () => {
   return (
     <div className="chart">
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
           width={500}
-          height={300}
+          height={400}
           data={data}
           margin={{
             top: 5,
