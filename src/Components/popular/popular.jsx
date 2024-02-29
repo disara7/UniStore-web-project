@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './popular.css';
 import data_product from '../Assets/data';
 import Item from '../items/item';
@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {Autoplay, Navigation, Pagination, EffectCards } from 'swiper/modules';
+import {Autoplay, Navigation, Pagination} from 'swiper/modules';
 
 
 const Popular = () => {
@@ -29,10 +29,6 @@ const Popular = () => {
           500: {
             slidesPerView: 1,
             spaceBetween: 30,
-          },
-          500: {
-            slidesPerView: 2,
-            spaceBetween: 50,
           },
           768: {
             slidesPerView: 3,
