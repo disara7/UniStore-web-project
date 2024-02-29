@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate,NavLink } from 'react-router-dom';
 import '../css/login.css';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import { formLabelClasses } from '@mui/joy/FormLabel';
 import { CssVarsProvider,extendTheme  } from '@mui/joy/styles';
@@ -14,12 +14,69 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
+import { auth, firestore, createUserWithEmailAndPassword, collection, doc, setDoc, provider, signInWithPopup } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
 export default function CreateAccount() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
+  
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(password !== confirmPassword){
+      alert("Passwords do not match");
+      return;
+    }
+    if(username === '' || password === '' || confirmPassword === '') {
+      alert("Please fill in all fields");
+      return;
+    }
+    if(password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return;
+    }
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+      const user = userCredential.user; 
+      const userRef = doc(collection(firestore, 'Users'), user.uid);
+
+      await setDoc(userRef, {
+        username,
+      });
+      console.log("Successfully created Account!");
+      navigate('/Finish');
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Entered email already in use. Please try again with another email');
+      } else {
+        console.error(e);
+        
+      }
+    } 
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      const username = user.email;
+      // Handle successful sign-in
+      const userRef = doc(collection(firestore, 'Users'), user.uid);
+      await setDoc(userRef, {
+        username,
+      });
+      console.log("Successfully created Account!");
+      navigate('/Finish');
+    } catch (error) {
+      // Handle errors
+      console.error('Error signing in:', error);
+    }
+  };
+
 
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
@@ -89,8 +146,8 @@ export default function CreateAccount() {
                 <Typography level="h1">Create an Account</Typography>
                 <Typography level="body-sm">
                   Already have an account?{' '}
-                  <Link href="/Login" level="title-sm">
-                    Login!
+                  <Link  level="title-sm">
+                    <NavLink to="/Login" style={{ textDecoration: 'none' }}>Login!</NavLink> 
                   </Link>
                 </Typography>
               </Stack>
@@ -102,6 +159,7 @@ export default function CreateAccount() {
                 sx={{
                   borderRadius: '20px'
                 }}
+                onClick={handleGoogleSignIn}
               >
                 Continue with Google
               </Button>
@@ -121,7 +179,7 @@ export default function CreateAccount() {
             <Stack gap={4} sx={{ mt: 2 }}>
               <Box className='login-box'>
               <form
-                onSubmit={{Link:'/Finish'}}
+                onSubmit={handleSubmit}
               >
               <div className="user-box">
               <div className="inputbox" style={{color: {xs:'white', md:'black'}}}>
@@ -154,24 +212,15 @@ export default function CreateAccount() {
                 <input
                     type="password"
                     name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                   />
                   <label>Confirm Password</label>
                 </div>
                 </div>
                 <Stack gap={4} sx={{ mt: 2 }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Checkbox size="sm" label="Remember me" name="persistent" />
-                    
-                  </Box>
+                  
                   <Button color="neutral" type="submit" fullWidth
                   sx={
                     {
@@ -191,7 +240,7 @@ export default function CreateAccount() {
       <Box
         sx={{
           height: '100%',
-          position: 'absolute',
+          position: 'fixed',
           right: 0,
           top: 0,
           bottom: 0,

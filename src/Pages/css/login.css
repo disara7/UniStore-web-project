@@ -122,6 +122,17 @@
     color: grey;
     font-size: 12px;
   }
+  .login-box .user-box .university-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+    /* Other styles as needed */
+  }
   
   /* .login-box form a {
     position: relative;
