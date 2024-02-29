@@ -17,7 +17,7 @@ import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import unistorecontextProvider from './Context/unistorecontext';
 import Payment from './Pages/Payment/payment';
-import SellerNav from './SellerSide/SellerComponents/SellerNav';
+import SellerNav from './SellerSide/SellerComponents/SellerNav/SellerNav';
 import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
 import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';

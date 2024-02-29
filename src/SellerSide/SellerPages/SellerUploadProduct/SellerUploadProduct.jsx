@@ -1,10 +1,10 @@
 import React from 'react'
-import SellerNav from '../../SellerComponents/SellerNav'
-import './SellerUploadProduct.css'
-import SellerDropdownMenu from '../../SellerComponents/SellerDropdownMenu'
-import Textarea from '@mui/joy/Textarea';
+import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
+import "./SellerUploadProduct.css";
+import SellerDropdownMenu from "../../SellerComponents/DropdownMenu/SellerDropdownMenu";
+import Textarea from "@mui/joy/Textarea";
 import Input from "@mui/joy/Input";
-import DragDropImageUploader from '../../SellerComponents/DragDropImageUploader';
+import DragDropImageUploader from "../../SellerComponents/DragDropImage/DragDropImageUploader";
 
 const options = ['Option 11', 'Option 22'];
 const options2 = ['Option 121', 'Option 222'];

@@ -1,17 +1,15 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { red } from '@mui/material/colors';
-import './SellerDropdownMenu.css'
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { red } from "@mui/material/colors";
+import "./SellerDropdownMenu.css";
 
-
-
-export default function SellerDropdownMenu({options,isDisabled}) {
-  const [value, setValue] = React.useState('');
-  const [inputValue, setInputValue] = React.useState('');
+export default function SellerDropdownMenu({ options, isDisabled }) {
+  const [value, setValue] = React.useState("");
+  const [inputValue, setInputValue] = React.useState("");
 
   return (
-    <div className='test'>
+    <div className="test">
       {/* <div>{`value: ${value !== null ? `'${value}'` : 'null'}`}</div>
       <div>{`inputValue: '${inputValue}'`}</div>
       <br /> */}
@@ -28,14 +26,16 @@ export default function SellerDropdownMenu({options,isDisabled}) {
         options={options}
         disabled={isDisabled}
         sx={{ width: 300 }}
-        renderInput={(params) => <TextField
+        renderInput={(params) => (
+          <TextField
             {...params}
             label="Select"
             className="autocomplete-input"
             InputLabelProps={{
-              className: 'autocomplete-label',
+              className: "autocomplete-label",
             }}
-          />}
+          />
+        )}
       />
     </div>
   );
