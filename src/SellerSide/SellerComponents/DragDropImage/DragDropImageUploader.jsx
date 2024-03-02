@@ -1,4 +1,4 @@
-import { upload } from "@testing-library/user-event/dist/upload";
+
 import "./DragDropImageUploader.css";
 import React, { useState, useRef } from "react";
 

@@ -1,11 +1,10 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { red } from "@mui/material/colors";
 import "./SellerDropdownMenu.css";
 
 export default function SellerDropdownMenu({ options, isDisabled }) {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState(options[0] || null);
   const [inputValue, setInputValue] = React.useState("");
 
   return (
