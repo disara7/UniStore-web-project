@@ -32,7 +32,7 @@ const Item = (props) => {
           <Typography variant="body2" color="text.secondary">
             {props.new_price}
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+          <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through',fontSize:'12px' }}>
             {props.old_price}
           </Typography>
           <div className="itemIcon">
