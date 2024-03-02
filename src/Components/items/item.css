@@ -17,7 +17,7 @@
     max-width: 300px;
 }
 
-i {
+.itemIcon i {
     font-size: 18px;
     margin-left: 4rem;
 }
@@ -65,71 +65,6 @@ i {
     transition: 0.6s;
 }
 
-
-
-
-/*============ Samsung Galaxy A51/71, S20 Ultra, 
-  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
-  /* @media screen and (min-width: 360px) and (max-width: 412px) {
-    .item img {
-        width: 180px;
-    }
-    
-    .item {
-        width: 190px;        
-    }
-    
-    .item_name{
-        margin: 0rem 0rem;
-    }
-
-    .item-price {
-        display: flex;
-        gap: 10px;
-        padding-left: 0.3rem;
-    }
-    
-    .new-price,.old-price {
-        font-size: 12px;
-    }
-
-    .item_name {
-        font-size: 12px;
-    }
-} */
-
-
-/*============ Surface Pro 7, iPad Mini 
-  iPad Pro, iPad Air =============*/
-
-  /* @media screen and (min-width: 540px) and (max-width: 1024px){
-    .item img {
-        width: 240px;
-    }
-    
-    .item {
-        width: 250px;        
-    }
-    
-    .item_name{
-        margin: 0rem 0rem;
-    }
-
-    .item-price {
-        display: flex;
-        gap: 10px;
-        padding-left: 0.3rem;
-    }
-    
-    .new-price,.old-price {
-        font-size: 16px;
-    }
-
-    .item_name {
-        font-size: 16px;
-    }
-} */
 @media screen and (max-width: 320px){
     .item img {
         width: 180px;
@@ -145,8 +80,9 @@ i {
     }
 
     .bottomPart i{
-        padding-left: 14px;
+        padding-left: 0;
     }
+
     
     .new-price,.old-price,.item_name {
         font-size: 14px;
@@ -158,6 +94,9 @@ i {
         width: 180px;
         
     }
+    .itemIcon i {
+        margin-left: 0rem;
+    }
     
     .item {
         width: 200px;        
@@ -168,7 +107,10 @@ i {
     }
 
     .bottomPart i{
-        padding-left: 14px;
+        padding-left: 0px;
+    }
+    .bottomPart {
+        gap: 10px;
     }
     
     .new-price,.old-price,.item_name {

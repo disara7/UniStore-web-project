@@ -1,84 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './popular.css';
 import data_product from '../Assets/data';
 import Item from '../items/item';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import {Autoplay, Navigation, Pagination, EffectCards } from 'swiper/modules';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { Typography } from '@mui/material';
 
 
-const Popular = () => {
 
+function Popular() {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1024 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 800 },
+      items: 4
+    },
+    tablet: {
+      breakpoint: { max: 800, min: 464 },
+      items: 3
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
     <div className='popular'>
-      <h1>Top Picks for You</h1>
+      <Typography variant="h1">Top Picks for You</Typography>
       <hr />
-      <Swiper
-        // spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        breakpoints={{
-          500: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          500: {
-            slidesPerView: 2,
-            spaceBetween: 50,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-          940:{
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-          992: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-          1200:{
-            slidesPerView:3,
-            spaceBetween: 50
-          },
-          1280:{
-            slidesPerView:4,
-            spaceBetween: 50
-          },
-          1440:{
-            slidesPerView:4,
-            spaceBetween: 50
-          }
-        }}
-        // navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
+      <Carousel 
+        responsive={responsive} 
+        containerClass="carousel-container" 
+        itemClass="carousel-item" 
+        autoPlay={true} 
+        autoPlaySpeed={3000}
+        showDots={false}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        infinite={true}
+        >
         {data_product.map((item, i) => (
-        <SwiperSlide key={i}>
-          <Item
-            key={i}
-            id={item.id}
-            name={item.name}
-            image={item.image}
-            new_price={item.new_price}
-            old_price={item.old_price}
-          />
-        </SwiperSlide>
-      ))}
-        
-      </Swiper>
+          <div className="slide" key={i}>
+            <Item
+              id={item.id}
+              name={item.name}
+              image={item.image}
+              new_price={item.new_price}
+              old_price={item.old_price}
+            />
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
 
-export default Popular
+export default Popular;

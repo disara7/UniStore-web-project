@@ -50,6 +50,12 @@
     padding: 0;
     margin: 0;
 }
+.b::before{
+  background-color: black;
+}
+.buttons .herobtn .Btn:hover{
+  color: white;
+}
 
 @media screen and (max-width: 320px) {
     .content {

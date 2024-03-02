@@ -21,6 +21,12 @@ import SellerNav from './SellerSide/SellerComponents/SellerNav/SellerNav';
 import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
 import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
+import UserProfile from './Pages/home/user';
+import BecomeSeller from './Pages/createseller';
+// import Item from './Components/items/item';
+// import ProductDisplay from './Components/ProductDisplay/product_display';
+// import unistorecontextProvider from './Context/unistorecontext';
+// import Payment from './Pages/Payment/payment';
 
 function App() {
   return (
@@ -30,23 +36,25 @@ function App() {
         {/* <Nav/> */}
         {/* <SellerNav/> */}
         <Routes>
-          <Route path='/'>
-            <Route index element={<Home/>}/>
-            <Route path='/preloved' element={<Preloved category="preloved"/>}/>
-            <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
-            <Route path='/about' element={<About />}/>
-            <Route path='/contact' element={<Contact />}/>
-            <Route path="/Product/:productId" element={<Product />} />
-            <Route path='/cart' element={<Cart/>}/> 
-            <Route path='/login' element={<Login/>}/> 
-            <Route path='/createaccount' element={<CreateAccount/>}/> 
-            <Route path='/finish' element={<Finish/>}/>
-            <Route path='/Payment' element={<Payment />}/>         
-          <Route path='/sellerdashboard/About' element={<About/>}/> 
+          <Route path='/' element={<Home/>}/>
+          <Route path='/Preloved' element={<Preloved category="preloved"/>}/>
+          <Route path='/CraftsWorld' element={<CraftsWorld category="craftsworld"/>}/>
+          <Route path='/About' element={<About />}/>
+          <Route path='/Contact' element={<Contact />}/>
+          <Route path='/Product' element={<Product />}>
+            <Route path=':productId' element={<Product/>} />
           </Route>
+          <Route path='/Cart' element={<Cart/>}/> 
+          <Route path='/Login' element={<Login/>}/> 
+          <Route path='/CreateAccount' element={<CreateAccount/>}/> 
+          <Route path='/Finish' element={<Finish/>}/>   
+          <Route path='/UserProfile' element={<UserProfile/>}/>
+          <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
+          <Route path='/Payment' element={<Payment />}/>         
+          <Route path='/sellerdashboard/About' element={<About/>}/> 
           <Route path='/sellerdashboard' element={<SellerDashboard/>}/>       
           <Route path='/sellerdashboard/SellerStatistic' element={<SellerStatistic/>}/> 
-          <Route path='/sellerdashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>    
+          <Route path='/sellerdashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
