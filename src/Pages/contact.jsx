@@ -53,32 +53,32 @@ const Contact = () => {
             </div>
             
           </div>
-          <div class="col-sm-6">
-      <div class="input-block">
+          <div className="col-sm-6">
+      <div className="input-block">
         <label for="">Last Name</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block">
+    <div className="col-sm-12">
+      <div className="input-block">
         <label for="">Email</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block">
+    <div className="col-sm-12">
+      <div className="input-block">
         <label for="">Message Subject</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block textarea">
+    <div className="col-sm-12">
+      <div className="input-block textarea">
         <label for="">Drop your message here</label>
-        <textarea rows="3" type="text" class="form-control"></textarea>
+        <textarea rows="3" type="text" className="form-control"></textarea>
       </div>
     </div>
-    <div class="col-sm-12">
-      <button class="square-button">Send</button>
+    <div className="col-sm-12">
+      <button className="square-button">Send</button>
       </div> 
           {/* ... other form fields ... */}
         </form>
