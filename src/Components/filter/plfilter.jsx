@@ -1,13 +1,13 @@
 import React from 'react'
 import './filter.css'
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 const PlFilter = () => {
   return (
     <div className='filter'>
         <h2>Categories</h2>
         <ul>
-          <li><h3><Link>Luggage and Bags</Link></h3></li>
+          <li><h3>Luggage and Bags</h3></li>
           <ul className='sub-list'>
             <li>Wallet & ID Holder</li>
             <li>Backpacks</li>
