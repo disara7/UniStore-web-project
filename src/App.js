@@ -20,15 +20,17 @@ import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerSta
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
-// import Item from './Components/items/item';
-// import ProductDisplay from './Components/ProductDisplay/product_display';
-// import unistorecontextProvider from './Context/unistorecontext';
-// import Payment from './Pages/Payment/payment';
+
+import Item from './Components/items/item';
+import ProductDisplay from './Components/ProductDisplay/product_display';
+import UnistorecontextProvider from './Context/unistorecontextProvider';
+import Payment from './Pages/Payment/payment';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <UnistorecontextProvider>
        
         <Nav/>
         {/* <SellerNav/> */}
@@ -54,6 +56,7 @@ function App() {
           <Route path='/SellerDashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>
         </Routes>
         <Footer/>
+        </UnistorecontextProvider>
       </BrowserRouter>
     </div>
   );
