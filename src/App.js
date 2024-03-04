@@ -29,6 +29,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+      <UnistorecontextProvider>
        
         <Nav/>
         {/* <SellerNav/> */}
@@ -54,6 +55,7 @@ function App() {
           <Route path='/SellerDashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>
         </Routes>
         <Footer/>
+        </UnistorecontextProvider>
       </BrowserRouter>
     </div>
   );
