@@ -17,7 +17,7 @@ import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
 import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
-import unistorecontextProvider from './Context/unistorecontext';
+import UnistorecontextProvider from './Context/unistorecontextProvider';
 import Payment from './Pages/Payment/payment';
 
 
@@ -25,6 +25,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+      <UnistorecontextProvider>
        
         <Nav/>
         <Routes>
@@ -45,6 +46,7 @@ function App() {
 
         </Routes>
         <Footer/>
+        </UnistorecontextProvider>
       </BrowserRouter>
     </div>
   );
