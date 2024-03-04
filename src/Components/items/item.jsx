@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -7,8 +8,10 @@ import Typography from '@mui/material/Typography';
 
 
 const Item = (props) => {
+  const { id, name, new_price, old_price, image } = props;
   
   return (
+    <Link to={`/Product/${id}`} style={{ textDecoration: 'none' }}>
         <Card sx={{ maxWidth: 300, borderRadius: 3, mb:1,mr:1, cursor:'pointer' }}>
         <CardMedia
           sx={{ height: {md:200, sm:150, xs:100} }}
@@ -40,6 +43,7 @@ const Item = (props) => {
           </div>
         </CardActions>
       </Card>
+      </Link>
   )
 }
 

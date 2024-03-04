@@ -24,7 +24,7 @@ import BecomeSeller from './Pages/createseller';
 import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import UnistorecontextProvider from './Context/unistorecontextProvider';
-import Payment from './Pages/Payment/payment';
+// import Payment from './Pages/Payment/payment';
 
 function App() {
   return (
@@ -49,7 +49,7 @@ function App() {
           <Route path='/Finish' element={<Finish/>}/>   
           <Route path='/UserProfile' element={<UserProfile/>}/>
           <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
-          <Route path='/Payment' element={<Payment />}/>         
+                   
           <Route path='/SellerDashboard/About' element={<About/>}/> 
           <Route path='/SellerDashboard' element={<SellerDashboard/>}/>       
           <Route path='/SellerDashboard/SellerStatistic' element={<SellerStatistic/>}/> 
