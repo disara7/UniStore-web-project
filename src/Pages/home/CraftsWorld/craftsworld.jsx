@@ -3,7 +3,7 @@ import './craftsworld.css'
 import Searchbar from '../../../Components/searchbar/searchbar'
 import CwFilter from '../../../Components/filter/cwfilter'
 import Item from '../../../Components/items/item'
-import data_product from '../../../Components/Assets/preloved_items'
+// import data_product from '../../../Components/Assets/preloved_items'
 import all_items from '../../../Components/Assets/all_items'
 
 const CraftsWorld = () => {
