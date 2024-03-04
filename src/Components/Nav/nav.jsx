@@ -18,7 +18,8 @@ const Nav = () => {
     window.location.pathname.startsWith('/Login') ||
     window.location.pathname.startsWith('/CreateAccount') ||
     window.location.pathname.startsWith('/Finish') || 
-    window.location.pathname.startsWith('/BecomeSeller');
+    window.location.pathname.startsWith('/BecomeSeller') ||
+    window.location.pathname.startsWith('/SellerDashboard');
   const [profilePictureUrl, setProfilePictureUrl] = useState(profilePic);
   const location = useLocation();
   const [activedPath, setActivedPath] = useState('/');
@@ -131,10 +132,10 @@ const Nav = () => {
           )}
 
         </div>
-        <div id='mobile' onClick={handleClick}>
+        <div id='mobile' onClick={handleClick} style={{cursor:'pointer'}}>
           <i id='bar' className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          <div className={clicked ? 'mobileOverlay active' : 'mobileOverlay'} onClick={handleClick}></div>
         </div>
-        <div className={clicked ? 'mobileOverlay active' : 'mobileOverlay'} onClick={handleClick}></div>
       </div>
     </div>
 

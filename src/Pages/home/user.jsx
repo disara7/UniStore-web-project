@@ -205,6 +205,9 @@ export default function UserProfile() {
     const handleBecomeSeller = () => {
         navigate('/BecomeSeller');
     }
+    const navigateToSeller = () => {
+      navigate('/SellerDashboard');
+    }
     
     return (
         <div className="userProfile" style={{ minHeight: '100vh', bgcolor:'F7F7F7' }}>
@@ -212,7 +215,7 @@ export default function UserProfile() {
               <Typography level="h2" component="h1" sx={{ mt: 1, mb: 2, color: 'white',fontSize:{xs:'28px',md:'36px'} }}>
                 My Account
               </Typography>
-              <Button className='btn' variant="plain" sx={{borderRadius: '20px', padding: '0 20px', bgcolor: 'white', color: 'black',height:'30px'}} >Seller Dashboard</Button>
+              <Button className='btn' variant="plain" sx={{borderRadius: '20px', padding: '0 20px', bgcolor: 'white', color: 'black',height:'30px'}} onClick={navigateToSeller}>Seller Dashboard</Button>
             </Box>
             <div className="bg"></div>
             
