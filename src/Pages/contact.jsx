@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './css/contact.css'; 
+import './css/contact.css';
+import './css/about.css';
 
 const Contact = () => {
   const [inputs, setInputs] = useState({
@@ -34,7 +35,11 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <h1>Contact Us</h1>
+      <div className="intro">
+        <h1>Contact Us</h1>
+        <p>Feel free to caontact the UniStore team for any feedback, suggestions, or queries through the following form. We appreciate your feedback. Thank you.</p>
+      </div>
+      
       <section className="contact-wrap">
         <form action="" className="contact-form">
           {/* ... other form fields ... */}
