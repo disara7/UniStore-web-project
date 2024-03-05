@@ -84,3 +84,12 @@
  .social-media p{
 
  }
+
+ @media screen and (max-width: 480px){
+   .intro p{
+      text-align: center;
+      width: 80%;
+      margin-bottom: 2rem;
+  }
+  
+ }
