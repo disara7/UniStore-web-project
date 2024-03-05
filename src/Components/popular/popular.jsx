@@ -6,8 +6,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Typography } from '@mui/material';
 
-
-
 function Popular() {
   const responsive = {
     superLargeDesktop: {
@@ -27,6 +25,9 @@ function Popular() {
       items: 1
     }
   };
+
+  const initialItemsToShow = 3;
+
   return (
     <div className='popular'>
       <Typography variant="h1">Top Picks for You</Typography>
@@ -36,11 +37,12 @@ function Popular() {
         containerClass="carousel-container" 
         itemClass="carousel-item" 
         autoPlay={true} 
-        autoPlaySpeed={3000}
+        autoPlaySpeed={1000}
         showDots={false}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         infinite={true}
-        >
+        partialVisible={initialItemsToShow}
+      >
         {data_product.map((item, i) => (
           <div className="slide" key={i}>
             <Item
@@ -55,6 +57,6 @@ function Popular() {
       </Carousel>
     </div>
   );
-};
+}
 
 export default Popular;
