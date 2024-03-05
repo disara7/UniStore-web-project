@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import styles from './item.module.css';
 
 
 const Item = (props) => {
@@ -12,9 +13,8 @@ const Item = (props) => {
   
   return (
     <Link to={`/Product/${id}`} style={{ textDecoration: 'none' }}>
-        <Card sx={{ maxWidth: 300, borderRadius: 3, mb:1,mr:1, cursor:'pointer' }}>
-        <CardMedia
-          sx={{ height: {md:200, sm:150, xs:100} }}
+        <Card className={styles.cardContainer}>
+        <CardMedia className={styles.cardImage}
           image={props.image}
           title={props.name}
         />
