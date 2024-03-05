@@ -1,21 +1,32 @@
-.item {
+/* .cardContainer {
+    width: 15rem;
+    max-width: 50rem; 
+    border-radius: 1rem; 
+    margin-bottom:1em; 
+    margin-right: 1.5rem; 
+    cursor: pointer;
+    padding: 0.5rem;
+} */
+
+.cardContainer {
     display: flex;
     flex-direction: column;
-    width: 310px;
+    width: 18rem;
     height: auto;
     border-radius: 10px;
-    padding: 6px;
+    padding: 0.5rem;
     background-color: white;  
     justify-content: center;
     align-items: center;
 }
 
-.item img {
-    padding: 5px;
-    padding-bottom: 0;
-    border-radius: 15px;
-    max-width: 300px;
+.cardImage {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 20rem;
+    height: 15rem;
 }
+
 
 .itemIcon i {
     font-size: 18px;
