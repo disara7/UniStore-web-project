@@ -8,6 +8,15 @@
     padding: 30px 40px;  
 }
 
+.carousel-item {
+  margin-right: 16%; /* Adjust the margin as needed */
+}
+
+.carousel-container {
+  max-width:65%; /* Adjust the maximum width as needed */
+  margin: auto; /* Center the carousel */
+}
+
 .popular h1 {
     color: #252525;
     font-size: 40px;
