@@ -5,10 +5,12 @@ import './nav.css';
 import logo_small from '../Assets/images/logo_small.png'
 import { FaRegUser } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+//import { unistorecontext } from '../../Context/unistorecontext';
 
 
 const Nav = () => {
   // const [menu, setMenu] = useState('Home');
+  //const {getTotalCartItems} = useContext(unistorecontext);
   const [clicked,setClicked]= useState(false);
   const [scrolled,setScrolled] = useState(false);
   const isLoginOrRegister =
@@ -56,7 +58,7 @@ const Nav = () => {
                   <BsCart2 />
                 </div>
               </a>
-            <div className="cart-count">0</div>
+           <div className="cart-count">0</div>
           </div>
           <div>
               <a href='./Login'>

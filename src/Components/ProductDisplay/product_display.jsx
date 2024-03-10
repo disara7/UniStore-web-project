@@ -1,18 +1,27 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './productdisplay.css';
 import { FaStar } from 'react-icons/fa6';
+import {UnistorecontextProvider} from '../../Context/unistorecontext';
+
 
 const ProductDisplay = ({ product }) => {
+ 
+  const {addToCart}= useContext(UnistorecontextProvider);
   const [selectedImage, setSelectedImage] = useState(product.image);
 
+  
   const handleImageClick = (newImage) => {
     setSelectedImage(newImage);
   };
+
   
+
   // Check if product is undefined or images is not an array
   if (!product ) {
     return <div>Loading or error message...</div>;
   }
+
+  
 
   return (
     <div className='productdisplay'>
@@ -52,7 +61,7 @@ const ProductDisplay = ({ product }) => {
           <FaStar color='grey' />
         </div>
         <p className='description'>{product.description}</p>
-        <button className='add-to-cart'>
+        <button className='add-to-cart' onClick={()=>{addToCart(product.id)}}>
         Add to Cart
       </button>
       </div>
