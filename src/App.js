@@ -13,7 +13,7 @@ import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
 import Footer from './Components/footer/Footer';
 import CreateAccount from './Pages/home/createaccount';
 import Finish from './Pages/home/signupfinish';
-import Payment from './Pages/Payment/payment';
+// import Payment from './Pages/Payment/payment';
 // import SellerNav from './SellerSide/SellerComponents/SellerNav/SellerNav';
 import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
 import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
