@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import UnistorecontextProvider from './Context/unistorecontext';
+// import UnistorecontextProvider from './Context/unistorecontextProvider';
 
-// Wrap your App component with the context provider
-const rootElement = document.getElementById('root');
-ReactDOM.render(
-  <UnistorecontextProvider>
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <>
     <App />
-  </UnistorecontextProvider>,
-  rootElement
+  </>
 );

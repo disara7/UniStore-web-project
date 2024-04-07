@@ -1,253 +1,111 @@
 .popular {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: auto; 
-    padding: 30px 40px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: auto; 
+  padding: 30px 40px;  
 }
 
 .popular h1 {
-    color: #252525;
-    font-size: 40px;
-    font-weight: 600;
-    margin-top: 1.5rem;
+  color: #252525;
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 1.5rem;
 }
 
 .popular hr {
-    width: 5rem;
-    height: 0.1px;
-    border-radius: 30px;
-    background: #252525;
-    margin-top: -1rem;
-    padding-bottom: 2px;
-    
+  width: 5rem;
+  height: 0.1px;
+  border-radius: 30px;
+  background: #252525;
+  margin-top: -1rem;
+  padding-bottom: 2px;
+  
 }
 
-.popular-item {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
+    
+
+@media screen and (max-width: 320px) {
+  .popular{
+      padding: 30px 50px; 
+  }
+  
+  .popular h1 {
+      font-size: 20px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 1rem;
+  }
+
+  
+}
+.carousel-container {
+  width: 90%;
 }
 
-/* .carousel-wrap {
-  margin: 90px auto;
-  padding: 0 5%;
-  width: 100%;
-  position: relative;
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .swiper{
+    height: 350px;
+  }
+ 
+  .popular h1 {
+      font-size: 22px;
+      padding-bottom: 1px;
+      text-align: center;
+  }
+
+  .popular hr {
+      width: 2rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .popular h1 {
+      font-size: 24px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 3rem;
+  }
+} 
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .popular h1 {
+      font-size: 28px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 3rem;
+  }
+} 
+
+
+
+
+  
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .popular h1 {
+      font-size: 32px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 4rem;
+  }
 }
 
+@media screen and (min-width: 1200px) and (min-width: 1440px) {
+  .popular h1 {
+      font-size: 40px;
+      padding-bottom: 1px;
+  }
 
-.owl-carousel .item {
-  position: relative;
-  z-index: 100; 
-  -webkit-backface-visibility: hidden; 
+  .popular hr {
+      width: 4rem;
+  }
 }
-
-
-.owl-nav > div {
-  margin-top: 26px;
-  position: absolute;
-  top: 50%;
-  color: #cdcbcd;
-}
-
-.owl-nav i {
-  font-size: 52px;
-}
-
-.owl-nav .owl-prev {
-  left: 30px;
-}
-
-.owl-nav .owl-next {
-  right: -30px;
-} */
-
-
-
-/*============ Samsung Galaxy A51/71, S20 Ultra, 
-  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
-  /* @media screen and (min-width: 360px) and (max-width: 412px) {
-    .popular{
-        padding: 0.5rem; 
-    }
-    
-    .popular h1 {
-        font-size: 20px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 1rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  
-    
-  }
-   */
-
-  /*============ Surface Pro 7, iPad Mini 
-  iPad Pro, iPad Air =============*/
-
-  /* @media screen and (min-width: 540px) and (max-width: 1024px) {
-   
-    .popular{
-        padding: 0.5rem; 
-    }
-    
-    .popular h1 {
-        font-size: 1.8rem;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 3rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  } */
-  .swiper {
-    width: 100%;
-    height: 460px;
-    
-  }
-  
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    background-color: transparent;
-  }
-  
-  
-  
-      
-  
-  @media screen and (max-width: 320px) {
-    .swiper{
-      height: 300px;
-    }
-    .popular{
-        padding: 30px 50px; 
-    }
-    
-    .popular h1 {
-        font-size: 20px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 1rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  
-    
-  }
-
-  @media screen and (min-width: 320px) and (max-width: 480px) {
-    .swiper{
-      height: 350px;
-    }
-   
-    .popular h1 {
-        font-size: 22px;
-        padding-bottom: 1px;
-        text-align: center;
-    }
-
-    .popular hr {
-        width: 2rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  }
-  @media screen and (min-width: 480px) and (max-width: 768px) {
-    .swiper{
-      height: 350px;
-    }
-    .popular h1 {
-        font-size: 24px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 3rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-
-    }
-  } 
-
-  @media screen and (min-width: 768px) and (max-width: 992px){
-    .swiper{
-      height: 380px;
-    }
-    .popular h1 {
-        font-size: 28px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 3rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-
-    }
-  } 
-  
-  
-
-
-    
-  @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .swiper{
-      height: 400px;
-    }
-    .popular h1 {
-        font-size: 32px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 4rem;
-    }
-
-    .popular-item {
-        gap: 20px;
-    }
-  }
-  
-  @media screen and (min-width: 1200px) and (min-width: 1440px) {
-    /* .swiper{
-      height: 450px;
-    } */
-    .popular h1 {
-        font-size: 40px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 4rem;
-    }
-  }

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { unistorecontext } from '../../Context/unistorecontext'
+import { unistorecontext } from '../../Context/unistorecontextProvider'
 import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs';
 import ProductDisplay from '../../Components/ProductDisplay/product_display';
@@ -12,6 +12,7 @@ import Recommended from '../../Components/Recommended/Recommended';
 const Product = () => {
   
   const {all_items} = useContext(unistorecontext);
+  console.log('all_items:', all_items);
   const {productId} = useParams();
   const product = all_items.find((e)=> e.id === Number(productId));
   return (

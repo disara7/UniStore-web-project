@@ -135,10 +135,7 @@
 
 
 
-/*============ Samsung Galaxy A51/71, S20 Ultra, 
-  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
-  @media screen and (min-width: 360px) and (max-width: 412px){
+  @media screen and (max-width: 480px){
     .sellernav-menu{
         padding: 1rem;
         width: auto;
@@ -201,14 +198,10 @@
 }
 
 
-
-/*============ Surface Pro 7, iPad Mini 
-  iPad Pro, iPad Air =============*/
-
-  @media screen and (min-width: 540px) and (max-width: 1024px)  {
+  @media screen and (max-width: 992px)  {
     .sellernav-menu{
         padding: 20px 60px;
-        width: auto;
+        width: 100%;
     }
     .sellernav-logo {
         display: flex;
@@ -229,7 +222,7 @@
        right: -300px;
        width: 300px;
        height: 100vh;
-       background: #F4B91B;
+       background: #000000;
        padding: 40px 0 0 20px;
        z-index: 1;
     }

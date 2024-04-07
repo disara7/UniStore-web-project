@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-// import { Link } from 'react-router-dom';
-import { BsCart2 } from "react-icons/bs";
 import "./SellerNav.css";
 import logo_small from "../../../Components/Assets/images/logo_small.png";
-import { FaRegUser } from "react-icons/fa";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
-import { grey } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useNavigate } from "react-router-dom";
@@ -71,26 +67,6 @@ const SellerNav = () => {
                 Products
               </Link>
             </li>
-            <li>
-              <Link
-                className={
-                  pathname === "/SellerDashboard/about" ? "active" : ""
-                }
-                to="/SellerDashboard/about"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={
-                  pathname === "/SellerDashboard/Contact" ? "active" : ""
-                }
-                to="/SellerDashboard/Contact"
-              >
-                Contact
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
@@ -101,18 +77,11 @@ const SellerNav = () => {
               <Button
                 variant="outlined"
                 startIcon={<CloudUploadOutlinedIcon />}
-                onClick={() => navigate("/sellerdashboard/SellerUploadProduct")}
+                onClick={() => navigate("/SellerDashboard/SellerUploadProduct")}
               >
                 Upload
               </Button>
             </ThemeProvider>
-          </div>
-          <div>
-            <a href="./Login">
-              <div className="icon-style">
-                <FaRegUser />
-              </div>
-            </a>
           </div>
         </div>
 

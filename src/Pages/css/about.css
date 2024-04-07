@@ -3,6 +3,8 @@
     padding: 5rem;
 } */
 
+
+
 .about h1 {
     color: white;
     text-align: center;
@@ -12,10 +14,11 @@
 
 .intro p{
     text-align: center;
-    width: 70%;
+    width: 80%;
     margin-left: 20%;
     padding: 2rem;
     color: white;
+    margin-bottom: 2rem;
 }
 
 .about h2 {

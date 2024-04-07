@@ -17,7 +17,7 @@
         /* width: 70%; */
         height: auto;
         background-color: white;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         margin: 20px;
         box-shadow: 0px 0px 38px -26px rgba(0,0,0,0.31);
@@ -61,6 +61,6 @@ h2{
 }
 hr{
     height: 0;
-      borderColor: "#C6C6C6";
+      color: "#C6C6C6";
       opacity: 0.2;
 }

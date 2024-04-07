@@ -15,8 +15,7 @@ const About = () => {
       
       <p >“UniStore” is an innovative online web-platform designed to foster a vibrant exchange within university 
     communities, aimed to promote sustainable reuse, and support small businesses owned by university 
-    undergraduates. UniStore comprises two separate sections: "Preloved" and "CraftsWorld," each 
-    dedicated to enhancing and supporting undergraduate experiences and their entrepreneurial endeavors.
+    undergraduates.
     </p>
 
       </div>
@@ -33,16 +32,16 @@ const About = () => {
         </div>
       </div>
       <div className="card">
-        <img src={member2} alt="" />
-        <p>Navindu Rathnayaka</p>
+        <img src={member3} alt="" />
+        <p>Dushyantha Thilakarathne</p>
         <div className="social-media">
           <BsLinkedin />
           <MdOutlineMail />
         </div>
       </div>
       <div className="card">
-        <img src={member3} alt="" />
-        <p>Dushyantha Thilakarathne</p>
+        <img src={member2} alt="" />
+        <p>Navindu Rathnayaka</p>
         <div className="social-media">
           <BsLinkedin />
           <MdOutlineMail />

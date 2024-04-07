@@ -9,10 +9,10 @@
         flex-wrap: wrap;
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 90%;
         height: auto;
         background-color: white;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         margin: 20px;
         box-shadow: 0px 0px 38px -26px rgba(0,0,0,0.31);
@@ -41,7 +41,7 @@
             display: flex;
             flex:1;
             align-items: center;
-            justify-content: end;
+            justify-content: flex-end;
             padding-right: 30px;
         }
 
@@ -67,7 +67,7 @@
         }
         hr{
             height: 0;
-              borderColor: "#C6C6C6";
+              color: "#C6C6C6";
               opacity: 0.2;
         }
     }
