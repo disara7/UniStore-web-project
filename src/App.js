@@ -20,15 +20,17 @@ import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerSta
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
-// import Item from './Components/items/item';
-// import ProductDisplay from './Components/ProductDisplay/product_display';
-// import unistorecontextProvider from './Context/unistorecontext';
+
+import Item from './Components/items/item';
+import ProductDisplay from './Components/ProductDisplay/product_display';
+import UnistorecontextProvider from './Context/unistorecontextProvider';
 // import Payment from './Pages/Payment/payment';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <UnistorecontextProvider>
        
         <Nav/>
         {/* <SellerNav/> */}
@@ -47,13 +49,14 @@ function App() {
           <Route path='/Finish' element={<Finish/>}/>   
           <Route path='/UserProfile' element={<UserProfile/>}/>
           <Route path='/BecomeSeller' element={<BecomeSeller/>}/>    
-          <Route path='/Payment' element={<Payment />}/>         
+                   
           <Route path='/SellerDashboard/About' element={<About/>}/> 
           <Route path='/SellerDashboard' element={<SellerDashboard/>}/>       
           <Route path='/SellerDashboard/SellerStatistic' element={<SellerStatistic/>}/> 
           <Route path='/SellerDashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>
         </Routes>
         <Footer/>
+        </UnistorecontextProvider>
       </BrowserRouter>
     </div>
   );
