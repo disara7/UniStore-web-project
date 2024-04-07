@@ -31,6 +31,9 @@ const SellerDashboard = () => {
           <SellerChart />
         </div>
       </div>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <button className="Btng">Switch to Buyer</button>
+      </Link>
     </div>
   );
 };
