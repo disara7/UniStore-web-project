@@ -25,7 +25,7 @@ import Item from './Components/items/item';
 import ProductDisplay from './Components/ProductDisplay/product_display';
 import UnistorecontextProvider from './Context/unistorecontextProvider';
 
-import Payment from './Pages/Payment/payment';
+
 
 
 function App() {
