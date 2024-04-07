@@ -1,0 +1,111 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: auto; 
+  padding: 30px 40px;  
+}
+
+.popular h1 {
+  color: #252525;
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.popular hr {
+  width: 5rem;
+  height: 0.1px;
+  border-radius: 30px;
+  background: #252525;
+  margin-top: -1rem;
+  padding-bottom: 2px;
+  
+}
+
+    
+
+@media screen and (max-width: 320px) {
+  .popular{
+      padding: 30px 50px; 
+  }
+  
+  .popular h1 {
+      font-size: 20px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 1rem;
+  }
+
+  
+}
+.carousel-container {
+  width: 90%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .swiper{
+    height: 350px;
+  }
+ 
+  .popular h1 {
+      font-size: 22px;
+      padding-bottom: 1px;
+      text-align: center;
+  }
+
+  .popular hr {
+      width: 2rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .popular h1 {
+      font-size: 24px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 3rem;
+  }
+} 
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .popular h1 {
+      font-size: 28px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 3rem;
+  }
+} 
+
+
+
+
+  
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .popular h1 {
+      font-size: 32px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-width: 1440px) {
+  .popular h1 {
+      font-size: 40px;
+      padding-bottom: 1px;
+  }
+
+  .popular hr {
+      width: 4rem;
+  }
+}
