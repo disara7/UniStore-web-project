@@ -11,7 +11,7 @@ const options2 = ['Option 121', 'Option 222'];
 
 const SellerUploadProduct = () => {
   const [isDisabled,setisDisabled] =React.useState(true);
-  const [selectedRadioBtn, setselectedRadioBtn] = React.useState('radio1');
+  const [selectedRadioBtn, setselectedRadioBtn] = React.useState('');
   const isRadioSelected = (value) => selectedRadioBtn===value;
   const handleRadioClick = (e) => {
     setselectedRadioBtn(e.currentTarget.value);
@@ -35,6 +35,7 @@ const SellerUploadProduct = () => {
               <h3>Item Type:</h3>
               <div className="itemTypeBtn">
               <div className="btnOption">
+                <label>
                 <input 
                   type='radio'
                   name='radioreact'
@@ -43,9 +44,11 @@ const SellerUploadProduct = () => {
                   onChange={handleRadioClick}
                   onClick={onClick}
                 />
-                <h4 id='usedItem'>Used Item</h4>
+                  Used Item
+                </label>
               </div>
               <div className="btnOption">
+                <label>
                 <input 
                   type='radio'
                   name='radioreact'
@@ -54,7 +57,8 @@ const SellerUploadProduct = () => {
                   onChange={handleRadioClick}
                   onClick={onClick2}
                 />    
-               <h4>Hand Craft</h4>
+                Hand Craft
+               </label>
               </div>
               </div>
           </div>
@@ -78,7 +82,7 @@ const SellerUploadProduct = () => {
           </div>
         </div>
         <div className="section">
-          <div className="uploadImages">
+          <div className="uploadImages" style={{width:'100%'}}>
             <h3>Upload Image(s):</h3>
             <DragDropImageUploader/>
           </div>
