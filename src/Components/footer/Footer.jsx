@@ -3,8 +3,19 @@ import './footer.css'
 import { BsInstagram } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    let location = useLocation();
+
+    const hideFooterOnPages = ['/Login', '/CreateAccount', '/Finish','/BecomeSeller'];
+    const shouldHideFooter = hideFooterOnPages.includes(location.pathname);
+    
+    if (shouldHideFooter) {
+        return null;
+    } 
+    
+    
   return (
     <div className='footer'>
         <div className="footer-logo">

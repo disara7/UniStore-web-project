@@ -33,16 +33,16 @@ const About = () => {
         </div>
       </div>
       <div className="card">
-        <img src={member2} alt="" />
-        <p>Navindu Rathnayaka</p>
+        <img src={member3} alt="" />
+        <p>Dushyantha Thilakarathne</p>
         <div className="social-media">
           <BsLinkedin />
           <MdOutlineMail />
         </div>
       </div>
       <div className="card">
-        <img src={member3} alt="" />
-        <p>Dushyantha Thilakarathne</p>
+        <img src={member2} alt="" />
+        <p>Navindu Rathnayaka</p>
         <div className="social-media">
           <BsLinkedin />
           <MdOutlineMail />

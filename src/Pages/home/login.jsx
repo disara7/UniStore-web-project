@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import '../css/login.css';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import { formLabelClasses } from '@mui/joy/FormLabel';
 import { CssVarsProvider,extendTheme  } from '@mui/joy/styles';
@@ -16,12 +17,108 @@ import GoogleIcon from './GoogleIcon';
 import CssBaseline from '@mui/joy/CssBaseline';
 import signInBg from '../../Components/Assets/images/signin.png';
 import logo from '../../Components/Assets/images/logo.png'
+import { auth, signInWithEmailAndPassword, provider, signInWithPopup,doc,firestore,getDoc,setDoc,collection } from '../../../src/FirebaseConfig/firebase';
 
 const theme = extendTheme({ cssVarPrefix: 'demo' });
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit= async (e) => {
+    e.preventDefault();
+    if (!isValidEmail(username)) {
+      alert("Invalid email format");
+      return;
+    }
+    if(username === '' || password === '') {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    try{
+      await signInWithEmailAndPassword(auth, username, password);
+      navigate('/');
+    } catch (e) {
+      console.log(e);
+      alert("Invalid Username or Password");
+    }
+  };
+  function isValidEmail(email) {
+    // Check presence of "@" symbol
+    if (!email.includes('@')) {
+      return false;
+    }
+
+    // Split email address into parts before and after "@" symbol
+    const [username, domain] = email.split('@');
+
+    // Check if username is empty
+    if (!username) {
+      return false;
+    }
+
+    // Check if domain is empty or contains only a dot
+    if (!domain || domain === '.') {
+      return false;
+    }
+
+    // Check allowed characters in username and domain
+    const allowedChars = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/;
+    if (!allowedChars.test(username) || !allowedChars.test(domain)) {
+      return false;
+    }
+
+    // Check domain length (at least 2 characters after the dot)
+    const domainParts = domain.split('.');
+    if (domainParts.length < 2 || domainParts.some(part => part.length < 1)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  const signInWithGoogle = async (e) => {
+    try{
+      const result = await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      const userDocRef = doc(firestore, 'Users', user.uid);
+      const userDocSnapshot = await getDoc(userDocRef);
+      if(userDocSnapshot.exists()){
+        navigate('/');
+      } else {
+        const user = result.user;
+        const username = user.email;
+        // Handle successful sign-in
+        const userRef = doc(collection(firestore, 'Users'), user.uid);
+        await setDoc(userRef, {
+          username,
+        });
+        console.log("Successfully created Account!");
+        navigate('/Finish');
+      }
+    } catch {
+      console.log(e);
+    }
+  }
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    try {
+      const email = prompt('Please enter your email:');
+      if (email) {
+        await auth.sendPasswordResetEmail(email);
+        alert('Password reset email sent. Please check your email for further instructions.');
+      }
+    } catch (error) {
+      if (error.code === 'auth/user-not-found') {
+        alert('The entered email is not registered. Please check the email or create a new account.');
+      } else {
+        console.error('Error sending password reset email:', error);
+        alert('The entered email is registered with Google account.If not, please try again.');
+      }
+    }
+  };
 
   return (
     <CssVarsProvider defaultMode='light' theme={theme} colorSchemeSelector="#dark-mode" modeStorageKey="dark-mode" disableTransitionOnChange>
@@ -39,7 +136,7 @@ export default function Login() {
       <Box
         sx={{
           height: '100vh',
-          position: 'absolute',
+          position: 'fixed',
           right: 'clamp(0px, (100vw - var(--Collapsed-breakpoint)) * 999, 100vw - var(--Cover-width))',
           top: 0,
           bottom: 0,
@@ -131,8 +228,8 @@ export default function Login() {
                 <Typography level="h1">Login</Typography>
                 <Typography level="body-sm">
                   Are you new?{' '}
-                  <Link href="/CreateAccount" level="title-sm">
-                    Sign up!
+                  <Link  level="title-sm">
+                    <NavLink to="/CreateAccount" style={{ textDecoration: 'none' }}>Sign Up!</NavLink> 
                   </Link>
                 </Typography>
               </Stack>
@@ -144,6 +241,7 @@ export default function Login() {
                 sx={{
                   borderRadius: '20px'
                 }}
+                onClick={signInWithGoogle}
               >
                 Continue with Google
               </Button>
@@ -163,16 +261,7 @@ export default function Login() {
             <Stack gap={4} sx={{ mt: 2 }}>
               <Box className='login-box'>
               <form
-                // onSubmit={(event: React.FormEvent<SignInFormElement>) => {
-                //   event.preventDefault();
-                //   const formElements = event.currentTarget.elements;
-                //   const data = {
-                //     email: formElements.email.value,
-                //     password: formElements.password.value,
-                //     persistent: formElements.persistent.checked,
-                //   };
-                //   alert(JSON.stringify(data, null, 2));
-                // }}
+                onSubmit={handleSubmit}
               >
               <div className="user-box">
               <div className="inputbox" style={{color: {xs:'white', md:'black'}}}>
@@ -210,12 +299,11 @@ export default function Login() {
                   <Box
                     sx={{
                       display: 'flex',
-                      justifyContent: 'space-between',
+                      justifyContent: 'flex-end',
                       alignItems: 'center',
                     }}
                   >
-                    <Checkbox size="sm" label="Remember me" name="persistent" />
-                    <Link level="title-sm" href="#replace-with-a-link">
+                    <Link component={RouterLink} level="title-sm" href="#replace-with-a-link" onClick={handleResetPassword}>
                       Forgot your password?
                     </Link>
                   </Box>

@@ -16,7 +16,8 @@
     
 }
 .nav-menu.active{
-    background: linear-gradient(to right,#F4B91B,#408242);
+    background: linear-gradient(to right, rgba(244, 185, 27, 0.8), rgba(64, 130, 66, 0.8));
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .nav-menu.hidden{
     display: none;
@@ -40,18 +41,18 @@
     color: white;
 }
 
-#nav-list li a {
+#nav-list li span {
     color: white;
     text-decoration: none; 
     transition: 0.3s ease-in-out;
   }
-  #nav-list li a:hover,
-  #nav-list li a.active{
+  #nav-list li span:hover,
+  #nav-list li span.active{
     font-weight: 600;
     
 }
-#nav-list li a:hover::after,
-#nav-list li a.active::after{
+#nav-list li span:hover::after,
+#nav-list li span.active::after{
     content: "";
     width: 5px;
     height: 5px;
