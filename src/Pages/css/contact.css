@@ -1,6 +1,23 @@
 .contact h1 {
-    margin-top: 7rem;
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
 }
+
+.intro {
+    height: 50vh;
+}
+
+.intro p{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    padding: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
 .contact-form{
     margin-top: 2rem;
     .input-block{

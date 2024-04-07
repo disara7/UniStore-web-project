@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './css/contact.css'; 
+import './css/contact.css';
+import './css/about.css';
 
 const Contact = () => {
   const [inputs, setInputs] = useState({
@@ -34,7 +35,11 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <h1>Contact Us</h1>
+      <div className="intro">
+        <h1>Contact Us</h1>
+        <p>Feel free to caontact the UniStore team for any feedback, suggestions, or queries through the following form. We appreciate your feedback. Thank you.</p>
+      </div>
+      
       <section className="contact-wrap">
         <form action="" className="contact-form">
           {/* ... other form fields ... */}
@@ -53,32 +58,32 @@ const Contact = () => {
             </div>
             
           </div>
-          <div class="col-sm-6">
-      <div class="input-block">
+          <div className="col-sm-6">
+      <div className="input-block">
         <label for="">Last Name</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block">
+    <div className="col-sm-12">
+      <div className="input-block">
         <label for="">Email</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block">
+    <div className="col-sm-12">
+      <div className="input-block">
         <label for="">Message Subject</label>
-        <input type="text" class="form-control" />
+        <input type="text" className="form-control" />
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="input-block textarea">
+    <div className="col-sm-12">
+      <div className="input-block textarea">
         <label for="">Drop your message here</label>
-        <textarea rows="3" type="text" class="form-control"></textarea>
+        <textarea rows="3" type="text" className="form-control"></textarea>
       </div>
     </div>
-    <div class="col-sm-12">
-      <button class="square-button">Send</button>
+    <div className="col-sm-12">
+      <button className="square-button">Send</button>
       </div> 
           {/* ... other form fields ... */}
         </form>

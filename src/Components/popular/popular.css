@@ -2,9 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     width: auto; 
     padding: 30px 40px;  
+}
+
+.carousel-item {
+  margin-right: 16%; /* Adjust the margin as needed */
+}
+
+.carousel-container {
+  max-width:65%; /* Adjust the maximum width as needed */
+  margin: auto; /* Center the carousel */
 }
 
 .popular h1 {
@@ -23,122 +33,10 @@
     padding-bottom: 2px;
     
 }
-
-.popular-item {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-}
-
-/* .carousel-wrap {
-  margin: 90px auto;
-  padding: 0 5%;
-  width: 100%;
-  position: relative;
-}
-
-
-.owl-carousel .item {
-  position: relative;
-  z-index: 100; 
-  -webkit-backface-visibility: hidden; 
-}
-
-
-.owl-nav > div {
-  margin-top: 26px;
-  position: absolute;
-  top: 50%;
-  color: #cdcbcd;
-}
-
-.owl-nav i {
-  font-size: 52px;
-}
-
-.owl-nav .owl-prev {
-  left: 30px;
-}
-
-.owl-nav .owl-next {
-  right: -30px;
-} */
-
-
-
-/*============ Samsung Galaxy A51/71, S20 Ultra, 
-  iPhone 12 Pro, Pixel 7, iPhone SE =============*/
-
-  /* @media screen and (min-width: 360px) and (max-width: 412px) {
-    .popular{
-        padding: 0.5rem; 
-    }
-    
-    .popular h1 {
-        font-size: 20px;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 1rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  
-    
-  }
-   */
-
-  /*============ Surface Pro 7, iPad Mini 
-  iPad Pro, iPad Air =============*/
-
-  /* @media screen and (min-width: 540px) and (max-width: 1024px) {
-   
-    .popular{
-        padding: 0.5rem; 
-    }
-    
-    .popular h1 {
-        font-size: 1.8rem;
-        padding-bottom: 1px;
-    }
-
-    .popular hr {
-        width: 3rem;
-    }
-
-    .popular-item {
-        gap: 10px;
-    }
-  } */
-  .swiper {
-    width: 100%;
-    height: 460px;
-    
-  }
-  
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    background-color: transparent;
-  }
-  
-  
   
       
   
   @media screen and (max-width: 320px) {
-    .swiper{
-      height: 300px;
-    }
     .popular{
         padding: 30px 50px; 
     }
@@ -151,12 +49,9 @@
     .popular hr {
         width: 1rem;
     }
-
-    .popular-item {
-        gap: 10px;
     }
-  
-    
+  .carousel-container {
+    width: 90%;
   }
 
   @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -173,15 +68,8 @@
     .popular hr {
         width: 2rem;
     }
-
-    .popular-item {
-        gap: 10px;
-    }
   }
   @media screen and (min-width: 480px) and (max-width: 768px) {
-    .swiper{
-      height: 350px;
-    }
     .popular h1 {
         font-size: 24px;
         padding-bottom: 1px;
@@ -190,17 +78,9 @@
     .popular hr {
         width: 3rem;
     }
-
-    .popular-item {
-        gap: 10px;
-
-    }
   } 
 
   @media screen and (min-width: 768px) and (max-width: 992px){
-    .swiper{
-      height: 380px;
-    }
     .popular h1 {
         font-size: 28px;
         padding-bottom: 1px;
@@ -209,11 +89,6 @@
     .popular hr {
         width: 3rem;
     }
-
-    .popular-item {
-        gap: 10px;
-
-    }
   } 
   
   
@@ -221,9 +96,6 @@
 
     
   @media screen and (min-width: 992px) and (max-width: 1200px) {
-    .swiper{
-      height: 400px;
-    }
     .popular h1 {
         font-size: 32px;
         padding-bottom: 1px;
@@ -232,16 +104,9 @@
     .popular hr {
         width: 4rem;
     }
-
-    .popular-item {
-        gap: 20px;
-    }
   }
   
   @media screen and (min-width: 1200px) and (min-width: 1440px) {
-    /* .swiper{
-      height: 450px;
-    } */
     .popular h1 {
         font-size: 40px;
         padding-bottom: 1px;

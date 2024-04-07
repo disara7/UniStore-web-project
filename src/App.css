@@ -42,7 +42,7 @@
   }
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   height: 0.5rem;
   width: 0.5rem;
 }
@@ -53,4 +53,4 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: yellowgreen;
-}
+} */
