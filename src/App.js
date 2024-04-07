@@ -18,6 +18,9 @@ import Finish from './Pages/home/signupfinish';
 import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
 import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
+
+import SellerProducts from "./SellerSide/SellerPages/SellerProducts/SellerProducts";
+
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
 
@@ -26,10 +29,12 @@ import BecomeSeller from './Pages/createseller';
 import UnistorecontextProvider from './Context/unistorecontextProvider';
 // import Payment from './Pages/Payment/payment';
 
+
 function App() {
   return (
     <div>
       <BrowserRouter>
+
       <UnistorecontextProvider>
        
         <Nav/>
@@ -57,6 +62,7 @@ function App() {
         </Routes>
         <Footer/>
         </UnistorecontextProvider>
+
       </BrowserRouter>
     </div>
   );
