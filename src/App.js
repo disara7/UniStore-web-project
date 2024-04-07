@@ -21,8 +21,8 @@ import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/Se
 import UserProfile from './Pages/home/user';
 import BecomeSeller from './Pages/createseller';
 
-import Item from './Components/items/item';
-import ProductDisplay from './Components/ProductDisplay/product_display';
+// import Item from './Components/items/item';
+// import ProductDisplay from './Components/ProductDisplay/product_display';
 import UnistorecontextProvider from './Context/unistorecontextProvider';
 // import Payment from './Pages/Payment/payment';
 
