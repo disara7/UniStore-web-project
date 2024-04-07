@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BsCart2 } from 'react-icons/bs';
 import './nav.css';
 import logo_small from '../Assets/images/logo_small.png'
