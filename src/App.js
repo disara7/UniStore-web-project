@@ -21,34 +21,50 @@ import SellerNav from './SellerSide/SellerComponents/SellerNav/SellerNav';
 import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
 import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
 import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
+import SellerProducts from "./SellerSide/SellerPages/SellerProducts/SellerProducts";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-       
         {/* <Nav/> */}
         {/* <SellerNav/> */}
         <Routes>
-          <Route path='/'>
-            <Route index element={<Home/>}/>
-            <Route path='/preloved' element={<Preloved category="preloved"/>}/>
-            <Route path='/craftsworld' element={<CraftsWorld category="craftsworld"/>}/>
-            <Route path='/about' element={<About />}/>
-            <Route path='/contact' element={<Contact />}/>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route
+              path="/preloved"
+              element={<Preloved category="preloved" />}
+            />
+            <Route
+              path="/craftsworld"
+              element={<CraftsWorld category="craftsworld" />}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/Product/:productId" element={<Product />} />
-            <Route path='/cart' element={<Cart/>}/> 
-            <Route path='/login' element={<Login/>}/> 
-            <Route path='/createaccount' element={<CreateAccount/>}/> 
-            <Route path='/finish' element={<Finish/>}/>
-            <Route path='/Payment' element={<Payment />}/>         
-          <Route path='/sellerdashboard/About' element={<About/>}/> 
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/finish" element={<Finish />} />
+            <Route path="/Payment" element={<Payment />} />
+            <Route path="/sellerdashboard/About" element={<About />} />
           </Route>
-          <Route path='/sellerdashboard' element={<SellerDashboard/>}/>       
-          <Route path='/sellerdashboard/SellerStatistic' element={<SellerStatistic/>}/> 
-          <Route path='/sellerdashboard/SellerUploadProduct' element={<SellerUploadProduct/>}/>    
+          <Route path="/sellerdashboard" element={<SellerDashboard />} />
+          <Route
+            path="/sellerdashboard/SellerStatistic"
+            element={<SellerStatistic />}
+          />
+          <Route
+            path="/sellerdashboard/SellerProducts"
+            element={<SellerProducts />}
+          />
+          <Route
+            path="/sellerdashboard/SellerUploadProduct"
+            element={<SellerUploadProduct />}
+          />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );

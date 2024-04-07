@@ -64,9 +64,9 @@ const SellerNav = () => {
             <li>
               <Link
                 className={
-                  pathname === "/SellerDashboard/Products" ? "active" : ""
+                  pathname === "/SellerDashboard/SellerProducts" ? "active" : ""
                 }
-                to="/SellerDashboard/Products"
+                to="/SellerDashboard/SellerProducts"
               >
                 Products
               </Link>
