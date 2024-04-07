@@ -1,13 +1,14 @@
 import React from "react";
 import "./SellerProduct.css";
 import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
+import SellerProductTable from "../../SellerComponents/SellerProductTable/SellerProductTable";
 
 const SellerProducts = () => {
   return (
     <div className="background">
       <SellerNav />
       <div className="bgBox">
-        <h1>hiiii</h1>
+        <SellerProductTable />
       </div>
     </div>
   );

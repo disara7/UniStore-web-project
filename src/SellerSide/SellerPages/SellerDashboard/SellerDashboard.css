@@ -71,5 +71,27 @@
               opacity: 0.2;
         }
     }
-
+    .Btng{
+        margin-bottom: 20px;
+        width: 10rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(0, 0, 0);
+        border-radius: 72px;
+        border-color:rgb(0, 0, 0);
+        border-style:solid;
+        color: white;
+        font-size:20px;
+        font-weight: 500;
+        gap: 8px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition-duration: .6s;
+        z-index: 1;
+        text-decoration: none;
+    }
 }
+
