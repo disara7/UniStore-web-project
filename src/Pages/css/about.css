@@ -84,3 +84,37 @@
  .social-media p{
 
  }
+
+ .paraz{
+   height: auto;
+   /* display: flex; */
+   align-items: center;
+   justify-content: center;
+   .firstPara{
+   }
+   .secPara{
+      align-items: center;
+      justify-content: center;
+      
+   }
+   .innerSecPara{
+      margin: 0 auto;
+      width: 800px;
+   }
+   .innerSecPara h2,h3{
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+   }
+
+   .innerSecPara p{
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+   }
+
+   
+ }
+
