@@ -37,6 +37,9 @@
             display: flex;
             padding-left: 10px;
             padding-right: 10px;
+            .itemName{
+                width: 100%;
+            }
         }
         .btnOption{
             display: flex;
@@ -64,6 +67,14 @@
         .description{
             width: 100%;
         }  
+        .image-preview-container{
+            width: fit-content;
+            
+            margin: 5px;
+            background-color: rgb(230, 230, 230);
+            border-radius: 10px;
+
+        }
     }
 
 }

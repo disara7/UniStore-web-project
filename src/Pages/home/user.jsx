@@ -51,7 +51,7 @@ export default function UserProfile() {
               const uid = user.uid;
               const userRef = doc(firestore, "Users", uid);
               const sellerDoc = await getDoc(doc(firestore, 'Sellers', uid));
-              if (sellerDoc.exists) {
+              if (sellerDoc.exists()) {
                 document.querySelector('.userProfile .btn').style.display = 'block';
                 document.querySelector('.sellerCard').style.display = 'none';
               } else {
