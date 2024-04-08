@@ -1,9 +1,9 @@
-import './App.css';
-import Nav from './Components/Nav/nav';
-import Home from './Pages/home/home';
-import Preloved from './Pages/home/Preloved/preloved';
-import About from './Pages/about';
-import Contact from './Pages/contact';
+import "./App.css";
+import Nav from "./Components/Nav/nav";
+import Home from "./Pages/home/home";
+import Preloved from "./Pages/home/Preloved/preloved";
+import About from "./Pages/about";
+import Contact from "./Pages/contact";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from "./Pages/home/product";
@@ -50,6 +50,25 @@ function App() {
             <Route path="/finish" element={<Finish />} />
             <Route path="/Payment" element={<Payment />} />
             <Route path="/sellerdashboard/About" element={<About />} />
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route
+              path="/preloved"
+              element={<Preloved category="preloved" />}
+            />
+            <Route
+              path="/craftsworld"
+              element={<CraftsWorld category="craftsworld" />}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Product/:productId" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/finish" element={<Finish />} />
+            <Route path="/Payment" element={<Payment />} />
+            <Route path="/sellerdashboard/About" element={<About />} />
           </Route>
           <Route path="/sellerdashboard" element={<SellerDashboard />} />
           <Route
@@ -64,7 +83,21 @@ function App() {
             path="/sellerdashboard/SellerUploadProduct"
             element={<SellerUploadProduct />}
           />
+          <Route path="/sellerdashboard" element={<SellerDashboard />} />
+          <Route
+            path="/sellerdashboard/SellerStatistic"
+            element={<SellerStatistic />}
+          />
+          <Route
+            path="/sellerdashboard/SellerProducts"
+            element={<SellerProducts />}
+          />
+          <Route
+            path="/sellerdashboard/SellerUploadProduct"
+            element={<SellerUploadProduct />}
+          />
         </Routes>
+        <Footer />
         <Footer />
       </BrowserRouter>
     </div>
