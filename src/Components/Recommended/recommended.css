@@ -16,7 +16,7 @@
     padding-left: 2.5rem;
 }
 
-.recommended-items {
+.recommended-list {
     display: flex;
     flex-direction: row;
     padding: 1rem;
