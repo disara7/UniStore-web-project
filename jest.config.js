@@ -1,7 +1,11 @@
+// jest.config.js
+
 module.exports = {
     // Specify test environment
     testEnvironment: 'jsdom',
-    setupFilesAfterEnv: ['./setupTests.js'],
-    // Other configuration options...
+    // Configure Jest to use Babel
+    transform: {
+      '^.+\\.jsx?$': 'babel-jest',
+    },
   };
   
