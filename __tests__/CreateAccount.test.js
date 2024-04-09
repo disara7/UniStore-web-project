@@ -6,6 +6,7 @@ describe('CreateAccount component', () => {
   it('renders without crashing', () => {
     render(<CreateAccount />);
   });
+  
 
   it('displays email input field', () => {
     const { getByLabelText } = render(<CreateAccount />);
