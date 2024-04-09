@@ -10,7 +10,7 @@ const Content = () => {
       if (user) {
         const uid = user.uid;
         const sellerDoc = await getDoc(doc(firestore, 'Sellers', uid));
-              if (sellerDoc.exists) {
+              if (sellerDoc.exists()) {
                 document.querySelector('.content').style.display = 'none';
               } else {
                 document.querySelector('.content').style.display = 'block';
@@ -30,7 +30,7 @@ const Content = () => {
             <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete</p>
             <div className="buttons">
               <div className="herobtn">
-                <NavLink to='/BecomeSeller'><button className='Btn b'>Become a Seller</button></NavLink>
+                <NavLink to='/BecomeSeller'><button className='Btn b' style={{margin:'10px'}}>Become a Seller</button></NavLink>
               </div>
             </div>
             </div>

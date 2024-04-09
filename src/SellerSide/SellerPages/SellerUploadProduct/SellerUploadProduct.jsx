@@ -110,7 +110,6 @@ const SellerUploadProduct = () => {
       );
   
       console.log("Pictures uploaded successfully!");
-      navigate('/SellerDashboard/Products', { replace: true });
     }
 
     if (selectedRadioBtn === 'radio1') {
@@ -135,7 +134,7 @@ const SellerUploadProduct = () => {
         console.error(error);
       }
     }
-    
+    navigate('/SellerDashboard/SellerProducts', { replace: true });
   };
   
   

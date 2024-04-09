@@ -13,11 +13,6 @@ export const userColumns = [
       );
     },
   },
-  {
-    field: "uploadDate",
-    headerName: "Upload Date",
-    width: 140,
-  },
 
   {
     field: "price",
@@ -29,18 +24,18 @@ export const userColumns = [
     headerName: "Stock",
     width: 70,
   },
-  {
-    field: "status",
-    headerName: "Status",
-    width: 90,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
-  },
+  // {
+  //   field: "status",
+  //   headerName: "Status",
+  //   width: 90,
+  //   renderCell: (params) => {
+  //     return (
+  //       <div className={`cellWithStatus ${params.row.status}`}>
+  //         {params.row.status}
+  //       </div>
+  //     );
+  //   },
+  // },
 ];
 
 //temporary data
