@@ -1,7 +1,7 @@
 import React from 'react'
 import './SellerDashboard.css'
-import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
-import SellerChart from "../../SellerComponents/chart/SellerChart";
+import SellerNav from "../../SellerComponents/SellerNav/SellerNav.jsx";
+import SellerChart from "../../SellerComponents/chart/SellerChart.jsx";
 import { Link } from "react-router-dom";
 
 const SellerDashboard = () => {

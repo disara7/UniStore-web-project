@@ -1,12 +1,12 @@
 import React, { useRef,useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
+import SellerNav from "../../SellerComponents/SellerNav/SellerNav.jsx";
 import "./SellerUploadProduct.css";
-import SellerDropdownMenu from "../../SellerComponents/DropdownMenu/SellerDropdownMenu";
+import SellerDropdownMenu from "../../SellerComponents/DropdownMenu/SellerDropdownMenu.jsx";
 import Textarea from "@mui/joy/Textarea";
 import Input from "@mui/joy/Input";
 import Compressor from "compressorjs";
-import { auth ,firestore, collection,setDoc, addDoc, updateDoc,doc,uploadBytesResumable,ref,storage } from "../../../FirebaseConfig/firebase";
+import { auth ,firestore, collection,setDoc, addDoc, updateDoc,doc,uploadBytesResumable,ref,storage } from "../../../FirebaseConfig/firebase.js";
 
 
 const options = ['Option 11', 'Option 22'];

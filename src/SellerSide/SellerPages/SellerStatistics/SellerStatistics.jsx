@@ -1,7 +1,7 @@
 import React from 'react'
 import './SellerStatistics.css'
-import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
-import SellerStatTable from "../../SellerComponents/statTable/sellerStatTable";
+import SellerNav from "../../SellerComponents/SellerNav/SellerNav.jsx";
+import SellerStatTable from "../../SellerComponents/statTable/sellerStatTable.jsx";
 
 const SellerStatistic = () => {
   return (

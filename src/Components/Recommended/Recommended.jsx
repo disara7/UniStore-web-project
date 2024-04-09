@@ -1,7 +1,7 @@
 import React from 'react'
 import './recommended.css'
-import Item from '../items/item'
-import all_items from '../Assets/all_items'
+import Item from '../items/item.jsx'
+import all_items from '../Assets/all_items.js'
 
 const Recommended = () => {
   return (

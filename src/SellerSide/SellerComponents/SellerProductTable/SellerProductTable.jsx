@@ -1,6 +1,6 @@
 import "./SellerProductTable.css";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns } from "../../dataTableSource";
+import { userColumns } from "../../dataTableSource.jsx";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { firestore,storage,auth,getDownloadURL,ref,where,query,getDocs,collection } from "../../../FirebaseConfig/firebase";

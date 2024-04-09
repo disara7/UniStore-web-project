@@ -1,10 +1,10 @@
 import React from 'react'
 import './craftsworld.css'
-import Searchbar from '../../../Components/searchbar/searchbar'
-import CwFilter from '../../../Components/filter/cwfilter'
-import Item from '../../../Components/items/item'
+import Searchbar from '../../../Components/searchbar/searchbar.jsx'
+import CwFilter from '../../../Components/filter/cwfilter.jsx'
+import Item from '../../../Components/items/item.jsx'
 // import data_product from '../../../Components/Assets/preloved_items'
-import all_items from '../../../Components/Assets/all_items'
+import all_items from '../../../Components/Assets/all_items.js'
 
 const CraftsWorld = () => {
   return (

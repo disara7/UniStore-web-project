@@ -1,10 +1,10 @@
 import React from 'react'
 import './preloved.css'
-import Searchbar from '../../../Components/searchbar/searchbar'
-import PlFilter from '../../../Components/filter/plfilter'
-import Item from '../../../Components/items/item'
+import Searchbar from '../../../Components/searchbar/searchbar.jsx'
+import PlFilter from '../../../Components/filter/plfilter.jsx'
+import Item from '../../../Components/items/item.jsx'
 // import data_product from '../../../Components/Assets/preloved_items'
-import all_items from '../../../Components/Assets/all_items'
+import all_items from '../../../Components/Assets/all_items.js'
 // import { FaSort } from "react-icons/fa";
 
 
