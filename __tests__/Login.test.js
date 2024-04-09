@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Login from '../../Pages/home/login';
+import Login from '../src/Pages/home/login';
 
 describe('Login component', () => {
   it('should render the login form', () => {
