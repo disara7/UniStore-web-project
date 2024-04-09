@@ -1,8 +1,8 @@
 import React from 'react'
 import './home.css'
-import Hero from '../../Components/Hero/hero'
-import Popular from '../../Components/popular/popular'
-import Content from './content/Content'
+import Hero from '../../Components/Hero/hero.jsx'
+import Popular from '../../Components/popular/popular.jsx'
+import Content from './content/Content.jsx'
 
 
 const Home = () => {

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,signInWithEmailAndPassword, signOut, fetchSignInMethodsForEmail, deleteUser, reauthenticateWithCredential, EmailAuthProvider, reauthenticateWithPopup } from 'firebase/auth'
-import { getFirestore, collection, addDoc, setDoc, doc, updateDoc, getDoc,deleteDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, setDoc, doc, updateDoc, getDocs,getDoc,deleteDoc,query,where } from 'firebase/firestore';
 import { getStorage,ref, getDownloadURL, uploadBytesResumable  } from "firebase/storage";
 
 const firebaseConfig = {
@@ -38,12 +38,14 @@ export {
   signInWithPopup,
   signInWithEmailAndPassword,
   signOut,
-  getDoc,
+  getDocs,getDoc,
   fetchSignInMethodsForEmail,
   deleteDoc,
   deleteUser,
   reauthenticateWithCredential,
   EmailAuthProvider,
   reauthenticateWithPopup,
-  GoogleAuthProvider
+  GoogleAuthProvider,
+  query,
+  where
  };

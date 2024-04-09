@@ -1,7 +1,7 @@
 import React from 'react';
 import './popular.css';
-import data_product from '../Assets/data';
-import Item from '../items/item';
+import data_product from '../Assets/data.js';
+import Item from '../items/item.jsx';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Typography } from '@mui/material';

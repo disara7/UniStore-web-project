@@ -20,15 +20,15 @@
       align-items: center;
   
       .cellImg {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
         margin-right: 20px;
       }
     }
   
-    .cellWithStatus {
+    /* .cellWithStatus {
         height: auto;
       padding: 10px;
       border-radius: 5px;
@@ -48,26 +48,29 @@
         background-color: rgba(255, 0, 0, 0.05);
         color: crimson;
       }
-    }
+    } */
   
     .cellAction {
       display: flex;
       align-items: center;
       gap: 15px;
+      margin-bottom: 10px;
   
       .viewButton {
         padding: 2px 2px;
-        border-radius: 5px;
+        border-radius: 10px;
+        /* height: 30px; */
         color: darkblue;
-        border: 1px dotted rgba(0, 0, 139, 0.596);
+        border: 1px solid rgba(0, 0, 139, 0.596);
         cursor: pointer;
       }
       
       .deleteButton {
         padding: 2px 2px;
-        border-radius: 5px;
+        border-radius: 10px;
+        /* height: 30px; */
         color: crimson;
-        border: 1px dotted rgba(220, 20, 60, 0.6);
+        border: 1px solid rgba(220, 20, 60, 0.6);
         cursor: pointer;
       }
     }

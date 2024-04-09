@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { unistorecontext } from '../../Context/unistorecontextProvider'
+import { unistorecontext } from '../../Context/unistorecontextProvider.jsx'
 import { useParams } from 'react-router-dom';
-import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs';
-import ProductDisplay from '../../Components/ProductDisplay/product_display';
+import Breadcrumbs from '../../Components/Breadcrumbs/breadcrumbs.jsx';
+import ProductDisplay from '../../Components/ProductDisplay/product_display.jsx';
 import '../css/product.css'
-import SellerProfile from '../../Components/Seller_Profile/SellerProfile';
-import Recommended from '../../Components/Recommended/Recommended';
+import SellerProfile from '../../Components/Seller_Profile/SellerProfile.jsx';
+import Recommended from '../../Components/Recommended/Recommended.jsx';
 
 
 

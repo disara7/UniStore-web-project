@@ -1,7 +1,7 @@
 import React from "react";
 import "./SellerProduct.css";
-import SellerNav from "../../SellerComponents/SellerNav/SellerNav";
-import SellerProductTable from "../../SellerComponents/SellerProductTable/SellerProductTable";
+import SellerNav from "../../SellerComponents/SellerNav/SellerNav.jsx";
+import SellerProductTable from "../../SellerComponents/SellerProductTable/SellerProductTable.jsx";
 
 const SellerProducts = () => {
   return (

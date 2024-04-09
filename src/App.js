@@ -1,32 +1,32 @@
 import './App.css';
-import Nav from './Components/Nav/nav';
-import Home from './Pages/home/home';
-import Preloved from './Pages/home/Preloved/preloved';
-import About from './Pages/about';
-import Contact from './Pages/contact';
+import Nav from './Components/Nav/nav.jsx';
+import Home from './Pages/home/home.jsx';
+import Preloved from './Pages/home/Preloved/preloved.jsx';
+import About from './Pages/about.jsx';
+import Contact from './Pages/contact.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Product from './Pages/home/product';
-import Cart from './Pages/home/cart';
-import Login from './Pages/home/login';
-import CraftsWorld from './Pages/home/CraftsWorld/craftsworld';
-import Footer from './Components/footer/Footer';
-import CreateAccount from './Pages/home/createaccount';
-import Finish from './Pages/home/signupfinish';
+import Product from './Pages/home/product.jsx';
+import Cart from './Pages/home/cart.jsx';
+import Login from './Pages/home/login.jsx';
+import CraftsWorld from './Pages/home/CraftsWorld/craftsworld.jsx';
+import Footer from './Components/footer/Footer.jsx';
+import CreateAccount from './Pages/home/createaccount.jsx';
+import Finish from './Pages/home/signupfinish.jsx';
 // import Payment from './Pages/Payment/payment';
 // import SellerNav from './SellerSide/SellerComponents/SellerNav/SellerNav';
-import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard';
-import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics';
-import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct';
+import SellerDashboard from './SellerSide/SellerPages/SellerDashboard/SellerDashboard.jsx';
+import SellerStatistic from './SellerSide/SellerPages/SellerStatistics/SellerStatistics.jsx';
+import SellerUploadProduct from './SellerSide/SellerPages/SellerUploadProduct/SellerUploadProduct.jsx';
 
-import SellerProducts from "./SellerSide/SellerPages/SellerProducts/SellerProducts";
+import SellerProducts from "./SellerSide/SellerPages/SellerProducts/SellerProducts.jsx";
 
-import UserProfile from './Pages/home/user';
-import BecomeSeller from './Pages/createseller';
+import UserProfile from './Pages/home/user.jsx';
+import BecomeSeller from './Pages/createseller.jsx';
 
 // import Item from './Components/items/item';
 // import ProductDisplay from './Components/ProductDisplay/product_display';
-import UnistorecontextProvider from './Context/unistorecontextProvider';
+import UnistorecontextProvider from './Context/unistorecontextProvider.jsx';
 // import Payment from './Pages/Payment/payment';
 
 
