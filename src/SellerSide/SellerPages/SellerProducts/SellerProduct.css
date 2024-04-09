@@ -12,7 +12,7 @@
         width: 70%;
         height: auto;
         background-color: white;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         margin: 20px;
         box-shadow: 0px 0px 38px -26px rgba(0,0,0,0.31);

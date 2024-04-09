@@ -25,6 +25,7 @@ const SellerUploadProduct = () => {
   const itemRef = useRef(null);
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([]);
+  // const [imageURL,setImageURL] =useState('');
 
   const handleImageSelect = (event) => {
     const selectedImages = event.target.files;
@@ -58,16 +59,9 @@ const SellerUploadProduct = () => {
     const user = auth.currentUser;
     const userId = user.uid;
 
-    const userData = {
-      userId,
-      itemName,
-      description,
-      category,
-      price: parseFloat(price),
-    };
-    console.log(selectedRadioBtn)
+    
   
-    await updateDoc(itemDocRef, userData);
+    
 
     if (images.length > 0) {
       await Promise.all(
@@ -87,7 +81,7 @@ const SellerUploadProduct = () => {
           });
   
           // Generate a unique filename with extension
-          const filename = `${user.uid}/${itemId}/${index + 1}-${image.name.split('.').pop()}`;
+          const filename = `${user.uid}/${itemId}/${index + 1}`;
   
           // Create a reference to the storage location
           const storageRef = ref(storage, `item_photos/${filename}`);
@@ -95,29 +89,40 @@ const SellerUploadProduct = () => {
           // Upload the compressed image to Firebase Storage
           const uploadTask = uploadBytesResumable(storageRef, compressedImage);
   
-          await uploadTask.on("state_changed",
-            (snapshot) => {
-              // Progress handling (optional)
-            },
-            (error) => {
-              console.error("Error uploading image:", error);
-            },
-            () => {
-              console.log(`Image ${index + 1} uploaded successfully!`);
-            }
-          );
+          uploadTask.on("state_changed",
+          (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(`${index+1} image upload progress: ${progress}%`);
+          },
+          (error) => {
+            console.error("Error uploading image:", error);
+          },
+        );
+        
         })
       );
-  
+      
       console.log("Pictures uploaded successfully!");
     }
+    // const url = await getDownloadURL(ref(storage, `item_photos/${user.uid}/${itemId}/1.${images[0].name.split('.').pop()}`));
+    // setImageURL(`${images.name.split('.').pop()}`);
+    const userData = {
+      userId,
+      itemName,
+      description,
+      category,
+      price: parseFloat(price),
+    };
+
+    await updateDoc(itemDocRef, userData);
+    
 
     if (selectedRadioBtn === 'radio1') {
       try {
         const used = doc(collection(firestore, 'Used_items'), itemId);
         await setDoc(used, userData);
         console.log('Item uploaded successfully!');
-        alert("Item uploaded successfully!");
+        
       } catch (error) {
         console.error(error);
       }
@@ -128,12 +133,14 @@ const SellerUploadProduct = () => {
         const handcraft = doc(collection(firestore, 'Craft_items'), itemId);
   
         await setDoc(handcraft, userData);
-        console.log('Item uploaded successfully!');
-        alert("Item uploaded successfully!");
+  
       } catch (error) {
         console.error(error);
       }
     }
+    
+    
+    alert("Item uploaded successfully!");
     navigate('/SellerDashboard/SellerProducts', { replace: true });
   };
   
