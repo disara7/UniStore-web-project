@@ -23,22 +23,26 @@ const Datatable = () => {
 
         const items = [];
         
-        snapshot.docs.forEach((doc) => {
+        snapshot.docs.forEach(async (doc) => {
           const itemData = doc.data();
           const imgRef = ref(storage, `item_photos/${userId}/${doc.id}/1`);
 
-          const downloadURL = getDownloadURL(imgRef);
-          console.log(downloadURL);
-          items.push({
-            id: doc.id,
-            productName: itemData.itemName,
-            img: downloadURL,
-            price: itemData.price,
+          const downloadURL =  getDownloadURL(imgRef).then((url) => {
+            const newItem =({
+              id: doc.id,
+              productName: itemData.itemName,
+              img: url,
+              price: itemData.price,
+              stock: itemData.quantity,
+            });
+            items.push(newItem);
+            setData([...items]);
           });
+          
         });
         
 
-        setData(items);
+        // setData(items);
         localStorage.setItem("sellerProducts", JSON.stringify(items));
       } catch (error) {
         console.error("Error fetching user items:", error);

@@ -16,9 +16,12 @@
     padding-left: 2.5rem;
 }
 
-.recommended-items {
+.recommended-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
     padding: 1rem;
 }
 

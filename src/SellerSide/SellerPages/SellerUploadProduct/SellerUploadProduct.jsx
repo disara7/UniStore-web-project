@@ -21,6 +21,7 @@ const SellerUploadProduct = () => {
   const [description,setDescription] = React.useState('');
   const [category,setCategory] = React.useState('');
   const [price,setPrice] = React.useState('');
+  const [quantity,setQuantity] = React.useState('');
   const [itemName,setItemName] = React.useState('');
   const itemRef = useRef(null);
   const [images, setImages] = useState([]);
@@ -106,18 +107,20 @@ const SellerUploadProduct = () => {
     }
     // const url = await getDownloadURL(ref(storage, `item_photos/${user.uid}/${itemId}/1.${images[0].name.split('.').pop()}`));
     // setImageURL(`${images.name.split('.').pop()}`);
+    const oldprice = '';
     const userData = {
       userId,
       itemName,
       description,
       category,
-      price: parseFloat(price),
+      price: `LKR ${price}`,
+      quantity: parseInt(quantity),
+      old_price: oldprice,
     };
-
-    await updateDoc(itemDocRef, userData);
     
 
     if (selectedRadioBtn === 'radio1') {
+      setCategory('Used');
       try {
         const used = doc(collection(firestore, 'Used_items'), itemId);
         await setDoc(used, userData);
@@ -128,6 +131,7 @@ const SellerUploadProduct = () => {
       }
     }
     else if (selectedRadioBtn === 'radio2') {
+      setCategory('Craft');
       try {
         
         const handcraft = doc(collection(firestore, 'Craft_items'), itemId);
@@ -138,7 +142,7 @@ const SellerUploadProduct = () => {
         console.error(error);
       }
     }
-    
+    await updateDoc(itemDocRef, userData);
     
     alert("Item uploaded successfully!");
     navigate('/SellerDashboard/SellerProducts', { replace: true });
@@ -218,6 +222,17 @@ const SellerUploadProduct = () => {
               maxRows={6}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              />
+          </div>
+        </div>
+        <div className="section">
+          <div className="priceBox">
+            <h3>Quantity:</h3>
+            <Input 
+              placeholder="Enter Quantity" 
+              sx={{ width: 300 }} 
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
               />
           </div>
         </div>

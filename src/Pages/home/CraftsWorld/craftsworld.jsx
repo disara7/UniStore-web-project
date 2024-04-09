@@ -1,12 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './craftsworld.css'
 import Searchbar from '../../../Components/searchbar/searchbar.jsx'
 import CwFilter from '../../../Components/filter/cwfilter.jsx'
 import Item from '../../../Components/items/item.jsx'
 // import data_product from '../../../Components/Assets/preloved_items'
-import all_items from '../../../Components/Assets/all_items.js'
+// import all_items from '../../../Components/Assets/all_items.js'
+import { firestore, getDocs, getDownloadURL, ref, storage,collection } from '../../../FirebaseConfig/firebase.js';
 
 const CraftsWorld = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const itemsRef = collection(firestore, "Craft_items");
+        const snapshot = await getDocs(itemsRef);
+
+        if (snapshot.empty) {
+          console.log("No products yet!!!");
+          return;
+        }
+
+        const items = [];
+        
+        snapshot.docs.forEach((doc) => {
+          const itemData = doc.data();
+          const userId = itemData.userId;
+          const imgRef = ref(storage, `item_photos/${userId}/${doc.id}/1`);
+
+          getDownloadURL(imgRef)
+          .then((url) => {
+            items.push({
+              id: doc.id,
+              name: itemData.itemName,
+              image: url,
+              new_price: itemData.price,
+              old_price: itemData.old_price,
+            });
+            setProducts([...items]);
+          })
+          .catch((error) => {
+            console.error("Error getting download URL:", error);
+          });
+        });
+        
+        
+        localStorage.setItem("craftProducts", JSON.stringify(items));
+      } catch (error) {
+        console.error("Error fetching user items:", error);
+      }
+    };
+    const storedData = localStorage.getItem("craftProducts");
+    if (storedData) {
+      setProducts(JSON.parse(storedData));
+    } else {
+      fetchData();
+    }
+
+    fetchData();
+  }, []);
   return (
     <div className='craftsworld'>
       <div className='crafts-top'>
@@ -26,16 +77,19 @@ const CraftsWorld = () => {
 
       </div>
       <div className="right">
-        {all_items.map((item, i)=>{
-                if (item.category==="craftsworld"){
-                  return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-              }
-              else {
-                  return null;
-              }}
-            )}
-          
-
+        {products.length > 0 &&(
+          products.map((item, i) => (
+              <Item
+                key={i}
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                new_price={item.new_price}
+                old_price={item.old_price}
+              />
+          ))
+        )
+        }
       </div>
 
       </div>
