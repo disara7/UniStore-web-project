@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Nav from './Components/Nav/nav.jsx';
 import Home from './Pages/home/home.jsx';
@@ -29,6 +30,32 @@ import BecomeSeller from './Pages/createseller.jsx';
 import UnistorecontextProvider from './Context/unistorecontextProvider.jsx';
 // import Payment from './Pages/Payment/payment';
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state to indicate error
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Log error to an error reporting service
+    console.error('Error caught by error boundary:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Render fallback UI when error occurs
+      return <h1>Something went wrong. Please try again later.</h1>;
+    }
+
+    // Render children if no error
+    return this.props.children;
+  }
+}
 
 function App() {
   return (
