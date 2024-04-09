@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
 import '../css/login.css';
+import 'text-encoding';
 import { FiUser } from "react-icons/fi";
 import { GoKey } from "react-icons/go";
 import Box from '@mui/joy/Box';
