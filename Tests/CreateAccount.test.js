@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import CreateAccount from './CreateAccount';
+import CreateAccount from '../src/Pages/home/createaccount';
 
 describe('CreateAccount component', () => {
   it('renders without crashing', () => {

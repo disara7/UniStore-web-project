@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import UserProfile from './UserProfile';
+import UserProfile from '../src/Pages/home/user';
 
 describe('UserProfile component', () => {
   it('renders without crashing', () => {

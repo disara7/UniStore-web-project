@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Finish from './Finish';
+import Finish from '../src/Pages/home/signupfinish';
 
 describe('Finish component', () => {
   // Test that the component renders without crashing
