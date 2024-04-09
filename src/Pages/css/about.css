@@ -81,17 +81,18 @@
     
  }
 
- .social-media p{
+ /* .social-media p{
 
- }
+ } */
 
  .paraz{
    height: auto;
    /* display: flex; */
    align-items: center;
    justify-content: center;
-   .firstPara{
-   }
+
+   /* .firstPara{
+   } */
    .secPara{
       align-items: center;
       justify-content: center;
