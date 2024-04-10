@@ -9,8 +9,38 @@ import Compressor from "compressorjs";
 import { auth ,firestore, collection,setDoc, addDoc, updateDoc,doc,uploadBytesResumable,ref,storage } from "../../../FirebaseConfig/firebase.js";
 
 
-const options = ['Option 11', 'Option 22'];
-const options2 = ['Option 121', 'Option 222'];
+const options = ['Luggage and Bags',
+  'Wallet & ID Holder',
+  'Backpacks',
+  'Hand Bags',
+  'Traveling Bags and Luggage',
+  'Fashion and Clothing',
+  'Electronic Accessories',
+  'Sport Equipment',
+  'Educational Material',
+  'Musical Instruments',
+  'Furniture and Home GoodsLuggage and Bags',
+  'Wallet & ID Holder',
+  'Backpacks',
+  'Hand Bags',
+  'Traveling Bags and Luggage',
+  'Fashion and Clothing',
+  'Electronic Accessories',
+  'Sport Equipment',
+  'Educational Material',
+  'Musical Instruments',
+  'Furniture and Home Goods'];
+
+const options2 = ['Hand-crafted Necklaces',
+  'Bracelets',
+  'Earrings',
+  'Rings',
+  'Home Decor',
+  'Art and Collectibles',
+  'Paper Goods',
+  'Beauty and Personal Care',
+  'Seasonal and Gift Items',
+  'Woodwork'];
 
 const SellerUploadProduct = () => {
   const navigate = useNavigate();

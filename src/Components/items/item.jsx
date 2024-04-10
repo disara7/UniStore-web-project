@@ -13,7 +13,7 @@ const Item = (props) => {
   
   return (
     <Link to={`/Product/${id}`} style={{ textDecoration: 'none' }}>
-        <Card sx={{ minWidth: 200,maxWidth: 300, borderRadius: 3, mb:1,mr:1, cursor:'pointer' }}>
+        <Card sx={{maxWidth: 300, borderRadius: 3, mb:1,mr:1, cursor:'pointer' }}>
           <CardMedia
             sx={{ height: {md:200, sm:150, xs:100} }}
             image={props.image}
