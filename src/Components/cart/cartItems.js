@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import './cart.css'
+import './cartitems.css'
 import UnistorecontextProvider from '../../Context/unistorecontext';
 
 export const CartItems = () =>  {  
