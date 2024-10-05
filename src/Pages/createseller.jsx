@@ -104,6 +104,7 @@ export default function BecomeSeller() {
     
           await setDoc(userRef, userData);
           console.log('Seller account created successfully!');
+          alert('Seller account created successfully!');
           window.location.replace('/UserProfile');
       
         } catch (error) {

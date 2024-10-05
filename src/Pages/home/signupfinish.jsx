@@ -115,6 +115,7 @@ export default function Finish() {
 
       await updateDoc(userRef, userData);
       console.log('User data updated successfully!');
+      alert("Account is created successfully!");
       navigate('/');
   
     } catch (error) {

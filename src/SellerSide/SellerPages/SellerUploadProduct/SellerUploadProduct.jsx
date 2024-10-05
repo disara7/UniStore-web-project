@@ -90,18 +90,14 @@ const SellerUploadProduct = () => {
     const user = auth.currentUser;
     const userId = user.uid;
 
-    
-  
-    
-
     if (images.length > 0) {
       await Promise.all(
         images.map(async (image, index) => {
           const compressedImage = await new Promise((resolve, reject) => {
             new Compressor(image, {
-              quality: 0.6, // Adjust quality for desired compression level (0-1)
-              maxWidth: 800, // Optional: Set a maximum width for resizing
-              maxHeight: 800, // Optional: Set a maximum height for resizing
+              quality: 0.6, 
+              maxWidth: 800, 
+              maxHeight: 800,
               success(result) {
                 resolve(result);
               },
@@ -110,16 +106,9 @@ const SellerUploadProduct = () => {
               },
             });
           });
-  
-          // Generate a unique filename with extension
           const filename = `${user.uid}/${itemId}/${index + 1}`;
-  
-          // Create a reference to the storage location
           const storageRef = ref(storage, `item_photos/${filename}`);
-  
-          // Upload the compressed image to Firebase Storage
           const uploadTask = uploadBytesResumable(storageRef, compressedImage);
-  
           uploadTask.on("state_changed",
           (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -129,10 +118,8 @@ const SellerUploadProduct = () => {
             console.error("Error uploading image:", error);
           },
         );
-        
         })
       );
-      
       console.log("Pictures uploaded successfully!");
     }
     // const url = await getDownloadURL(ref(storage, `item_photos/${user.uid}/${itemId}/1.${images[0].name.split('.').pop()}`));
